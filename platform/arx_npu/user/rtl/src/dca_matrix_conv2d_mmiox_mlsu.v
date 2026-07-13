@@ -52,6 +52,7 @@ module DCA_MATRIX_CONV2D_MMIOX_MLSU
 	mi_sinst_decode_finish,
 	mi_sinst_execute_finish,
 	mi_sinst_busy,
+  mi_scache_flush,
 	mi_sload_tensor_row_wvalid,
 	mi_sload_tensor_row_wlast,
 	mi_sload_tensor_row_wdata,
@@ -67,6 +68,7 @@ module DCA_MATRIX_CONV2D_MMIOX_MLSU
 	mk_sinst_decode_finish,
 	mk_sinst_execute_finish,
 	mk_sinst_busy,
+  mk_scache_flush,
 	mk_sload_tensor_row_wvalid,
 	mk_sload_tensor_row_wlast,
 	mk_sload_tensor_row_wdata,
@@ -82,6 +84,7 @@ module DCA_MATRIX_CONV2D_MMIOX_MLSU
 	mo_sinst_decode_finish,
 	mo_sinst_execute_finish,
 	mo_sinst_busy,
+  mo_scache_flush,
 	mo_sload_tensor_row_wvalid,
 	mo_sload_tensor_row_wlast,
 	mo_sload_tensor_row_wdata,
@@ -155,6 +158,7 @@ input wire mi_sinst_wready;
 input wire mi_sinst_decode_finish;
 input wire mi_sinst_execute_finish;
 input wire mi_sinst_busy;
+output wire mi_scache_flush;
 input wire mi_sload_tensor_row_wvalid;
 input wire mi_sload_tensor_row_wlast;
 input wire [BW_INPUT_TENSOR_ROW-1:0] mi_sload_tensor_row_wdata;
@@ -170,6 +174,7 @@ input wire mk_sinst_wready;
 input wire mk_sinst_decode_finish;
 input wire mk_sinst_execute_finish;
 input wire mk_sinst_busy;
+output wire mk_scache_flush;
 input wire mk_sload_tensor_row_wvalid;
 input wire mk_sload_tensor_row_wlast;
 input wire [BW_KERNEL_TENSOR_ROW-1:0] mk_sload_tensor_row_wdata;
@@ -185,6 +190,7 @@ input wire mo_sinst_wready;
 input wire mo_sinst_decode_finish;
 input wire mo_sinst_execute_finish;
 input wire mo_sinst_busy;
+output wire mo_scache_flush;
 input wire mo_sload_tensor_row_wvalid;
 input wire mo_sload_tensor_row_wlast;
 input wire [BW_OUTPUT_TENSOR_ROW-1:0] mo_sload_tensor_row_wdata;
@@ -657,6 +663,10 @@ assign execute_finish = (state==EXECUTE) & end_of_2d_conv;
 //assign i_mreg2_move_wenable = 0; // update
 //assign i_mreg2_move_wdata_list = 0; // update
 //assign execute_finish = (state==EXECUTE); // update
+
+assign mi_scache_flush = control_rmx_operation_finish;
+assign mk_scache_flush = control_rmx_operation_finish;
+assign mo_scache_flush = control_rmx_operation_finish;
 
 endmodule
 

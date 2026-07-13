@@ -108,7 +108,8 @@ int convolution_i8_shift(unsigned char* input, unsigned char* kernel,  int *bias
         kernel_info_list[ch]->addr = (void *)(signed_kernel + (kn * C * KH * KW) + (ch * KH * KW));
       }
       // conv hw
-      mop_mapping->matrix_conv_sharedoutput(mop_mapping, C, input_info_list, kernel_info_list, output_info, conv_option.value, 1);
+      ervp_hwtask_busy_fx_t hwtask_busy_fx = mop_mapping->matrix_conv_sharedoutput(mop_mapping, C, input_info_list, kernel_info_list, output_info, conv_option.value, 1);
+      hwtask_wait_complete(hwtask_busy_fx);
 
       // doBias
       if(doBias) {

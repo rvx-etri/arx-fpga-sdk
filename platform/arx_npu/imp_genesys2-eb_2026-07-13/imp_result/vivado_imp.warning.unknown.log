@@ -1,0 +1,673 @@
+WARNING: [Vivado 12-13650] The IP file '/home/kshan/rvx_etri/platform_repo/arx_npu/fpga_component/genesys2-eb/xci/xilinx_ddr3_ctrl_axi32/xilinx_ddr3_ctrl_axi32.xci' has been moved from its original location, as a result the outputs for this IP will now be generated in '/home/kshan/rvx_etri/platform_repo/arx_npu/fpga_component/genesys2-eb/xci/xilinx_ddr3_ctrl_axi32'. Alternatively a copy of the IP can be imported into the project using one of the 'import_ip' or 'import_files' commands.
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/kshan/rvx_etri/platform_repo/arx_npu/imp_genesys2-eb_2026-07-13/src/arx_npu_fpga.v:72]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2367]
+WARNING: [Synth 8-6774] Null subtype or type declaration found [/home/kshan/rvx_etri/platform_repo/arx_npu/user/rtl/src/ipRcsvPipeAddTree.vhd:194]
+WARNING: [Synth 8-6774] Null subtype or type declaration found [/home/kshan/rvx_etri/platform_repo/arx_npu/user/rtl/src/ipRcsvPipeAddTree.vhd:194]
+WARNING: [Synth 8-693] zero replication count - replication ignored [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_regs.v:231]
+WARNING: [Synth 8-7071] port 'device_temp_i' of module 'xilinx_ddr3_ctrl_axi32' is unconnected for instance 'u_xilinx_ddr3_ctrl_axi32' [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/include/slow_dram_body.vh:69]
+WARNING: [Synth 8-7071] port 'device_temp' of module 'xilinx_ddr3_ctrl_axi32' is unconnected for instance 'u_xilinx_ddr3_ctrl_axi32' [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/include/slow_dram_body.vh:69]
+WARNING: [Synth 8-7023] instance 'u_xilinx_ddr3_ctrl_axi32' of module 'xilinx_ddr3_ctrl_axi32' has 67 connections declared, but only 65 given [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/include/slow_dram_body.vh:69]
+WARNING: [Synth 8-6014] Unused sequential element reg_RW0_ren_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/tag_array_ext.v:27]
+WARNING: [Synth 8-6014] Unused sequential element reg_RW0_ren_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/data_arrays_0_ext.v:27]
+WARNING: [Synth 8-6014] Unused sequential element reg_RW0_ren_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/tag_array_0_ext.v:27]
+WARNING: [Synth 8-6014] Unused sequential element reg_RW0_ren_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/data_arrays_0_0_ext.v:27]
+WARNING: [Synth 8-4767] Trying to implement RAM 'regfile_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons. [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/FPU.v:490]
+WARNING: [Synth 8-6014] Unused sequential element ex_ctrl_rxs1_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2593]
+WARNING: [Synth 8-6014] Unused sequential element ex_ctrl_rfs1_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2638]
+WARNING: [Synth 8-6014] Unused sequential element ex_ctrl_rfs2_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2641]
+WARNING: [Synth 8-6014] Unused sequential element mem_ctrl_rxs2_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2694]
+WARNING: [Synth 8-6014] Unused sequential element mem_ctrl_rxs1_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2699]
+WARNING: [Synth 8-6014] Unused sequential element mem_ctrl_rfs1_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2709]
+WARNING: [Synth 8-6014] Unused sequential element mem_ctrl_rfs2_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2714]
+WARNING: [Synth 8-6014] Unused sequential element wb_ctrl_rxs2_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2135]
+WARNING: [Synth 8-6014] Unused sequential element wb_ctrl_rxs1_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2132]
+WARNING: [Synth 8-6014] Unused sequential element wb_ctrl_rfs1_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2132]
+WARNING: [Synth 8-6014] Unused sequential element wb_ctrl_rfs2_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2135]
+WARNING: [Synth 8-6014] Unused sequential element coreMonitorBundle_rd0val_x23_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:3032]
+WARNING: [Synth 8-6014] Unused sequential element coreMonitorBundle_rd0val_REG_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2134]
+WARNING: [Synth 8-6014] Unused sequential element coreMonitorBundle_rd1val_x29_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:3046]
+WARNING: [Synth 8-6014] Unused sequential element coreMonitorBundle_rd1val_REG_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2137]
+WARNING: [Synth 8-11357] Potential Runtime issue for 3D-RAM or RAM from Record/Structs for RAM  data_reg with 15488 registers
+WARNING: [Synth 8-11357] Potential Runtime issue for 3D-RAM or RAM from Record/Structs for RAM  bufData_reg with 15488 registers
+WARNING: [Synth 8-3848] Net kerBufFull in module/entity c2dConvCore does not have driver. [/home/kshan/rvx_etri/platform_repo/arx_npu/user/rtl/src/c2dConvCore.vhd:66]
+WARNING: [Synth 8-3848] Net imgBufFull in module/entity c2dConvCore does not have driver. [/home/kshan/rvx_etri/platform_repo/arx_npu/user/rtl/src/c2dConvCore.vhd:67]
+WARNING: [Synth 8-3848] Net imgBufEmpty in module/entity c2dConvCore does not have driver. [/home/kshan/rvx_etri/platform_repo/arx_npu/user/rtl/src/c2dConvCore.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element imgBufLdStartI_reg was removed.  [/home/kshan/rvx_etri/platform_repo/arx_npu/user/rtl/src/c2dConvCoreCtrl.vhd:316]
+WARNING: [Synth 8-6014] Unused sequential element kerBufLdStartI_reg was removed.  [/home/kshan/rvx_etri/platform_repo/arx_npu/user/rtl/src/c2dConvCoreCtrl.vhd:317]
+WARNING: [Synth 8-6014] Unused sequential element imgBufLdEndI_reg was removed.  [/home/kshan/rvx_etri/platform_repo/arx_npu/user/rtl/src/c2dConvCoreCtrl.vhd:351]
+WARNING: [Synth 8-6014] Unused sequential element imgBufRdStartI_reg was removed.  [/home/kshan/rvx_etri/platform_repo/arx_npu/user/rtl/src/c2dConvCoreCtrl.vhd:360]
+WARNING: [Synth 8-6014] Unused sequential element imgBufRdEndI_reg was removed.  [/home/kshan/rvx_etri/platform_repo/arx_npu/user/rtl/src/c2dConvCoreCtrl.vhd:397]
+WARNING: [Synth 8-6014] Unused sequential element OUTPUT_BUF_ACCUM_ON_G1.outBufRegFileCntI_reg was removed.  [/home/kshan/rvx_etri/platform_repo/arx_npu/user/rtl/src/c2dOutBuf.vhd:242]
+WARNING: [Synth 8-3848] Net dca_signal_02 in module/entity DCA_MODULE_30 does not have driver. [/home/kshan/rvx_etri/hwlib_special/dca/src/dca_module_30.v:96]
+WARNING: [Synth 8-3848] Net dca_signal_18 in module/entity DCA_MODULE_30 does not have driver. [/home/kshan/rvx_etri/hwlib_special/dca/src/dca_module_30.v:97]
+WARNING: [Synth 8-3848] Net dca_signal_09 in module/entity DCA_MODULE_30 does not have driver. [/home/kshan/rvx_etri/hwlib_special/dca/src/dca_module_30.v:80]
+WARNING: [Synth 8-3848] Net dca_signal_21 in module/entity DCA_MODULE_30 does not have driver. [/home/kshan/rvx_etri/hwlib_special/dca/src/dca_module_30.v:92]
+WARNING: [Synth 8-3848] Net dca_signal_10 in module/entity DCA_MODULE_30 does not have driver. [/home/kshan/rvx_etri/hwlib_special/dca/src/dca_module_30.v:93]
+WARNING: [Synth 8-3848] Net dca_signal_45 in module/entity DCA_MODULE_04 does not have driver. [/home/kshan/rvx_etri/hwlib_special/dca/src/dca_module_04.v:212]
+WARNING: [Synth 8-3848] Net cpg_misc_thread_status_list_rdata in module/entity ERVP_COMMON_PERI_GROUP does not have driver. [/home/kshan/rvx_etri/hwlib_basic/peripheral/common_peri_group/src/ervp_common_peri_group.v:147]
+WARNING: [Synth 8-7137] Register fifo_reg[127] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[126] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[125] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[124] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[123] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[122] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[121] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[120] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[119] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[118] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[117] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[116] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[115] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[114] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[113] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[112] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[111] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[110] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[109] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[108] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[107] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[106] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[105] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[104] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[103] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[102] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[101] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[100] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[99] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[98] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[97] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[96] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[95] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[94] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[93] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[92] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[91] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[90] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[89] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[88] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[87] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[86] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[85] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[84] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[83] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[82] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[81] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[80] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[79] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[78] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[77] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[76] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[75] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[74] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[73] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[72] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[71] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[70] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[69] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[68] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[67] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[66] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[65] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[64] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[63] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[62] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[61] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[60] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[59] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[58] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[57] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[56] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[55] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[54] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[53] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[52] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[51] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[50] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[49] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[48] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[47] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[46] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[45] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[44] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[43] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[42] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[41] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[40] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[39] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[38] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[37] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[36] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[35] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[34] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[33] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[32] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[31] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[30] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[29] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[28] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-6014] Unused sequential element rbit_in_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_receiver.v:114]
+WARNING: [Synth 8-3848] Net normal_prdata[3] in module/entity ERVP_PLATFORM_CONTROLLER does not have driver. [/home/kshan/rvx_etri/hwlib_basic/peripheral/platform_controller/src/ervp_platform_controller.v:184]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'shift_amount_abs_reg' and it is trimmed from '3' to '2' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/external/ervp_barrel_shifter.v:74]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-7129] Port select[0] in module ERVP_MUX__parameterized29 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port select[0] in module ERVP_DEMUX__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port select[0] in module ERVP_DEMUX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rstnn in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[13] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[12] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[11] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[10] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[9] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[8] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[7] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[6] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[5] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[4] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[3] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[2] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[1] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[0] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[13] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[12] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[11] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[10] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[9] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[8] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[7] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[6] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[5] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[4] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[3] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[2] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[1] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[0] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/kshan/rvx_etri/platform_repo/arx_npu/imp_genesys2-eb_2026-07-13/src/arx_npu_fpga.v:72]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2367]
+WARNING: [Synth 8-6774] Null subtype or type declaration found [/home/kshan/rvx_etri/platform_repo/arx_npu/user/rtl/src/ipRcsvPipeAddTree.vhd:194]
+WARNING: [Synth 8-6774] Null subtype or type declaration found [/home/kshan/rvx_etri/platform_repo/arx_npu/user/rtl/src/ipRcsvPipeAddTree.vhd:194]
+WARNING: [Synth 8-693] zero replication count - replication ignored [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_regs.v:231]
+WARNING: [Synth 8-7071] port 'device_temp_i' of module 'xilinx_ddr3_ctrl_axi32' is unconnected for instance 'u_xilinx_ddr3_ctrl_axi32' [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/include/slow_dram_body.vh:69]
+WARNING: [Synth 8-7071] port 'device_temp' of module 'xilinx_ddr3_ctrl_axi32' is unconnected for instance 'u_xilinx_ddr3_ctrl_axi32' [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/include/slow_dram_body.vh:69]
+WARNING: [Synth 8-7023] instance 'u_xilinx_ddr3_ctrl_axi32' of module 'xilinx_ddr3_ctrl_axi32' has 67 connections declared, but only 65 given [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/include/slow_dram_body.vh:69]
+WARNING: [Synth 8-6014] Unused sequential element reg_RW0_ren_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/tag_array_ext.v:27]
+WARNING: [Synth 8-6014] Unused sequential element reg_RW0_ren_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/data_arrays_0_ext.v:27]
+WARNING: [Synth 8-6014] Unused sequential element reg_RW0_ren_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/tag_array_0_ext.v:27]
+WARNING: [Synth 8-6014] Unused sequential element reg_RW0_ren_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/data_arrays_0_0_ext.v:27]
+WARNING: [Synth 8-4767] Trying to implement RAM 'regfile_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons. [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/FPU.v:490]
+WARNING: [Synth 8-6014] Unused sequential element ex_ctrl_rxs1_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2593]
+WARNING: [Synth 8-6014] Unused sequential element ex_ctrl_rfs1_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2638]
+WARNING: [Synth 8-6014] Unused sequential element ex_ctrl_rfs2_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2641]
+WARNING: [Synth 8-6014] Unused sequential element mem_ctrl_rxs2_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2694]
+WARNING: [Synth 8-6014] Unused sequential element mem_ctrl_rxs1_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2699]
+WARNING: [Synth 8-6014] Unused sequential element mem_ctrl_rfs1_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2709]
+WARNING: [Synth 8-6014] Unused sequential element mem_ctrl_rfs2_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2714]
+WARNING: [Synth 8-6014] Unused sequential element wb_ctrl_rxs2_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2135]
+WARNING: [Synth 8-6014] Unused sequential element wb_ctrl_rxs1_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2132]
+WARNING: [Synth 8-6014] Unused sequential element wb_ctrl_rfs1_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2132]
+WARNING: [Synth 8-6014] Unused sequential element wb_ctrl_rfs2_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2135]
+WARNING: [Synth 8-6014] Unused sequential element coreMonitorBundle_rd0val_x23_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:3032]
+WARNING: [Synth 8-6014] Unused sequential element coreMonitorBundle_rd0val_REG_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2134]
+WARNING: [Synth 8-6014] Unused sequential element coreMonitorBundle_rd1val_x29_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:3046]
+WARNING: [Synth 8-6014] Unused sequential element coreMonitorBundle_rd1val_REG_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2137]
+WARNING: [Synth 8-11357] Potential Runtime issue for 3D-RAM or RAM from Record/Structs for RAM  data_reg with 15488 registers
+WARNING: [Synth 8-11357] Potential Runtime issue for 3D-RAM or RAM from Record/Structs for RAM  bufData_reg with 15488 registers
+WARNING: [Synth 8-3848] Net kerBufFull in module/entity c2dConvCore does not have driver. [/home/kshan/rvx_etri/platform_repo/arx_npu/user/rtl/src/c2dConvCore.vhd:66]
+WARNING: [Synth 8-3848] Net imgBufFull in module/entity c2dConvCore does not have driver. [/home/kshan/rvx_etri/platform_repo/arx_npu/user/rtl/src/c2dConvCore.vhd:67]
+WARNING: [Synth 8-3848] Net imgBufEmpty in module/entity c2dConvCore does not have driver. [/home/kshan/rvx_etri/platform_repo/arx_npu/user/rtl/src/c2dConvCore.vhd:68]
+WARNING: [Synth 8-6014] Unused sequential element imgBufLdStartI_reg was removed.  [/home/kshan/rvx_etri/platform_repo/arx_npu/user/rtl/src/c2dConvCoreCtrl.vhd:316]
+WARNING: [Synth 8-6014] Unused sequential element kerBufLdStartI_reg was removed.  [/home/kshan/rvx_etri/platform_repo/arx_npu/user/rtl/src/c2dConvCoreCtrl.vhd:317]
+WARNING: [Synth 8-6014] Unused sequential element imgBufLdEndI_reg was removed.  [/home/kshan/rvx_etri/platform_repo/arx_npu/user/rtl/src/c2dConvCoreCtrl.vhd:351]
+WARNING: [Synth 8-6014] Unused sequential element imgBufRdStartI_reg was removed.  [/home/kshan/rvx_etri/platform_repo/arx_npu/user/rtl/src/c2dConvCoreCtrl.vhd:360]
+WARNING: [Synth 8-6014] Unused sequential element imgBufRdEndI_reg was removed.  [/home/kshan/rvx_etri/platform_repo/arx_npu/user/rtl/src/c2dConvCoreCtrl.vhd:397]
+WARNING: [Synth 8-6014] Unused sequential element OUTPUT_BUF_ACCUM_ON_G1.outBufRegFileCntI_reg was removed.  [/home/kshan/rvx_etri/platform_repo/arx_npu/user/rtl/src/c2dOutBuf.vhd:242]
+WARNING: [Synth 8-3848] Net dca_signal_02 in module/entity DCA_MODULE_30 does not have driver. [/home/kshan/rvx_etri/hwlib_special/dca/src/dca_module_30.v:96]
+WARNING: [Synth 8-3848] Net dca_signal_18 in module/entity DCA_MODULE_30 does not have driver. [/home/kshan/rvx_etri/hwlib_special/dca/src/dca_module_30.v:97]
+WARNING: [Synth 8-3848] Net dca_signal_09 in module/entity DCA_MODULE_30 does not have driver. [/home/kshan/rvx_etri/hwlib_special/dca/src/dca_module_30.v:80]
+WARNING: [Synth 8-3848] Net dca_signal_21 in module/entity DCA_MODULE_30 does not have driver. [/home/kshan/rvx_etri/hwlib_special/dca/src/dca_module_30.v:92]
+WARNING: [Synth 8-3848] Net dca_signal_10 in module/entity DCA_MODULE_30 does not have driver. [/home/kshan/rvx_etri/hwlib_special/dca/src/dca_module_30.v:93]
+WARNING: [Synth 8-3848] Net dca_signal_45 in module/entity DCA_MODULE_04 does not have driver. [/home/kshan/rvx_etri/hwlib_special/dca/src/dca_module_04.v:212]
+WARNING: [Synth 8-3848] Net cpg_misc_thread_status_list_rdata in module/entity ERVP_COMMON_PERI_GROUP does not have driver. [/home/kshan/rvx_etri/hwlib_basic/peripheral/common_peri_group/src/ervp_common_peri_group.v:147]
+WARNING: [Synth 8-7137] Register fifo_reg[127] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[126] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[125] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[124] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[123] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[122] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[121] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[120] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[119] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[118] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[117] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[116] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[115] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[114] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[113] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[112] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[111] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[110] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[109] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[108] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[107] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[106] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[105] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[104] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[103] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[102] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[101] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[100] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[99] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[98] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[97] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[96] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[95] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[94] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[93] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[92] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[91] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[90] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[89] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[88] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[87] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[86] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[85] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[84] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[83] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[82] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[81] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[80] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[79] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[78] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[77] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[76] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[75] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[74] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[73] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[72] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[71] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[70] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[69] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[68] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[67] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[66] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[65] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[64] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[63] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[62] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[61] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[60] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[59] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[58] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[57] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[56] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[55] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[54] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[53] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[52] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[51] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[50] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[49] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[48] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[47] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[46] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[45] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[44] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[43] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[42] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[41] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[40] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[39] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[38] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[37] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[36] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[35] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[34] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[33] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[32] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[31] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[30] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[29] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-7137] Register fifo_reg[28] in module ERVP_UART_RFIFO has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_rfifo.v:82]
+WARNING: [Synth 8-6014] Unused sequential element rbit_in_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/peripheral/uart/src/ervp_uart_receiver.v:114]
+WARNING: [Synth 8-3848] Net normal_prdata[3] in module/entity ERVP_PLATFORM_CONTROLLER does not have driver. [/home/kshan/rvx_etri/hwlib_basic/peripheral/platform_controller/src/ervp_platform_controller.v:184]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'shift_amount_abs_reg' and it is trimmed from '3' to '2' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/external/ervp_barrel_shifter.v:74]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wready_temp_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:191]
+WARNING: [Synth 8-6014] Unused sequential element walmostfull_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/lib_rtl/src/memory/ervp_asynch_fifo.v:205]
+WARNING: [Synth 8-7129] Port select[0] in module ERVP_MUX__parameterized29 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port select[0] in module ERVP_DEMUX__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port select[0] in module ERVP_DEMUX is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rstnn in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[13] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[12] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[11] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[10] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[9] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[8] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[7] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[6] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[5] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[4] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[3] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[2] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[1] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port windex[0] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[13] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[12] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[11] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[10] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[9] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[8] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[7] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[6] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[5] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[4] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[3] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[2] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[1] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rindex[0] in module ERVP_MEMORY_CELL_1R1W is either unconnected or has no load
+WARNING: [Synth 8-3936] Found unconnected internal register 'pstore2_addr_reg' and it is trimmed from '32' to '12' bits. [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/DCache.v:3237]
+WARNING: [Synth 8-3936] Found unconnected internal register 'pstore1_addr_reg' and it is trimmed from '32' to '12' bits. [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/DCache.v:3224]
+WARNING: [Synth 8-3936] Found unconnected internal register 'release_ack_addr_reg' and it is trimmed from '32' to '22' bits. [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/DCache.v:3719]
+WARNING: [Synth 8-7032] RAM "ram_reg" have possible Byte Write pattern, however the data width (84) is not multiple of supported byte widths of 8 or 9 .
+WARNING: [Synth 8-3936] Found unconnected internal register 'r_btb_updatePipe_bits_br_pc_reg' and it is trimmed from '32' to '2' bits. [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/BTB.v:1859]
+WARNING: [Synth 8-3936] Found unconnected internal register 'in_typ_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/FPToInt.v:131]
+WARNING: [Synth 8-3936] Found unconnected internal register 'inPipe_bits_typ_reg' and it is trimmed from '2' to '1' bits. [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/IntToFP.v:95]
+WARNING: [Synth 8-3936] Found unconnected internal register 'inPipe_bits_rm_reg' and it is trimmed from '3' to '2' bits. [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/FPToFP.v:31]
+WARNING: [Synth 8-3936] Found unconnected internal register 'mem_reg_inst_reg' and it is trimmed from '32' to '12' bits. [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/FPU.v:577]
+WARNING: [Synth 8-3936] Found unconnected internal register 'ex_reg_inst_reg' and it is trimmed from '32' to '28' bits. [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/FPU.v:259]
+WARNING: [Synth 8-3936] Found unconnected internal register 'wb_reg_raw_inst_reg' and it is trimmed from '32' to '16' bits. [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2072]
+WARNING: [Synth 8-3936] Found unconnected internal register 'mem_reg_raw_inst_reg' and it is trimmed from '32' to '16' bits. [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2899]
+WARNING: [Synth 8-3936] Found unconnected internal register 'ex_reg_raw_inst_reg' and it is trimmed from '32' to '16' bits. [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/Rocket.v:2826]
+WARNING: [Synth 8-6430] The Block RAM "tag_array_ext:/ram_reg" may get memory collision error if read and write address collide. Use attribute (* rw_addr_collision= "yes" *) to avoid collision 
+WARNING: [Synth 8-6841] Block RAM (ram_reg) originally specified as a Byte Wide Write Enable RAM cannot take advantage of ByteWide feature and is implemented with single write enable per RAM due to following reason.
+WARNING: [Synth 8-6430] The Block RAM "data_arrays_0_ext:/ram_reg" may get memory collision error if read and write address collide. Use attribute (* rw_addr_collision= "yes" *) to avoid collision 
+WARNING: [Synth 8-6430] The Block RAM "tag_array_0_ext:/ram_reg" may get memory collision error if read and write address collide. Use attribute (* rw_addr_collision= "yes" *) to avoid collision 
+WARNING: [Synth 8-6841] Block RAM (ram_reg) originally specified as a Byte Wide Write Enable RAM cannot take advantage of ByteWide feature and is implemented with single write enable per RAM due to following reason.
+WARNING: [Synth 8-6430] The Block RAM "data_arrays_0_0_ext:/ram_reg" may get memory collision error if read and write address collide. Use attribute (* rw_addr_collision= "yes" *) to avoid collision 
+WARNING: [Synth 8-6841] Block RAM (i_system_sram/generate_cell[0].i_cell/i_write_bit[1].memory_reg) originally specified as a Byte Wide Write Enable RAM cannot take advantage of ByteWide feature and is implemented with single write enable per RAM due to following reason.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][47]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][46]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][45]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][44]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][43]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][42]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][41]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][40]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][39]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][38]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][37]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][36]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][35]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][34]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][33]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][32]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][31]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][30]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][29]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][28]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][27]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][26]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][25]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][24]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][23]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][22]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][21]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][20]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][19]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][18]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][17]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][47]__0) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][46]__0) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][45]__0) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][44]__0) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][43]__0) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][42]__0) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][41]__0) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][40]__0) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][39]__0) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][38]__0) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][37]__0) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][36]__0) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][35]__0) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][34]__0) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][33]__0) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][32]__0) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][31]__0) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][30]__0) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][47]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][46]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][45]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][44]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][43]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][42]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][41]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][40]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][39]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][38]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][37]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][36]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][35]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][34]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][33]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][32]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][31]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][30]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][29]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][28]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][27]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][26]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][25]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][24]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][23]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][22]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][21]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][20]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][19]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][18]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][17]__1) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[6].multOutArrayI_reg[6][47]__2) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[5].multOutArrayI_reg[5][47]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[5].multOutArrayI_reg[5][46]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[5].multOutArrayI_reg[5][45]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[5].multOutArrayI_reg[5][44]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[5].multOutArrayI_reg[5][43]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[5].multOutArrayI_reg[5][42]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[5].multOutArrayI_reg[5][41]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[5].multOutArrayI_reg[5][40]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[5].multOutArrayI_reg[5][39]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[5].multOutArrayI_reg[5][38]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[5].multOutArrayI_reg[5][37]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[5].multOutArrayI_reg[5][36]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[5].multOutArrayI_reg[5][35]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[5].multOutArrayI_reg[5][34]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[5].multOutArrayI_reg[5][33]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[5].multOutArrayI_reg[5][32]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[5].multOutArrayI_reg[5][31]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[5].multOutArrayI_reg[5][30]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3332] Sequential element (i2_ipMultAddTreePipe/MULT_ADD_TREE_GEN0.PIPE_MULT_GEN0[5].multOutArrayI_reg[5][29]) is unused and will be removed from module c2dConvCoreLine.
+WARNING: [Synth 8-3917] design Frontend has port io_cpu_npc[0] driven by constant 0
+WARNING: [Synth 8-6430] The Block RAM "icache/tag_array/tag_array_0_ext/ram_reg" may get memory collision error if read and write address collide. Use attribute (* rw_addr_collision= "yes" *) to avoid collision 
+WARNING: [Synth 8-6841] Block RAM (tag_array/tag_array_0_ext/ram_reg) originally specified as a Byte Wide Write Enable RAM cannot take advantage of ByteWide feature and is implemented with single write enable per RAM due to following reason.
+WARNING: [Synth 8-6430] The Block RAM "icache/data_arrays_0/data_arrays_0_0_ext/ram_reg" may get memory collision error if read and write address collide. Use attribute (* rw_addr_collision= "yes" *) to avoid collision 
+WARNING: [Synth 8-3936] Found unconnected internal register 'reg_medeleg_reg' and it is trimmed from '32' to '24' bits. [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/CSRFile.v:391]
+WARNING: [Synth 8-3936] Found unconnected internal register 'reg_mideleg_reg' and it is trimmed from '32' to '10' bits. [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/CSRFile.v:388]
+WARNING: [Synth 8-3936] Found unconnected internal register 'reg_mcounteren_reg' and it is trimmed from '32' to '3' bits. [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/CSRFile.v:471]
+WARNING: [Synth 8-3936] Found unconnected internal register 'reg_scounteren_reg' and it is trimmed from '32' to '3' bits. [/home/kshan/rvx_etri/hwlib_basic/core/rocket_big/src/CSRFile.v:473]
+WARNING: [Synth 8-3917] design Rocket has port io_imem_btb_update_bits_pc[1] driven by constant 0
+WARNING: [Synth 8-3917] design Rocket has port io_imem_btb_update_bits_pc[0] driven by constant 0
+WARNING: [Synth 8-3917] design Rocket has port io_imem_bht_update_bits_pc[1] driven by constant 0
+WARNING: [Synth 8-3917] design Rocket has port io_imem_bht_update_bits_pc[0] driven by constant 0
+WARNING: [Synth 8-3917] design Rocket has port io_dmem_req_bits_tag[6] driven by constant 0
+WARNING: [Synth 8-3917] design Rocket has port io_dmem_req_bits_dv driven by constant 0
+WARNING: [Synth 8-3917] design RocketTile__GB4 has port io_requestor_1_resp_bits_tag[6] driven by constant 0
+WARNING: [Synth 8-6430] The Block RAM "dcache/tag_array/tag_array_ext/ram_reg" may get memory collision error if read and write address collide. Use attribute (* rw_addr_collision= "yes" *) to avoid collision 
+WARNING: [Synth 8-6841] Block RAM (tag_array_ext/ram_reg) originally specified as a Byte Wide Write Enable RAM cannot take advantage of ByteWide feature and is implemented with single write enable per RAM due to following reason.
+WARNING: [Synth 8-6430] The Block RAM "dcache/\data/data_arrays_0/data_arrays_0_ext /ram_reg" may get memory collision error if read and write address collide. Use attribute (* rw_addr_collision= "yes" *) to avoid collision 
+WARNING: [Synth 8-3917] design c2dConvTop__GCB1 has port outHeightCnt[7] driven by constant 0
+WARNING: [Synth 8-3917] design c2dConvTop__GCB1 has port outHeightCnt[6] driven by constant 0
+WARNING: [Synth 8-3917] design c2dConvTop__GCB1 has port outHeightCnt[5] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port write_slydready[1] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqhint driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqlast driven by constant 1
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqafy driven by constant 1
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[191] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[190] driven by constant 1
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[189] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[180] driven by constant 1
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[179] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[178] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[177] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[176] driven by constant 1
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[175] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[174] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[173] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[172] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[171] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[170] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[169] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[168] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[167] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[166] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[165] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[164] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[163] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[162] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[161] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[160] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[159] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[158] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[157] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[156] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[155] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[154] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[153] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[152] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[151] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[150] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[149] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[148] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[147] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[146] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[145] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[144] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[143] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[142] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[141] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[140] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[139] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[138] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[137] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[136] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[135] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[134] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[133] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[132] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[131] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[130] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[129] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[128] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[127] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[126] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[125] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[124] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[123] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[122] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[121] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[120] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[119] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[118] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[117] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[116] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[115] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[114] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[113] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[112] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[111] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[110] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[109] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[108] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[107] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[106] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[105] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[104] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[103] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[102] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[101] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[100] driven by constant 0
+WARNING: [Synth 8-3917] design DCA_MATRIX_LSU_LPI2P__GCB0 has port read_slqdata[99] driven by constant 0
+WARNING: [Synth 8-565] redefining clock 'external_clk_0'
+WARNING: [Synth 8-565] redefining clock 'external_clk_0'
+WARNING: [Synth 8-565] redefining clock 'external_clk_0'
+WARNING: [Synth 8-565] redefining clock 'external_clk_0'
+WARNING: [Synth 8-565] redefining clock 'external_clk_0'
+WARNING: [Place 30-574] Poor placement for routing between an IO pin and BUFG. This is normally an ERROR but the CLOCK_DEDICATED_ROUTE constraint is set to FALSE allowing your design to continue. The use of this override is highly discouraged as it may lead to very poor timing results. It is recommended that this error condition be corrected in the design.
+WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
+WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.

@@ -187,11 +187,11 @@
       </parameter>
     </ip_instance>
     <ip_instance>
-      <name>autoname_103</name>
+      <name>autoname_122</name>
       <library_name>tick_generator</library_name>
     </ip_instance>
     <ip_instance>
-      <name>autoname_105</name>
+      <name>autoname_124</name>
       <library_name>real_clock</library_name>
     </ip_instance>
     <ip_instance>
@@ -578,7 +578,7 @@
         <id>NAME</id>
         <value type="text">&quot;common_peri_group_no_name&quot;</value>
       </parameter>
-      <library_name>sni_apb_asynch</library_name>
+      <library_name>sni_apbe_asynch</library_name>
       <domain>clk_system</domain>
     </ip_instance>
     <ip_instance>
@@ -1273,7 +1273,7 @@
       <user_available/>
     </signal>
     <signal>
-      <name>autoname_104</name>
+      <name>autoname_123</name>
       <width type="dec">1</width>
       <comm_type>tick_timer</comm_type>
     </signal>
@@ -1403,11 +1403,11 @@
       <output>gclk_noc</output>
     </connect>
     <connect>
-      <input>autoname_103/tick_1us</input>
+      <input>autoname_122/tick_1us</input>
       <output>tick_1us</output>
     </connect>
     <connect>
-      <input>autoname_103/tick_62d5ms</input>
+      <input>autoname_122/tick_62d5ms</input>
       <output>tick_62d5ms</output>
     </connect>
     <connect>
@@ -1416,7 +1416,7 @@
     </connect>
     <connect>
       <input>tick_1us</input>
-      <output>autoname_104</output>
+      <output>autoname_123</output>
     </connect>
     <connect>
       <input>external_peri_group/spi_common_sclk</input>
@@ -1556,11 +1556,11 @@
     </connect>
     <connect>
       <input>rstnn_seqeunce[2]</input>
-      <output>autoname_103/rstnn</output>
+      <output>autoname_122/rstnn</output>
     </connect>
     <connect>
       <input>rstnn_seqeunce[2]</input>
-      <output>autoname_105/rstnn</output>
+      <output>autoname_124/rstnn</output>
     </connect>
     <connect>
       <input>rstnn_seqeunce[2]</input>
@@ -1656,11 +1656,11 @@
     </connect>
     <connect>
       <input>clk_system</input>
-      <output>autoname_103/clk</output>
+      <output>autoname_122/clk</output>
     </connect>
     <connect>
       <input>clk_system</input>
-      <output>autoname_105/clk</output>
+      <output>autoname_124/clk</output>
     </connect>
     <connect>
       <input>clk_system</input>
@@ -2083,7 +2083,7 @@
       <output>platform_controller/pc(0)</output>
     </connect>
     <connect>
-      <input>autoname_103/tick_62d5ms</input>
+      <input>autoname_122/tick_62d5ms</input>
       <output>i_led/tick_62d5ms</output>
     </connect>
     <connect>
@@ -2111,7 +2111,7 @@
       <output>core_peri_group/thread_status_list</output>
     </connect>
     <connect>
-      <input>autoname_105/real_clock</input>
+      <input>autoname_124/real_clock</input>
       <output>common_peri_group/real_clock</output>
     </connect>
     <connect>
@@ -2120,18 +2120,18 @@
     </connect>
     <connect>
       <input>common_peri_group/system_tick_config</input>
-      <output>autoname_103/tick_config</output>
+      <output>autoname_122/tick_config</output>
     </connect>
     <connect>
-      <input>autoname_103/tick_1us</input>
-      <output>autoname_105/tick_1us</output>
+      <input>autoname_122/tick_1us</input>
+      <output>autoname_124/tick_1us</output>
     </connect>
     <connect>
-      <input>autoname_103/tick_1us</input>
+      <input>autoname_122/tick_1us</input>
       <output>external_peri_group/tick_1us</output>
     </connect>
     <connect>
-      <input>autoname_104</input>
+      <input>autoname_123</input>
       <output>core_peri_group/tick_1us</output>
     </connect>
     <connect>
@@ -2248,6 +2248,38 @@
     </connect>
     <connect>
       <input>external_peri_group/wifie</input>
+      <output>`NOT_CONNECT</output>
+    </connect>
+    <connect>
+      <input>i_snim_external_peri_group_no_name/sptid</input>
+      <output>`NOT_CONNECT</output>
+    </connect>
+    <connect>
+      <input>i_snim_external_peri_group_no_name/spwstrb</input>
+      <output>`NOT_CONNECT</output>
+    </connect>
+    <connect>
+      <input>i_snim_platform_controller_no_name/sptid</input>
+      <output>`NOT_CONNECT</output>
+    </connect>
+    <connect>
+      <input>i_snim_platform_controller_no_name/spwstrb</input>
+      <output>`NOT_CONNECT</output>
+    </connect>
+    <connect>
+      <input>i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio/sptid</input>
+      <output>`NOT_CONNECT</output>
+    </connect>
+    <connect>
+      <input>i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio/spwstrb</input>
+      <output>`NOT_CONNECT</output>
+    </connect>
+    <connect>
+      <input>i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio/sptid</input>
+      <output>`NOT_CONNECT</output>
+    </connect>
+    <connect>
+      <input>i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio/spwstrb</input>
       <output>`NOT_CONNECT</output>
     </connect>
     <connect>

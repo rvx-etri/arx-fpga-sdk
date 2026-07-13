@@ -15,12 +15,13 @@
 
 ///////////////////////////////////////////////////////////////
 
-#define NUM_MATRIX 3
-#define INPUT_MATRIX_SIZE 10
+#define NUM_MATRIX 1
+#define INPUT_MATRIX_SIZE 8
 #define KERNEL_MATRIX_SIZE 3
 #define RESULT_CHECK 1
 
 #define MATRIX_DATATYPE MATRIX_DATATYPE_SINT32
+//#define MATRIX_DATATYPE MATRIX_DATATYPE_FLOAT32
 
 ErvpMatrixInfo* input_info = NULL;
 ErvpMatrixInfo* kernel_info = NULL;

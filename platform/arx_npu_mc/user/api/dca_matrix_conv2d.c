@@ -8,6 +8,34 @@
 #include "dca_module_ext_memorymap_offset.h"
 #include "dca_matrix_conv2d.h"
 
+static void cache_flush_smart(int region, ...)
+{
+#if defined(CACHING_NONE) || defined(CACHING_SAFE)
+  va_list args;
+  va_start(args, region);
+
+  int cacheable = 1;
+  for (int i = 0; i < region; i++)
+  {
+    unsigned int addr = va_arg(args, unsigned int);
+    cacheable = check_cacheable(addr);
+    // debug_printd(cacheable);
+    // debug_printx(_cacheable_start);
+    // debug_printx(_cacheable_last);
+    // debug_printx(addr);
+    if (cacheable)
+      break;
+  }
+
+  va_end(args);
+  if (cacheable)
+    flush_cache();
+#endif
+#if defined(CACHING_MOST) || defined(CACHING_ALL)
+  flush_cache();
+#endif
+}
+
 static const int OPCODE_CONV2D_COND = DCA_MATRIX_CONV2D_OPCODE_ACC_STORE;
 static const int OPCODE_CONV2D = OPCODE_CONV2D_COND | DCA_MATRIX_CONV2D_OPCODE_ACC_CLEAR;
 

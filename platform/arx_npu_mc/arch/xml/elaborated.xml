@@ -3427,6 +3427,13 @@
         <init>rstnn</init>
       </signal>
       <signal>
+        <name>mi_scache_flush</name>
+        <width type="dec">1</width>
+        <port>output</port>
+        <sync>clk</sync>
+        <init>rstnn</init>
+      </signal>
+      <signal>
         <name>mi_sload_tensor_row_wvalid</name>
         <width type="dec">1</width>
         <port>input</port>
@@ -3525,6 +3532,13 @@
         <init>rstnn</init>
       </signal>
       <signal>
+        <name>mk_scache_flush</name>
+        <width type="dec">1</width>
+        <port>output</port>
+        <sync>clk</sync>
+        <init>rstnn</init>
+      </signal>
+      <signal>
         <name>mk_sload_tensor_row_wvalid</name>
         <width type="dec">1</width>
         <port>input</port>
@@ -3619,6 +3633,13 @@
         <name>mo_sinst_busy</name>
         <width type="dec">1</width>
         <port>input</port>
+        <sync>clk</sync>
+        <init>rstnn</init>
+      </signal>
+      <signal>
+        <name>mo_scache_flush</name>
+        <width type="dec">1</width>
+        <port>output</port>
         <sync>clk</sync>
         <init>rstnn</init>
       </signal>
@@ -3864,6 +3885,13 @@
         <init>rstnn</init>
       </signal>
       <signal>
+        <name>ma_scache_flush</name>
+        <width type="dec">1</width>
+        <port>output</port>
+        <sync>clk</sync>
+        <init>rstnn</init>
+      </signal>
+      <signal>
         <name>ma_sload_tensor_row_wvalid</name>
         <width type="dec">1</width>
         <port>input</port>
@@ -3962,6 +3990,13 @@
         <init>rstnn</init>
       </signal>
       <signal>
+        <name>mb_scache_flush</name>
+        <width type="dec">1</width>
+        <port>output</port>
+        <sync>clk</sync>
+        <init>rstnn</init>
+      </signal>
+      <signal>
         <name>mb_sload_tensor_row_wvalid</name>
         <width type="dec">1</width>
         <port>input</port>
@@ -4056,6 +4091,13 @@
         <name>mc_sinst_busy</name>
         <width type="dec">1</width>
         <port>input</port>
+        <sync>clk</sync>
+        <init>rstnn</init>
+      </signal>
+      <signal>
+        <name>mc_scache_flush</name>
+        <width type="dec">1</width>
+        <port>output</port>
         <sync>clk</sync>
         <init>rstnn</init>
       </signal>
@@ -4974,7 +5016,7 @@
       </signal>
       <signal>
         <name>lock_status_list</name>
-        <width type="text">5</width>
+        <width type="text">5*16</width>
         <port>output</port>
         <comm_type>lock_status_list</comm_type>
       </signal>
@@ -5007,6 +5049,22 @@
         <width type="dec">11</width>
         <port>output</port>
         <comm_type>core_tick_config</comm_type>
+      </signal>
+      <signal>
+        <name>rptid</name>
+        <width type="text">`REQUIRED_BW_OF_SLAVE_TID</width>
+        <port>input</port>
+        <comm_type>not_used</comm_type>
+        <sync>clk</sync>
+        <init>rstnn</init>
+      </signal>
+      <signal>
+        <name>rpwstrb</name>
+        <width type="text">32/8</width>
+        <port>input</port>
+        <comm_type>not_used</comm_type>
+        <sync>clk</sync>
+        <init>rstnn</init>
       </signal>
       <signal>
         <name>rpsel</name>
@@ -5066,7 +5124,7 @@
       </signal>
     </ip_instance>
     <ip_instance>
-      <name>autoname_103</name>
+      <name>autoname_122</name>
       <library_name>tick_generator</library_name>
       <hdl_name>ERVP_TICK_GENERATOR</hdl_name>
       <signal>
@@ -5100,7 +5158,7 @@
       </signal>
     </ip_instance>
     <ip_instance>
-      <name>autoname_105</name>
+      <name>autoname_124</name>
       <library_name>real_clock</library_name>
       <hdl_name>ERVP_REAL_CLOCK</hdl_name>
       <signal>
@@ -5489,7 +5547,7 @@
       </signal>
       <signal>
         <name>lock_status_list</name>
-        <width type="text">5</width>
+        <width type="text">5*16</width>
         <port>input</port>
         <comm_type>lock_status_list</comm_type>
       </signal>
@@ -5709,7 +5767,7 @@
         <id>NUM_GLOBAL_TAG</id>
         <value type="dec">1</value>
       </parameter>
-      <name>autoname_106</name>
+      <name>autoname_125</name>
       <hdl_name>ERVP_CORE_PERI_GROUP</hdl_name>
       <signal>
         <name>clk</name>
@@ -5742,7 +5800,7 @@
       </signal>
       <signal>
         <name>lock_status_list</name>
-        <width type="text">5</width>
+        <width type="text">5*16</width>
         <port>input</port>
         <comm_type>lock_status_list</comm_type>
       </signal>
@@ -5962,7 +6020,7 @@
         <id>NUM_GLOBAL_TAG</id>
         <value type="dec">1</value>
       </parameter>
-      <name>autoname_107</name>
+      <name>autoname_126</name>
       <hdl_name>ERVP_CORE_PERI_GROUP</hdl_name>
       <signal>
         <name>clk</name>
@@ -5995,7 +6053,7 @@
       </signal>
       <signal>
         <name>lock_status_list</name>
-        <width type="text">5</width>
+        <width type="text">5*16</width>
         <port>input</port>
         <comm_type>lock_status_list</comm_type>
       </signal>
@@ -6215,7 +6273,7 @@
         <id>NUM_GLOBAL_TAG</id>
         <value type="dec">1</value>
       </parameter>
-      <name>autoname_108</name>
+      <name>autoname_127</name>
       <hdl_name>ERVP_CORE_PERI_GROUP</hdl_name>
       <signal>
         <name>clk</name>
@@ -6248,7 +6306,7 @@
       </signal>
       <signal>
         <name>lock_status_list</name>
-        <width type="text">5</width>
+        <width type="text">5*16</width>
         <port>input</port>
         <comm_type>lock_status_list</comm_type>
       </signal>
@@ -7465,6 +7523,13 @@
         <init>rstnn</init>
       </signal>
       <signal>
+        <name>rcache_flush</name>
+        <width type="dec">1</width>
+        <port>input</port>
+        <sync>clk</sync>
+        <init>rstnn</init>
+      </signal>
+      <signal>
         <name>rload_tensor_row_wvalid</name>
         <width type="dec">1</width>
         <port>output</port>
@@ -7716,6 +7781,13 @@
         <name>rinst_busy</name>
         <width type="dec">1</width>
         <port>output</port>
+        <sync>clk</sync>
+        <init>rstnn</init>
+      </signal>
+      <signal>
+        <name>rcache_flush</name>
+        <width type="dec">1</width>
+        <port>input</port>
         <sync>clk</sync>
         <init>rstnn</init>
       </signal>
@@ -7975,6 +8047,13 @@
         <init>rstnn</init>
       </signal>
       <signal>
+        <name>rcache_flush</name>
+        <width type="dec">1</width>
+        <port>input</port>
+        <sync>clk</sync>
+        <init>rstnn</init>
+      </signal>
+      <signal>
         <name>rload_tensor_row_wvalid</name>
         <width type="dec">1</width>
         <port>output</port>
@@ -8226,6 +8305,13 @@
         <name>rinst_busy</name>
         <width type="dec">1</width>
         <port>output</port>
+        <sync>clk</sync>
+        <init>rstnn</init>
+      </signal>
+      <signal>
+        <name>rcache_flush</name>
+        <width type="dec">1</width>
+        <port>input</port>
         <sync>clk</sync>
         <init>rstnn</init>
       </signal>
@@ -8485,6 +8571,13 @@
         <init>rstnn</init>
       </signal>
       <signal>
+        <name>rcache_flush</name>
+        <width type="dec">1</width>
+        <port>input</port>
+        <sync>clk</sync>
+        <init>rstnn</init>
+      </signal>
+      <signal>
         <name>rload_tensor_row_wvalid</name>
         <width type="dec">1</width>
         <port>output</port>
@@ -8732,6 +8825,13 @@
         <name>rinst_busy</name>
         <width type="dec">1</width>
         <port>output</port>
+        <sync>clk</sync>
+        <init>rstnn</init>
+      </signal>
+      <signal>
+        <name>rcache_flush</name>
+        <width type="dec">1</width>
+        <port>input</port>
         <sync>clk</sync>
         <init>rstnn</init>
       </signal>
@@ -11077,7 +11177,7 @@
         <id>NAME</id>
         <value type="text">&quot;common_peri_group_no_name&quot;</value>
       </parameter>
-      <library_name>sni_apb_asynch</library_name>
+      <library_name>sni_apbe_asynch</library_name>
       <domain>clk_system</domain>
       <hdl_name>MUNOC_APB_SLAVE_NETWORK_INTERFACE_MODULE_ASYNCH</hdl_name>
       <signal>
@@ -11105,6 +11205,22 @@
         <width type="dec">1</width>
         <port>input</port>
         <comm_type>not_used</comm_type>
+      </signal>
+      <signal>
+        <name>sptid</name>
+        <width type="text">`REQUIRED_BW_OF_SLAVE_TID</width>
+        <port>output</port>
+        <comm_type>not_used</comm_type>
+        <sync>clk_slave</sync>
+        <init>rstnn_slave</init>
+      </signal>
+      <signal>
+        <name>spwstrb</name>
+        <width type="text">32/8</width>
+        <port>output</port>
+        <comm_type>not_used</comm_type>
+        <sync>clk_slave</sync>
+        <init>rstnn_slave</init>
       </signal>
       <signal>
         <name>spsel</name>
@@ -11272,6 +11388,18 @@
         <name>comm_disable</name>
         <width type="dec">1</width>
         <port>input</port>
+        <comm_type>not_used</comm_type>
+      </signal>
+      <signal>
+        <name>sptid</name>
+        <width type="text">`REQUIRED_BW_OF_SLAVE_TID</width>
+        <port>output</port>
+        <comm_type>not_used</comm_type>
+      </signal>
+      <signal>
+        <name>spwstrb</name>
+        <width type="text">32/8</width>
+        <port>output</port>
         <comm_type>not_used</comm_type>
       </signal>
       <signal>
@@ -11443,6 +11571,18 @@
         <comm_type>not_used</comm_type>
       </signal>
       <signal>
+        <name>sptid</name>
+        <width type="text">`REQUIRED_BW_OF_SLAVE_TID</width>
+        <port>output</port>
+        <comm_type>not_used</comm_type>
+      </signal>
+      <signal>
+        <name>spwstrb</name>
+        <width type="text">32/8</width>
+        <port>output</port>
+        <comm_type>not_used</comm_type>
+      </signal>
+      <signal>
         <name>spsel</name>
         <width type="dec">1</width>
         <port>output</port>
@@ -11611,6 +11751,18 @@
         <comm_type>not_used</comm_type>
       </signal>
       <signal>
+        <name>sptid</name>
+        <width type="text">`REQUIRED_BW_OF_SLAVE_TID</width>
+        <port>output</port>
+        <comm_type>not_used</comm_type>
+      </signal>
+      <signal>
+        <name>spwstrb</name>
+        <width type="text">32/8</width>
+        <port>output</port>
+        <comm_type>not_used</comm_type>
+      </signal>
+      <signal>
         <name>spsel</name>
         <width type="dec">1</width>
         <port>output</port>
@@ -11776,6 +11928,18 @@
         <name>comm_disable</name>
         <width type="dec">1</width>
         <port>input</port>
+        <comm_type>not_used</comm_type>
+      </signal>
+      <signal>
+        <name>sptid</name>
+        <width type="text">`REQUIRED_BW_OF_SLAVE_TID</width>
+        <port>output</port>
+        <comm_type>not_used</comm_type>
+      </signal>
+      <signal>
+        <name>spwstrb</name>
+        <width type="text">32/8</width>
+        <port>output</port>
         <comm_type>not_used</comm_type>
       </signal>
       <signal>
@@ -14629,7 +14793,7 @@
       <port>output</port>
     </signal>
     <signal>
-      <name>autoname_104</name>
+      <name>autoname_123</name>
       <width type="dec">1</width>
       <comm_type>tick_timer</comm_type>
     </signal>
@@ -15501,6 +15665,10 @@
       <width type="dec">1</width>
     </signal>
     <signal>
+      <name>i_dca_matrix_conv00_mi_scache_flush</name>
+      <width type="dec">1</width>
+    </signal>
+    <signal>
       <name>i_dca_matrix_conv00_mi_sload_tensor_row_wvalid</name>
       <width type="dec">1</width>
     </signal>
@@ -15557,6 +15725,10 @@
       <width type="dec">1</width>
     </signal>
     <signal>
+      <name>i_dca_matrix_conv00_mk_scache_flush</name>
+      <width type="dec">1</width>
+    </signal>
+    <signal>
       <name>i_dca_matrix_conv00_mk_sload_tensor_row_wvalid</name>
       <width type="dec">1</width>
     </signal>
@@ -15610,6 +15782,10 @@
     </signal>
     <signal>
       <name>i_dca_matrix_conv00_mo_sinst_busy</name>
+      <width type="dec">1</width>
+    </signal>
+    <signal>
+      <name>i_dca_matrix_conv00_mo_scache_flush</name>
       <width type="dec">1</width>
     </signal>
     <signal>
@@ -15745,6 +15921,10 @@
       <width type="dec">1</width>
     </signal>
     <signal>
+      <name>i_dca_matrix_mac00_ma_scache_flush</name>
+      <width type="dec">1</width>
+    </signal>
+    <signal>
       <name>i_dca_matrix_mac00_ma_sload_tensor_row_wvalid</name>
       <width type="dec">1</width>
     </signal>
@@ -15801,6 +15981,10 @@
       <width type="dec">1</width>
     </signal>
     <signal>
+      <name>i_dca_matrix_mac00_mb_scache_flush</name>
+      <width type="dec">1</width>
+    </signal>
+    <signal>
       <name>i_dca_matrix_mac00_mb_sload_tensor_row_wvalid</name>
       <width type="dec">1</width>
     </signal>
@@ -15854,6 +16038,10 @@
     </signal>
     <signal>
       <name>i_dca_matrix_mac00_mc_sinst_busy</name>
+      <width type="dec">1</width>
+    </signal>
+    <signal>
+      <name>i_dca_matrix_mac00_mc_scache_flush</name>
       <width type="dec">1</width>
     </signal>
     <signal>
@@ -16350,7 +16538,7 @@
     </signal>
     <signal>
       <name>common_peri_group_lock_status_list</name>
-      <width type="text">5</width>
+      <width type="text">5*16</width>
     </signal>
     <signal>
       <name>common_peri_group_thread_status_list</name>
@@ -16371,6 +16559,14 @@
     <signal>
       <name>common_peri_group_core_tick_config</name>
       <width type="dec">11</width>
+    </signal>
+    <signal>
+      <name>common_peri_group_rptid</name>
+      <width type="text">`REQUIRED_BW_OF_SLAVE_TID</width>
+    </signal>
+    <signal>
+      <name>common_peri_group_rpwstrb</name>
+      <width type="text">32/8</width>
     </signal>
     <signal>
       <name>common_peri_group_rpsel</name>
@@ -16405,39 +16601,39 @@
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_103_clk</name>
+      <name>autoname_122_clk</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_103_rstnn</name>
+      <name>autoname_122_rstnn</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_103_tick_config</name>
+      <name>autoname_122_tick_config</name>
       <width type="dec">11</width>
     </signal>
     <signal>
-      <name>autoname_103_tick_1us</name>
+      <name>autoname_122_tick_1us</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_103_tick_62d5ms</name>
+      <name>autoname_122_tick_62d5ms</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_105_clk</name>
+      <name>autoname_124_clk</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_105_rstnn</name>
+      <name>autoname_124_rstnn</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_105_tick_1us</name>
+      <name>autoname_124_tick_1us</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_105_real_clock</name>
+      <name>autoname_124_real_clock</name>
       <width type="dec">64</width>
     </signal>
     <signal>
@@ -16626,7 +16822,7 @@
     </signal>
     <signal>
       <name>core_peri_group_lock_status_list</name>
-      <width type="text">5</width>
+      <width type="text">5*16</width>
     </signal>
     <signal>
       <name>core_peri_group_global_tag_list</name>
@@ -16741,411 +16937,411 @@
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_106_clk</name>
+      <name>autoname_125_clk</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_106_rstnn</name>
+      <name>autoname_125_rstnn</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_106_tick_1us</name>
+      <name>autoname_125_tick_1us</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_106_delay_notice</name>
+      <name>autoname_125_delay_notice</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_106_plic_interrupt</name>
+      <name>autoname_125_plic_interrupt</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_106_lock_status_list</name>
-      <width type="text">5</width>
+      <name>autoname_125_lock_status_list</name>
+      <width type="text">5*16</width>
     </signal>
     <signal>
-      <name>autoname_106_global_tag_list</name>
+      <name>autoname_125_global_tag_list</name>
       <width type="text">1</width>
     </signal>
     <signal>
-      <name>autoname_106_thread_status_list</name>
+      <name>autoname_125_thread_status_list</name>
       <width type="dec">32</width>
     </signal>
     <signal>
-      <name>autoname_106_core_interrupt_vector</name>
+      <name>autoname_125_core_interrupt_vector</name>
       <width type="dec">32</width>
     </signal>
     <signal>
-      <name>autoname_106_allows_holds</name>
+      <name>autoname_125_allows_holds</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_106_rpsel</name>
+      <name>autoname_125_rpsel</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_106_rpenable</name>
+      <name>autoname_125_rpenable</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_106_rpwrite</name>
+      <name>autoname_125_rpwrite</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_106_rpaddr</name>
+      <name>autoname_125_rpaddr</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_106_rpwdata</name>
+      <name>autoname_125_rpwdata</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_106_rpready</name>
+      <name>autoname_125_rpready</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_106_rprdata</name>
+      <name>autoname_125_rprdata</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_106_rpslverr</name>
+      <name>autoname_125_rpslverr</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_106_tcu_spsel</name>
+      <name>autoname_125_tcu_spsel</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_106_tcu_spenable</name>
+      <name>autoname_125_tcu_spenable</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_106_tcu_spwrite</name>
+      <name>autoname_125_tcu_spwrite</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_106_tcu_spaddr</name>
+      <name>autoname_125_tcu_spaddr</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_106_tcu_spwdata</name>
+      <name>autoname_125_tcu_spwdata</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_106_tcu_spready</name>
+      <name>autoname_125_tcu_spready</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_106_tcu_sprdata</name>
+      <name>autoname_125_tcu_sprdata</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_106_tcu_spslverr</name>
+      <name>autoname_125_tcu_spslverr</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_106_florian_spsel</name>
+      <name>autoname_125_florian_spsel</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_106_florian_spenable</name>
+      <name>autoname_125_florian_spenable</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_106_florian_spwrite</name>
+      <name>autoname_125_florian_spwrite</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_106_florian_spaddr</name>
+      <name>autoname_125_florian_spaddr</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_106_florian_spwdata</name>
+      <name>autoname_125_florian_spwdata</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_106_florian_spready</name>
+      <name>autoname_125_florian_spready</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_106_florian_sprdata</name>
+      <name>autoname_125_florian_sprdata</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_106_florian_spslverr</name>
+      <name>autoname_125_florian_spslverr</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_107_clk</name>
+      <name>autoname_126_clk</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_107_rstnn</name>
+      <name>autoname_126_rstnn</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_107_tick_1us</name>
+      <name>autoname_126_tick_1us</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_107_delay_notice</name>
+      <name>autoname_126_delay_notice</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_107_plic_interrupt</name>
+      <name>autoname_126_plic_interrupt</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_107_lock_status_list</name>
-      <width type="text">5</width>
+      <name>autoname_126_lock_status_list</name>
+      <width type="text">5*16</width>
     </signal>
     <signal>
-      <name>autoname_107_global_tag_list</name>
+      <name>autoname_126_global_tag_list</name>
       <width type="text">1</width>
     </signal>
     <signal>
-      <name>autoname_107_thread_status_list</name>
+      <name>autoname_126_thread_status_list</name>
       <width type="dec">32</width>
     </signal>
     <signal>
-      <name>autoname_107_core_interrupt_vector</name>
+      <name>autoname_126_core_interrupt_vector</name>
       <width type="dec">32</width>
     </signal>
     <signal>
-      <name>autoname_107_allows_holds</name>
+      <name>autoname_126_allows_holds</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_107_rpsel</name>
+      <name>autoname_126_rpsel</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_107_rpenable</name>
+      <name>autoname_126_rpenable</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_107_rpwrite</name>
+      <name>autoname_126_rpwrite</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_107_rpaddr</name>
+      <name>autoname_126_rpaddr</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_107_rpwdata</name>
+      <name>autoname_126_rpwdata</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_107_rpready</name>
+      <name>autoname_126_rpready</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_107_rprdata</name>
+      <name>autoname_126_rprdata</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_107_rpslverr</name>
+      <name>autoname_126_rpslverr</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_107_tcu_spsel</name>
+      <name>autoname_126_tcu_spsel</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_107_tcu_spenable</name>
+      <name>autoname_126_tcu_spenable</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_107_tcu_spwrite</name>
+      <name>autoname_126_tcu_spwrite</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_107_tcu_spaddr</name>
+      <name>autoname_126_tcu_spaddr</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_107_tcu_spwdata</name>
+      <name>autoname_126_tcu_spwdata</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_107_tcu_spready</name>
+      <name>autoname_126_tcu_spready</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_107_tcu_sprdata</name>
+      <name>autoname_126_tcu_sprdata</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_107_tcu_spslverr</name>
+      <name>autoname_126_tcu_spslverr</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_107_florian_spsel</name>
+      <name>autoname_126_florian_spsel</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_107_florian_spenable</name>
+      <name>autoname_126_florian_spenable</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_107_florian_spwrite</name>
+      <name>autoname_126_florian_spwrite</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_107_florian_spaddr</name>
+      <name>autoname_126_florian_spaddr</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_107_florian_spwdata</name>
+      <name>autoname_126_florian_spwdata</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_107_florian_spready</name>
+      <name>autoname_126_florian_spready</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_107_florian_sprdata</name>
+      <name>autoname_126_florian_sprdata</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_107_florian_spslverr</name>
+      <name>autoname_126_florian_spslverr</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_108_clk</name>
+      <name>autoname_127_clk</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_108_rstnn</name>
+      <name>autoname_127_rstnn</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_108_tick_1us</name>
+      <name>autoname_127_tick_1us</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_108_delay_notice</name>
+      <name>autoname_127_delay_notice</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_108_plic_interrupt</name>
+      <name>autoname_127_plic_interrupt</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_108_lock_status_list</name>
-      <width type="text">5</width>
+      <name>autoname_127_lock_status_list</name>
+      <width type="text">5*16</width>
     </signal>
     <signal>
-      <name>autoname_108_global_tag_list</name>
+      <name>autoname_127_global_tag_list</name>
       <width type="text">1</width>
     </signal>
     <signal>
-      <name>autoname_108_thread_status_list</name>
+      <name>autoname_127_thread_status_list</name>
       <width type="dec">32</width>
     </signal>
     <signal>
-      <name>autoname_108_core_interrupt_vector</name>
+      <name>autoname_127_core_interrupt_vector</name>
       <width type="dec">32</width>
     </signal>
     <signal>
-      <name>autoname_108_allows_holds</name>
+      <name>autoname_127_allows_holds</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_108_rpsel</name>
+      <name>autoname_127_rpsel</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_108_rpenable</name>
+      <name>autoname_127_rpenable</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_108_rpwrite</name>
+      <name>autoname_127_rpwrite</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_108_rpaddr</name>
+      <name>autoname_127_rpaddr</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_108_rpwdata</name>
+      <name>autoname_127_rpwdata</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_108_rpready</name>
+      <name>autoname_127_rpready</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_108_rprdata</name>
+      <name>autoname_127_rprdata</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_108_rpslverr</name>
+      <name>autoname_127_rpslverr</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_108_tcu_spsel</name>
+      <name>autoname_127_tcu_spsel</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_108_tcu_spenable</name>
+      <name>autoname_127_tcu_spenable</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_108_tcu_spwrite</name>
+      <name>autoname_127_tcu_spwrite</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_108_tcu_spaddr</name>
+      <name>autoname_127_tcu_spaddr</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_108_tcu_spwdata</name>
+      <name>autoname_127_tcu_spwdata</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_108_tcu_spready</name>
+      <name>autoname_127_tcu_spready</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_108_tcu_sprdata</name>
+      <name>autoname_127_tcu_sprdata</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_108_tcu_spslverr</name>
+      <name>autoname_127_tcu_spslverr</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_108_florian_spsel</name>
+      <name>autoname_127_florian_spsel</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_108_florian_spenable</name>
+      <name>autoname_127_florian_spenable</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_108_florian_spwrite</name>
+      <name>autoname_127_florian_spwrite</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_108_florian_spaddr</name>
+      <name>autoname_127_florian_spaddr</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_108_florian_spwdata</name>
+      <name>autoname_127_florian_spwdata</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_108_florian_spready</name>
+      <name>autoname_127_florian_spready</name>
       <width type="dec">1</width>
     </signal>
     <signal>
-      <name>autoname_108_florian_sprdata</name>
+      <name>autoname_127_florian_sprdata</name>
       <width type="text">32</width>
     </signal>
     <signal>
-      <name>autoname_108_florian_spslverr</name>
+      <name>autoname_127_florian_spslverr</name>
       <width type="dec">1</width>
     </signal>
     <signal>
@@ -17685,6 +17881,10 @@
       <width type="dec">1</width>
     </signal>
     <signal>
+      <name>i_dca_matrix_conv00_mi_mlsu_rcache_flush</name>
+      <width type="dec">1</width>
+    </signal>
+    <signal>
       <name>i_dca_matrix_conv00_mi_mlsu_rload_tensor_row_wvalid</name>
       <width type="dec">1</width>
     </signal>
@@ -17818,6 +18018,10 @@
     </signal>
     <signal>
       <name>i_dca_matrix_conv00_mk_mlsu_rinst_busy</name>
+      <width type="dec">1</width>
+    </signal>
+    <signal>
+      <name>i_dca_matrix_conv00_mk_mlsu_rcache_flush</name>
       <width type="dec">1</width>
     </signal>
     <signal>
@@ -17957,6 +18161,10 @@
       <width type="dec">1</width>
     </signal>
     <signal>
+      <name>i_dca_matrix_conv00_mo_mlsu_rcache_flush</name>
+      <width type="dec">1</width>
+    </signal>
+    <signal>
       <name>i_dca_matrix_conv00_mo_mlsu_rload_tensor_row_wvalid</name>
       <width type="dec">1</width>
     </signal>
@@ -18090,6 +18298,10 @@
     </signal>
     <signal>
       <name>i_dca_matrix_mac00_ma_mlsu_rinst_busy</name>
+      <width type="dec">1</width>
+    </signal>
+    <signal>
+      <name>i_dca_matrix_mac00_ma_mlsu_rcache_flush</name>
       <width type="dec">1</width>
     </signal>
     <signal>
@@ -18229,6 +18441,10 @@
       <width type="dec">1</width>
     </signal>
     <signal>
+      <name>i_dca_matrix_mac00_mb_mlsu_rcache_flush</name>
+      <width type="dec">1</width>
+    </signal>
+    <signal>
       <name>i_dca_matrix_mac00_mb_mlsu_rload_tensor_row_wvalid</name>
       <width type="dec">1</width>
     </signal>
@@ -18362,6 +18578,10 @@
     </signal>
     <signal>
       <name>i_dca_matrix_mac00_mc_mlsu_rinst_busy</name>
+      <width type="dec">1</width>
+    </signal>
+    <signal>
+      <name>i_dca_matrix_mac00_mc_mlsu_rcache_flush</name>
       <width type="dec">1</width>
     </signal>
     <signal>
@@ -19605,6 +19825,14 @@
       <width type="dec">1</width>
     </signal>
     <signal>
+      <name>i_snim_common_peri_group_no_name_sptid</name>
+      <width type="text">`REQUIRED_BW_OF_SLAVE_TID</width>
+    </signal>
+    <signal>
+      <name>i_snim_common_peri_group_no_name_spwstrb</name>
+      <width type="text">32/8</width>
+    </signal>
+    <signal>
       <name>i_snim_common_peri_group_no_name_spsel</name>
       <width type="dec">1</width>
     </signal>
@@ -19687,6 +19915,14 @@
     <signal>
       <name>i_snim_external_peri_group_no_name_comm_disable</name>
       <width type="dec">1</width>
+    </signal>
+    <signal>
+      <name>i_snim_external_peri_group_no_name_sptid</name>
+      <width type="text">`REQUIRED_BW_OF_SLAVE_TID</width>
+    </signal>
+    <signal>
+      <name>i_snim_external_peri_group_no_name_spwstrb</name>
+      <width type="text">32/8</width>
     </signal>
     <signal>
       <name>i_snim_external_peri_group_no_name_spsel</name>
@@ -19773,6 +20009,14 @@
       <width type="dec">1</width>
     </signal>
     <signal>
+      <name>i_snim_platform_controller_no_name_sptid</name>
+      <width type="text">`REQUIRED_BW_OF_SLAVE_TID</width>
+    </signal>
+    <signal>
+      <name>i_snim_platform_controller_no_name_spwstrb</name>
+      <width type="text">32/8</width>
+    </signal>
+    <signal>
       <name>i_snim_platform_controller_no_name_spsel</name>
       <width type="dec">1</width>
     </signal>
@@ -19857,6 +20101,14 @@
       <width type="dec">1</width>
     </signal>
     <signal>
+      <name>i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio_sptid</name>
+      <width type="text">`REQUIRED_BW_OF_SLAVE_TID</width>
+    </signal>
+    <signal>
+      <name>i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio_spwstrb</name>
+      <width type="text">32/8</width>
+    </signal>
+    <signal>
       <name>i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio_spsel</name>
       <width type="dec">1</width>
     </signal>
@@ -19939,6 +20191,14 @@
     <signal>
       <name>i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio_comm_disable</name>
       <width type="dec">1</width>
+    </signal>
+    <signal>
+      <name>i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio_sptid</name>
+      <width type="text">`REQUIRED_BW_OF_SLAVE_TID</width>
+    </signal>
+    <signal>
+      <name>i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio_spwstrb</name>
+      <width type="text">32/8</width>
     </signal>
     <signal>
       <name>i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio_spsel</name>
@@ -21213,11 +21473,11 @@
       <output>gclk_noc</output>
     </connect>
     <connect>
-      <input>autoname_103_tick_1us</input>
+      <input>autoname_122_tick_1us</input>
       <output>tick_1us</output>
     </connect>
     <connect>
-      <input>autoname_103_tick_62d5ms</input>
+      <input>autoname_122_tick_62d5ms</input>
       <output>tick_62d5ms</output>
     </connect>
     <connect>
@@ -21226,7 +21486,7 @@
     </connect>
     <connect>
       <input>tick_1us</input>
-      <output>autoname_104</output>
+      <output>autoname_123</output>
     </connect>
     <connect>
       <input>external_peri_group_spi_common_sclk</input>
@@ -21334,11 +21594,11 @@
     </connect>
     <connect>
       <input>rstnn_seqeunce[2]</input>
-      <output>autoname_103_rstnn</output>
+      <output>autoname_122_rstnn</output>
     </connect>
     <connect>
       <input>rstnn_seqeunce[2]</input>
-      <output>autoname_105_rstnn</output>
+      <output>autoname_124_rstnn</output>
     </connect>
     <connect>
       <input>rstnn_seqeunce[2]</input>
@@ -21350,15 +21610,15 @@
     </connect>
     <connect>
       <input>rstnn_seqeunce[3]</input>
-      <output>autoname_106_rstnn</output>
+      <output>autoname_125_rstnn</output>
     </connect>
     <connect>
       <input>rstnn_seqeunce[3]</input>
-      <output>autoname_107_rstnn</output>
+      <output>autoname_126_rstnn</output>
     </connect>
     <connect>
       <input>rstnn_seqeunce[3]</input>
-      <output>autoname_108_rstnn</output>
+      <output>autoname_127_rstnn</output>
     </connect>
     <connect>
       <input>rstnn_seqeunce[3]</input>
@@ -21458,11 +21718,11 @@
     </connect>
     <connect>
       <input>clk_system</input>
-      <output>autoname_103_clk</output>
+      <output>autoname_122_clk</output>
     </connect>
     <connect>
       <input>clk_system</input>
-      <output>autoname_105_clk</output>
+      <output>autoname_124_clk</output>
     </connect>
     <connect>
       <input>clk_system</input>
@@ -21474,15 +21734,15 @@
     </connect>
     <connect>
       <input>gclk_local_access</input>
-      <output>autoname_106_clk</output>
+      <output>autoname_125_clk</output>
     </connect>
     <connect>
       <input>gclk_local_access</input>
-      <output>autoname_107_clk</output>
+      <output>autoname_126_clk</output>
     </connect>
     <connect>
       <input>gclk_local_access</input>
-      <output>autoname_108_clk</output>
+      <output>autoname_127_clk</output>
     </connect>
     <connect>
       <input>gclk_system_debug</input>
@@ -21845,7 +22105,7 @@
       <output>i_snim_i_system_ddr_no_name_rstnn</output>
     </connect>
     <connect>
-      <input>autoname_103_tick_62d5ms</input>
+      <input>autoname_122_tick_62d5ms</input>
       <output>i_led_tick_62d5ms</output>
     </connect>
     <connect>
@@ -21870,15 +22130,15 @@
     </connect>
     <connect>
       <input>common_peri_group_lock_status_list</input>
-      <output>autoname_106_lock_status_list</output>
+      <output>autoname_125_lock_status_list</output>
     </connect>
     <connect>
       <input>common_peri_group_lock_status_list</input>
-      <output>autoname_107_lock_status_list</output>
+      <output>autoname_126_lock_status_list</output>
     </connect>
     <connect>
       <input>common_peri_group_lock_status_list</input>
-      <output>autoname_108_lock_status_list</output>
+      <output>autoname_127_lock_status_list</output>
     </connect>
     <connect>
       <input>common_peri_group_thread_status_list</input>
@@ -21886,18 +22146,18 @@
     </connect>
     <connect>
       <input>common_peri_group_thread_status_list</input>
-      <output>autoname_106_thread_status_list</output>
+      <output>autoname_125_thread_status_list</output>
     </connect>
     <connect>
       <input>common_peri_group_thread_status_list</input>
-      <output>autoname_107_thread_status_list</output>
+      <output>autoname_126_thread_status_list</output>
     </connect>
     <connect>
       <input>common_peri_group_thread_status_list</input>
-      <output>autoname_108_thread_status_list</output>
+      <output>autoname_127_thread_status_list</output>
     </connect>
     <connect>
-      <input>autoname_105_real_clock</input>
+      <input>autoname_124_real_clock</input>
       <output>common_peri_group_real_clock</output>
     </connect>
     <connect>
@@ -21906,43 +22166,43 @@
     </connect>
     <connect>
       <input>common_peri_group_global_tag_list</input>
-      <output>autoname_106_global_tag_list</output>
+      <output>autoname_125_global_tag_list</output>
     </connect>
     <connect>
       <input>common_peri_group_global_tag_list</input>
-      <output>autoname_107_global_tag_list</output>
+      <output>autoname_126_global_tag_list</output>
     </connect>
     <connect>
       <input>common_peri_group_global_tag_list</input>
-      <output>autoname_108_global_tag_list</output>
+      <output>autoname_127_global_tag_list</output>
     </connect>
     <connect>
       <input>common_peri_group_system_tick_config</input>
-      <output>autoname_103_tick_config</output>
+      <output>autoname_122_tick_config</output>
     </connect>
     <connect>
-      <input>autoname_103_tick_1us</input>
-      <output>autoname_105_tick_1us</output>
+      <input>autoname_122_tick_1us</input>
+      <output>autoname_124_tick_1us</output>
     </connect>
     <connect>
-      <input>autoname_103_tick_1us</input>
+      <input>autoname_122_tick_1us</input>
       <output>external_peri_group_tick_1us</output>
     </connect>
     <connect>
-      <input>autoname_104</input>
+      <input>autoname_123</input>
       <output>core_peri_group_tick_1us</output>
     </connect>
     <connect>
-      <input>autoname_104</input>
-      <output>autoname_106_tick_1us</output>
+      <input>autoname_123</input>
+      <output>autoname_125_tick_1us</output>
     </connect>
     <connect>
-      <input>autoname_104</input>
-      <output>autoname_107_tick_1us</output>
+      <input>autoname_123</input>
+      <output>autoname_126_tick_1us</output>
     </connect>
     <connect>
-      <input>autoname_104</input>
-      <output>autoname_108_tick_1us</output>
+      <input>autoname_123</input>
+      <output>autoname_127_tick_1us</output>
     </connect>
     <connect>
       <input>external_rstnn</input>
@@ -21961,15 +22221,15 @@
       <output>i_main_core_interrupt_vector</output>
     </connect>
     <connect>
-      <input>autoname_106_core_interrupt_vector</input>
+      <input>autoname_125_core_interrupt_vector</input>
       <output>i_sub_core_001_interrupt_vector</output>
     </connect>
     <connect>
-      <input>autoname_107_core_interrupt_vector</input>
+      <input>autoname_126_core_interrupt_vector</input>
       <output>i_sub_core_002_interrupt_vector</output>
     </connect>
     <connect>
-      <input>autoname_108_core_interrupt_vector</input>
+      <input>autoname_127_core_interrupt_vector</input>
       <output>i_sub_core_003_interrupt_vector</output>
     </connect>
     <connect>
@@ -21978,15 +22238,15 @@
     </connect>
     <connect>
       <input>i_mnim_i_sub_core_001_no_name_local_allows_holds</input>
-      <output>autoname_106_allows_holds</output>
+      <output>autoname_125_allows_holds</output>
     </connect>
     <connect>
       <input>i_mnim_i_sub_core_002_no_name_local_allows_holds</input>
-      <output>autoname_107_allows_holds</output>
+      <output>autoname_126_allows_holds</output>
     </connect>
     <connect>
       <input>i_mnim_i_sub_core_003_no_name_local_allows_holds</input>
-      <output>autoname_108_allows_holds</output>
+      <output>autoname_127_allows_holds</output>
     </connect>
     <connect>
       <input>0</input>
@@ -22022,15 +22282,15 @@
     </connect>
     <connect>
       <input>0</input>
-      <output>autoname_106_plic_interrupt</output>
+      <output>autoname_125_plic_interrupt</output>
     </connect>
     <connect>
       <input>0</input>
-      <output>autoname_107_plic_interrupt</output>
+      <output>autoname_126_plic_interrupt</output>
     </connect>
     <connect>
       <input>0</input>
-      <output>autoname_108_plic_interrupt</output>
+      <output>autoname_127_plic_interrupt</output>
     </connect>
     <connect>
       <input>0</input>
@@ -22245,6 +22505,10 @@
       <output>i_dca_matrix_conv00_mi_sinst_busy</output>
     </connect>
     <connect>
+      <input>i_dca_matrix_conv00_mi_scache_flush</input>
+      <output>i_dca_matrix_conv00_mi_mlsu_rcache_flush</output>
+    </connect>
+    <connect>
       <input>i_dca_matrix_conv00_mi_mlsu_rload_tensor_row_wvalid</input>
       <output>i_dca_matrix_conv00_mi_sload_tensor_row_wvalid</output>
     </connect>
@@ -22299,6 +22563,10 @@
     <connect>
       <input>i_dca_matrix_conv00_mk_mlsu_rinst_busy</input>
       <output>i_dca_matrix_conv00_mk_sinst_busy</output>
+    </connect>
+    <connect>
+      <input>i_dca_matrix_conv00_mk_scache_flush</input>
+      <output>i_dca_matrix_conv00_mk_mlsu_rcache_flush</output>
     </connect>
     <connect>
       <input>i_dca_matrix_conv00_mk_mlsu_rload_tensor_row_wvalid</input>
@@ -22357,6 +22625,10 @@
       <output>i_dca_matrix_conv00_mo_sinst_busy</output>
     </connect>
     <connect>
+      <input>i_dca_matrix_conv00_mo_scache_flush</input>
+      <output>i_dca_matrix_conv00_mo_mlsu_rcache_flush</output>
+    </connect>
+    <connect>
       <input>i_dca_matrix_conv00_mo_mlsu_rload_tensor_row_wvalid</input>
       <output>i_dca_matrix_conv00_mo_sload_tensor_row_wvalid</output>
     </connect>
@@ -22411,6 +22683,10 @@
     <connect>
       <input>i_dca_matrix_mac00_ma_mlsu_rinst_busy</input>
       <output>i_dca_matrix_mac00_ma_sinst_busy</output>
+    </connect>
+    <connect>
+      <input>i_dca_matrix_mac00_ma_scache_flush</input>
+      <output>i_dca_matrix_mac00_ma_mlsu_rcache_flush</output>
     </connect>
     <connect>
       <input>i_dca_matrix_mac00_ma_mlsu_rload_tensor_row_wvalid</input>
@@ -22469,6 +22745,10 @@
       <output>i_dca_matrix_mac00_mb_sinst_busy</output>
     </connect>
     <connect>
+      <input>i_dca_matrix_mac00_mb_scache_flush</input>
+      <output>i_dca_matrix_mac00_mb_mlsu_rcache_flush</output>
+    </connect>
+    <connect>
       <input>i_dca_matrix_mac00_mb_mlsu_rload_tensor_row_wvalid</input>
       <output>i_dca_matrix_mac00_mb_sload_tensor_row_wvalid</output>
     </connect>
@@ -22523,6 +22803,10 @@
     <connect>
       <input>i_dca_matrix_mac00_mc_mlsu_rinst_busy</input>
       <output>i_dca_matrix_mac00_mc_sinst_busy</output>
+    </connect>
+    <connect>
+      <input>i_dca_matrix_mac00_mc_scache_flush</input>
+      <output>i_dca_matrix_mac00_mc_mlsu_rcache_flush</output>
     </connect>
     <connect>
       <input>i_dca_matrix_mac00_mc_mlsu_rload_tensor_row_wvalid</input>
@@ -23155,6 +23439,14 @@
     <connect>
       <input>i_system_sram_sxrresp</input>
       <output>i_snim_i_system_sram_no_name_sxrresp</output>
+    </connect>
+    <connect>
+      <input>i_snim_common_peri_group_no_name_sptid</input>
+      <output>common_peri_group_rptid</output>
+    </connect>
+    <connect>
+      <input>i_snim_common_peri_group_no_name_spwstrb</input>
+      <output>common_peri_group_rpwstrb</output>
     </connect>
     <connect>
       <input>i_snim_common_peri_group_no_name_spsel</input>
@@ -24410,98 +24702,98 @@
     </connect>
     <connect>
       <input>i_mnim_i_sub_core_001_no_name_local_spsel</input>
-      <output>autoname_106_rpsel</output>
+      <output>autoname_125_rpsel</output>
     </connect>
     <connect>
       <input>i_mnim_i_sub_core_001_no_name_local_spenable</input>
-      <output>autoname_106_rpenable</output>
+      <output>autoname_125_rpenable</output>
     </connect>
     <connect>
       <input>i_mnim_i_sub_core_001_no_name_local_spwrite</input>
-      <output>autoname_106_rpwrite</output>
+      <output>autoname_125_rpwrite</output>
     </connect>
     <connect>
       <input>i_mnim_i_sub_core_001_no_name_local_spaddr</input>
-      <output>autoname_106_rpaddr</output>
+      <output>autoname_125_rpaddr</output>
     </connect>
     <connect>
       <input>i_mnim_i_sub_core_001_no_name_local_spwdata</input>
-      <output>autoname_106_rpwdata</output>
+      <output>autoname_125_rpwdata</output>
     </connect>
     <connect>
-      <input>autoname_106_rpready</input>
+      <input>autoname_125_rpready</input>
       <output>i_mnim_i_sub_core_001_no_name_local_spready</output>
     </connect>
     <connect>
-      <input>autoname_106_rprdata</input>
+      <input>autoname_125_rprdata</input>
       <output>i_mnim_i_sub_core_001_no_name_local_sprdata</output>
     </connect>
     <connect>
-      <input>autoname_106_rpslverr</input>
+      <input>autoname_125_rpslverr</input>
       <output>i_mnim_i_sub_core_001_no_name_local_spslverr</output>
     </connect>
     <connect>
       <input>i_mnim_i_sub_core_002_no_name_local_spsel</input>
-      <output>autoname_107_rpsel</output>
+      <output>autoname_126_rpsel</output>
     </connect>
     <connect>
       <input>i_mnim_i_sub_core_002_no_name_local_spenable</input>
-      <output>autoname_107_rpenable</output>
+      <output>autoname_126_rpenable</output>
     </connect>
     <connect>
       <input>i_mnim_i_sub_core_002_no_name_local_spwrite</input>
-      <output>autoname_107_rpwrite</output>
+      <output>autoname_126_rpwrite</output>
     </connect>
     <connect>
       <input>i_mnim_i_sub_core_002_no_name_local_spaddr</input>
-      <output>autoname_107_rpaddr</output>
+      <output>autoname_126_rpaddr</output>
     </connect>
     <connect>
       <input>i_mnim_i_sub_core_002_no_name_local_spwdata</input>
-      <output>autoname_107_rpwdata</output>
+      <output>autoname_126_rpwdata</output>
     </connect>
     <connect>
-      <input>autoname_107_rpready</input>
+      <input>autoname_126_rpready</input>
       <output>i_mnim_i_sub_core_002_no_name_local_spready</output>
     </connect>
     <connect>
-      <input>autoname_107_rprdata</input>
+      <input>autoname_126_rprdata</input>
       <output>i_mnim_i_sub_core_002_no_name_local_sprdata</output>
     </connect>
     <connect>
-      <input>autoname_107_rpslverr</input>
+      <input>autoname_126_rpslverr</input>
       <output>i_mnim_i_sub_core_002_no_name_local_spslverr</output>
     </connect>
     <connect>
       <input>i_mnim_i_sub_core_003_no_name_local_spsel</input>
-      <output>autoname_108_rpsel</output>
+      <output>autoname_127_rpsel</output>
     </connect>
     <connect>
       <input>i_mnim_i_sub_core_003_no_name_local_spenable</input>
-      <output>autoname_108_rpenable</output>
+      <output>autoname_127_rpenable</output>
     </connect>
     <connect>
       <input>i_mnim_i_sub_core_003_no_name_local_spwrite</input>
-      <output>autoname_108_rpwrite</output>
+      <output>autoname_127_rpwrite</output>
     </connect>
     <connect>
       <input>i_mnim_i_sub_core_003_no_name_local_spaddr</input>
-      <output>autoname_108_rpaddr</output>
+      <output>autoname_127_rpaddr</output>
     </connect>
     <connect>
       <input>i_mnim_i_sub_core_003_no_name_local_spwdata</input>
-      <output>autoname_108_rpwdata</output>
+      <output>autoname_127_rpwdata</output>
     </connect>
     <connect>
-      <input>autoname_108_rpready</input>
+      <input>autoname_127_rpready</input>
       <output>i_mnim_i_sub_core_003_no_name_local_spready</output>
     </connect>
     <connect>
-      <input>autoname_108_rprdata</input>
+      <input>autoname_127_rprdata</input>
       <output>i_mnim_i_sub_core_003_no_name_local_sprdata</output>
     </connect>
     <connect>
-      <input>autoname_108_rpslverr</input>
+      <input>autoname_127_rpslverr</input>
       <output>i_mnim_i_sub_core_003_no_name_local_spslverr</output>
     </connect>
     <connect>
@@ -24710,39 +25002,39 @@
     </connect>
     <connect>
       <input>0</input>
-      <output>autoname_106_tcu_spready</output>
+      <output>autoname_125_tcu_spready</output>
     </connect>
     <connect>
       <input>0</input>
-      <output>autoname_106_tcu_sprdata</output>
+      <output>autoname_125_tcu_sprdata</output>
     </connect>
     <connect>
       <input>0</input>
-      <output>autoname_106_tcu_spslverr</output>
+      <output>autoname_125_tcu_spslverr</output>
     </connect>
     <connect>
       <input>0</input>
-      <output>autoname_107_tcu_spready</output>
+      <output>autoname_126_tcu_spready</output>
     </connect>
     <connect>
       <input>0</input>
-      <output>autoname_107_tcu_sprdata</output>
+      <output>autoname_126_tcu_sprdata</output>
     </connect>
     <connect>
       <input>0</input>
-      <output>autoname_107_tcu_spslverr</output>
+      <output>autoname_126_tcu_spslverr</output>
     </connect>
     <connect>
       <input>0</input>
-      <output>autoname_108_tcu_spready</output>
+      <output>autoname_127_tcu_spready</output>
     </connect>
     <connect>
       <input>0</input>
-      <output>autoname_108_tcu_sprdata</output>
+      <output>autoname_127_tcu_sprdata</output>
     </connect>
     <connect>
       <input>0</input>
-      <output>autoname_108_tcu_spslverr</output>
+      <output>autoname_127_tcu_spslverr</output>
     </connect>
     <connect>
       <input>0</input>
@@ -24758,39 +25050,39 @@
     </connect>
     <connect>
       <input>0</input>
-      <output>autoname_106_florian_spready</output>
+      <output>autoname_125_florian_spready</output>
     </connect>
     <connect>
       <input>0</input>
-      <output>autoname_106_florian_sprdata</output>
+      <output>autoname_125_florian_sprdata</output>
     </connect>
     <connect>
       <input>0</input>
-      <output>autoname_106_florian_spslverr</output>
+      <output>autoname_125_florian_spslverr</output>
     </connect>
     <connect>
       <input>0</input>
-      <output>autoname_107_florian_spready</output>
+      <output>autoname_126_florian_spready</output>
     </connect>
     <connect>
       <input>0</input>
-      <output>autoname_107_florian_sprdata</output>
+      <output>autoname_126_florian_sprdata</output>
     </connect>
     <connect>
       <input>0</input>
-      <output>autoname_107_florian_spslverr</output>
+      <output>autoname_126_florian_spslverr</output>
     </connect>
     <connect>
       <input>0</input>
-      <output>autoname_108_florian_spready</output>
+      <output>autoname_127_florian_spready</output>
     </connect>
     <connect>
       <input>0</input>
-      <output>autoname_108_florian_sprdata</output>
+      <output>autoname_127_florian_sprdata</output>
     </connect>
     <connect>
       <input>0</input>
-      <output>autoname_108_florian_spslverr</output>
+      <output>autoname_127_florian_spslverr</output>
     </connect>
     <connect>
       <input>external_peri_group_uart_stx_list[1*(`UART_INDEX_FOR_UART_PRINTF+1)-1 -:1]</input>

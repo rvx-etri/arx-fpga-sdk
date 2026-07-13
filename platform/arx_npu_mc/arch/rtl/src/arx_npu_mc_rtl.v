@@ -11,7 +11,7 @@
 // IN ANY FORM, BY ANY MEANS, IN WHOLE OR IN PART, WITHOUT THE
 // COMPLETE PRIOR WRITTEN PERMISSION OF ETRI.
 // ****************************************************************************
-// 2026-02-13
+// 2026-07-13
 // Kyuseung Han (han@etri.re.kr)
 // ****************************************************************************
 // ****************************************************************************
@@ -279,7 +279,7 @@ input wire [(2)-1:0] i_system_sram_sxrresp;
 
 `include "dca_lsu_util.vb"
 
-wire autoname_104;
+wire autoname_123;
 wire rstnn_noc;
 wire i_main_core_clk;
 wire i_main_core_rstnn;
@@ -342,6 +342,7 @@ wire i_dca_matrix_conv00_mi_sinst_wready;
 wire i_dca_matrix_conv00_mi_sinst_decode_finish;
 wire i_dca_matrix_conv00_mi_sinst_execute_finish;
 wire i_dca_matrix_conv00_mi_sinst_busy;
+wire i_dca_matrix_conv00_mi_scache_flush;
 wire i_dca_matrix_conv00_mi_sload_tensor_row_wvalid;
 wire i_dca_matrix_conv00_mi_sload_tensor_row_wlast;
 wire [(32*22)-1:0] i_dca_matrix_conv00_mi_sload_tensor_row_wdata;
@@ -356,6 +357,7 @@ wire i_dca_matrix_conv00_mk_sinst_wready;
 wire i_dca_matrix_conv00_mk_sinst_decode_finish;
 wire i_dca_matrix_conv00_mk_sinst_execute_finish;
 wire i_dca_matrix_conv00_mk_sinst_busy;
+wire i_dca_matrix_conv00_mk_scache_flush;
 wire i_dca_matrix_conv00_mk_sload_tensor_row_wvalid;
 wire i_dca_matrix_conv00_mk_sload_tensor_row_wlast;
 wire [(32*7)-1:0] i_dca_matrix_conv00_mk_sload_tensor_row_wdata;
@@ -370,6 +372,7 @@ wire i_dca_matrix_conv00_mo_sinst_wready;
 wire i_dca_matrix_conv00_mo_sinst_decode_finish;
 wire i_dca_matrix_conv00_mo_sinst_execute_finish;
 wire i_dca_matrix_conv00_mo_sinst_busy;
+wire i_dca_matrix_conv00_mo_scache_flush;
 wire i_dca_matrix_conv00_mo_sload_tensor_row_wvalid;
 wire i_dca_matrix_conv00_mo_sload_tensor_row_wlast;
 wire [(32*16)-1:0] i_dca_matrix_conv00_mo_sload_tensor_row_wdata;
@@ -403,6 +406,7 @@ wire i_dca_matrix_mac00_ma_sinst_wready;
 wire i_dca_matrix_mac00_ma_sinst_decode_finish;
 wire i_dca_matrix_mac00_ma_sinst_execute_finish;
 wire i_dca_matrix_mac00_ma_sinst_busy;
+wire i_dca_matrix_mac00_ma_scache_flush;
 wire i_dca_matrix_mac00_ma_sload_tensor_row_wvalid;
 wire i_dca_matrix_mac00_ma_sload_tensor_row_wlast;
 wire [(32*8)-1:0] i_dca_matrix_mac00_ma_sload_tensor_row_wdata;
@@ -417,6 +421,7 @@ wire i_dca_matrix_mac00_mb_sinst_wready;
 wire i_dca_matrix_mac00_mb_sinst_decode_finish;
 wire i_dca_matrix_mac00_mb_sinst_execute_finish;
 wire i_dca_matrix_mac00_mb_sinst_busy;
+wire i_dca_matrix_mac00_mb_scache_flush;
 wire i_dca_matrix_mac00_mb_sload_tensor_row_wvalid;
 wire i_dca_matrix_mac00_mb_sload_tensor_row_wlast;
 wire [(32*8)-1:0] i_dca_matrix_mac00_mb_sload_tensor_row_wdata;
@@ -431,6 +436,7 @@ wire i_dca_matrix_mac00_mc_sinst_wready;
 wire i_dca_matrix_mac00_mc_sinst_decode_finish;
 wire i_dca_matrix_mac00_mc_sinst_execute_finish;
 wire i_dca_matrix_mac00_mc_sinst_busy;
+wire i_dca_matrix_mac00_mc_scache_flush;
 wire i_dca_matrix_mac00_mc_sload_tensor_row_wvalid;
 wire i_dca_matrix_mac00_mc_sload_tensor_row_wlast;
 wire [(32*8)-1:0] i_dca_matrix_mac00_mc_sload_tensor_row_wdata;
@@ -554,12 +560,14 @@ wire [(32)-1:0] i_sub_core_003_spc;
 wire [(32)-1:0] i_sub_core_003_sinst;
 wire common_peri_group_clk;
 wire common_peri_group_rstnn;
-wire [(5)-1:0] common_peri_group_lock_status_list;
+wire [(5*16)-1:0] common_peri_group_lock_status_list;
 wire [(32)-1:0] common_peri_group_thread_status_list;
 wire [(64)-1:0] common_peri_group_real_clock;
 wire [(1)-1:0] common_peri_group_global_tag_list;
 wire [(11)-1:0] common_peri_group_system_tick_config;
 wire [(11)-1:0] common_peri_group_core_tick_config;
+wire [(`REQUIRED_BW_OF_SLAVE_TID)-1:0] common_peri_group_rptid;
+wire [(32/8)-1:0] common_peri_group_rpwstrb;
 wire common_peri_group_rpsel;
 wire common_peri_group_rpenable;
 wire common_peri_group_rpwrite;
@@ -568,15 +576,15 @@ wire [(32)-1:0] common_peri_group_rpwdata;
 wire common_peri_group_rpready;
 wire [(32)-1:0] common_peri_group_rprdata;
 wire common_peri_group_rpslverr;
-wire autoname_103_clk;
-wire autoname_103_rstnn;
-wire [(11)-1:0] autoname_103_tick_config;
-wire autoname_103_tick_1us;
-wire autoname_103_tick_62d5ms;
-wire autoname_105_clk;
-wire autoname_105_rstnn;
-wire autoname_105_tick_1us;
-wire [(64)-1:0] autoname_105_real_clock;
+wire autoname_122_clk;
+wire autoname_122_rstnn;
+wire [(11)-1:0] autoname_122_tick_config;
+wire autoname_122_tick_1us;
+wire autoname_122_tick_62d5ms;
+wire autoname_124_clk;
+wire autoname_124_rstnn;
+wire autoname_124_tick_1us;
+wire [(64)-1:0] autoname_124_real_clock;
 wire external_peri_group_clk;
 wire external_peri_group_rstnn;
 wire external_peri_group_tick_1us;
@@ -623,7 +631,7 @@ wire core_peri_group_rstnn;
 wire core_peri_group_tick_1us;
 wire core_peri_group_delay_notice;
 wire core_peri_group_plic_interrupt;
-wire [(5)-1:0] core_peri_group_lock_status_list;
+wire [(5*16)-1:0] core_peri_group_lock_status_list;
 wire [(1)-1:0] core_peri_group_global_tag_list;
 wire [(32)-1:0] core_peri_group_thread_status_list;
 wire [(32)-1:0] core_peri_group_core_interrupt_vector;
@@ -652,108 +660,108 @@ wire [(32)-1:0] core_peri_group_florian_spwdata;
 wire core_peri_group_florian_spready;
 wire [(32)-1:0] core_peri_group_florian_sprdata;
 wire core_peri_group_florian_spslverr;
-wire autoname_106_clk;
-wire autoname_106_rstnn;
-wire autoname_106_tick_1us;
-wire autoname_106_delay_notice;
-wire autoname_106_plic_interrupt;
-wire [(5)-1:0] autoname_106_lock_status_list;
-wire [(1)-1:0] autoname_106_global_tag_list;
-wire [(32)-1:0] autoname_106_thread_status_list;
-wire [(32)-1:0] autoname_106_core_interrupt_vector;
-wire autoname_106_allows_holds;
-wire autoname_106_rpsel;
-wire autoname_106_rpenable;
-wire autoname_106_rpwrite;
-wire [(32)-1:0] autoname_106_rpaddr;
-wire [(32)-1:0] autoname_106_rpwdata;
-wire autoname_106_rpready;
-wire [(32)-1:0] autoname_106_rprdata;
-wire autoname_106_rpslverr;
-wire autoname_106_tcu_spsel;
-wire autoname_106_tcu_spenable;
-wire autoname_106_tcu_spwrite;
-wire [(32)-1:0] autoname_106_tcu_spaddr;
-wire [(32)-1:0] autoname_106_tcu_spwdata;
-wire autoname_106_tcu_spready;
-wire [(32)-1:0] autoname_106_tcu_sprdata;
-wire autoname_106_tcu_spslverr;
-wire autoname_106_florian_spsel;
-wire autoname_106_florian_spenable;
-wire autoname_106_florian_spwrite;
-wire [(32)-1:0] autoname_106_florian_spaddr;
-wire [(32)-1:0] autoname_106_florian_spwdata;
-wire autoname_106_florian_spready;
-wire [(32)-1:0] autoname_106_florian_sprdata;
-wire autoname_106_florian_spslverr;
-wire autoname_107_clk;
-wire autoname_107_rstnn;
-wire autoname_107_tick_1us;
-wire autoname_107_delay_notice;
-wire autoname_107_plic_interrupt;
-wire [(5)-1:0] autoname_107_lock_status_list;
-wire [(1)-1:0] autoname_107_global_tag_list;
-wire [(32)-1:0] autoname_107_thread_status_list;
-wire [(32)-1:0] autoname_107_core_interrupt_vector;
-wire autoname_107_allows_holds;
-wire autoname_107_rpsel;
-wire autoname_107_rpenable;
-wire autoname_107_rpwrite;
-wire [(32)-1:0] autoname_107_rpaddr;
-wire [(32)-1:0] autoname_107_rpwdata;
-wire autoname_107_rpready;
-wire [(32)-1:0] autoname_107_rprdata;
-wire autoname_107_rpslverr;
-wire autoname_107_tcu_spsel;
-wire autoname_107_tcu_spenable;
-wire autoname_107_tcu_spwrite;
-wire [(32)-1:0] autoname_107_tcu_spaddr;
-wire [(32)-1:0] autoname_107_tcu_spwdata;
-wire autoname_107_tcu_spready;
-wire [(32)-1:0] autoname_107_tcu_sprdata;
-wire autoname_107_tcu_spslverr;
-wire autoname_107_florian_spsel;
-wire autoname_107_florian_spenable;
-wire autoname_107_florian_spwrite;
-wire [(32)-1:0] autoname_107_florian_spaddr;
-wire [(32)-1:0] autoname_107_florian_spwdata;
-wire autoname_107_florian_spready;
-wire [(32)-1:0] autoname_107_florian_sprdata;
-wire autoname_107_florian_spslverr;
-wire autoname_108_clk;
-wire autoname_108_rstnn;
-wire autoname_108_tick_1us;
-wire autoname_108_delay_notice;
-wire autoname_108_plic_interrupt;
-wire [(5)-1:0] autoname_108_lock_status_list;
-wire [(1)-1:0] autoname_108_global_tag_list;
-wire [(32)-1:0] autoname_108_thread_status_list;
-wire [(32)-1:0] autoname_108_core_interrupt_vector;
-wire autoname_108_allows_holds;
-wire autoname_108_rpsel;
-wire autoname_108_rpenable;
-wire autoname_108_rpwrite;
-wire [(32)-1:0] autoname_108_rpaddr;
-wire [(32)-1:0] autoname_108_rpwdata;
-wire autoname_108_rpready;
-wire [(32)-1:0] autoname_108_rprdata;
-wire autoname_108_rpslverr;
-wire autoname_108_tcu_spsel;
-wire autoname_108_tcu_spenable;
-wire autoname_108_tcu_spwrite;
-wire [(32)-1:0] autoname_108_tcu_spaddr;
-wire [(32)-1:0] autoname_108_tcu_spwdata;
-wire autoname_108_tcu_spready;
-wire [(32)-1:0] autoname_108_tcu_sprdata;
-wire autoname_108_tcu_spslverr;
-wire autoname_108_florian_spsel;
-wire autoname_108_florian_spenable;
-wire autoname_108_florian_spwrite;
-wire [(32)-1:0] autoname_108_florian_spaddr;
-wire [(32)-1:0] autoname_108_florian_spwdata;
-wire autoname_108_florian_spready;
-wire [(32)-1:0] autoname_108_florian_sprdata;
-wire autoname_108_florian_spslverr;
+wire autoname_125_clk;
+wire autoname_125_rstnn;
+wire autoname_125_tick_1us;
+wire autoname_125_delay_notice;
+wire autoname_125_plic_interrupt;
+wire [(5*16)-1:0] autoname_125_lock_status_list;
+wire [(1)-1:0] autoname_125_global_tag_list;
+wire [(32)-1:0] autoname_125_thread_status_list;
+wire [(32)-1:0] autoname_125_core_interrupt_vector;
+wire autoname_125_allows_holds;
+wire autoname_125_rpsel;
+wire autoname_125_rpenable;
+wire autoname_125_rpwrite;
+wire [(32)-1:0] autoname_125_rpaddr;
+wire [(32)-1:0] autoname_125_rpwdata;
+wire autoname_125_rpready;
+wire [(32)-1:0] autoname_125_rprdata;
+wire autoname_125_rpslverr;
+wire autoname_125_tcu_spsel;
+wire autoname_125_tcu_spenable;
+wire autoname_125_tcu_spwrite;
+wire [(32)-1:0] autoname_125_tcu_spaddr;
+wire [(32)-1:0] autoname_125_tcu_spwdata;
+wire autoname_125_tcu_spready;
+wire [(32)-1:0] autoname_125_tcu_sprdata;
+wire autoname_125_tcu_spslverr;
+wire autoname_125_florian_spsel;
+wire autoname_125_florian_spenable;
+wire autoname_125_florian_spwrite;
+wire [(32)-1:0] autoname_125_florian_spaddr;
+wire [(32)-1:0] autoname_125_florian_spwdata;
+wire autoname_125_florian_spready;
+wire [(32)-1:0] autoname_125_florian_sprdata;
+wire autoname_125_florian_spslverr;
+wire autoname_126_clk;
+wire autoname_126_rstnn;
+wire autoname_126_tick_1us;
+wire autoname_126_delay_notice;
+wire autoname_126_plic_interrupt;
+wire [(5*16)-1:0] autoname_126_lock_status_list;
+wire [(1)-1:0] autoname_126_global_tag_list;
+wire [(32)-1:0] autoname_126_thread_status_list;
+wire [(32)-1:0] autoname_126_core_interrupt_vector;
+wire autoname_126_allows_holds;
+wire autoname_126_rpsel;
+wire autoname_126_rpenable;
+wire autoname_126_rpwrite;
+wire [(32)-1:0] autoname_126_rpaddr;
+wire [(32)-1:0] autoname_126_rpwdata;
+wire autoname_126_rpready;
+wire [(32)-1:0] autoname_126_rprdata;
+wire autoname_126_rpslverr;
+wire autoname_126_tcu_spsel;
+wire autoname_126_tcu_spenable;
+wire autoname_126_tcu_spwrite;
+wire [(32)-1:0] autoname_126_tcu_spaddr;
+wire [(32)-1:0] autoname_126_tcu_spwdata;
+wire autoname_126_tcu_spready;
+wire [(32)-1:0] autoname_126_tcu_sprdata;
+wire autoname_126_tcu_spslverr;
+wire autoname_126_florian_spsel;
+wire autoname_126_florian_spenable;
+wire autoname_126_florian_spwrite;
+wire [(32)-1:0] autoname_126_florian_spaddr;
+wire [(32)-1:0] autoname_126_florian_spwdata;
+wire autoname_126_florian_spready;
+wire [(32)-1:0] autoname_126_florian_sprdata;
+wire autoname_126_florian_spslverr;
+wire autoname_127_clk;
+wire autoname_127_rstnn;
+wire autoname_127_tick_1us;
+wire autoname_127_delay_notice;
+wire autoname_127_plic_interrupt;
+wire [(5*16)-1:0] autoname_127_lock_status_list;
+wire [(1)-1:0] autoname_127_global_tag_list;
+wire [(32)-1:0] autoname_127_thread_status_list;
+wire [(32)-1:0] autoname_127_core_interrupt_vector;
+wire autoname_127_allows_holds;
+wire autoname_127_rpsel;
+wire autoname_127_rpenable;
+wire autoname_127_rpwrite;
+wire [(32)-1:0] autoname_127_rpaddr;
+wire [(32)-1:0] autoname_127_rpwdata;
+wire autoname_127_rpready;
+wire [(32)-1:0] autoname_127_rprdata;
+wire autoname_127_rpslverr;
+wire autoname_127_tcu_spsel;
+wire autoname_127_tcu_spenable;
+wire autoname_127_tcu_spwrite;
+wire [(32)-1:0] autoname_127_tcu_spaddr;
+wire [(32)-1:0] autoname_127_tcu_spwdata;
+wire autoname_127_tcu_spready;
+wire [(32)-1:0] autoname_127_tcu_sprdata;
+wire autoname_127_tcu_spslverr;
+wire autoname_127_florian_spsel;
+wire autoname_127_florian_spenable;
+wire autoname_127_florian_spwrite;
+wire [(32)-1:0] autoname_127_florian_spaddr;
+wire [(32)-1:0] autoname_127_florian_spwdata;
+wire autoname_127_florian_spready;
+wire [(32)-1:0] autoname_127_florian_sprdata;
+wire autoname_127_florian_spslverr;
 wire platform_controller_clk;
 wire platform_controller_external_rstnn;
 wire platform_controller_global_rstnn;
@@ -888,6 +896,7 @@ wire i_dca_matrix_conv00_mi_mlsu_rinst_wready;
 wire i_dca_matrix_conv00_mi_mlsu_rinst_decode_finish;
 wire i_dca_matrix_conv00_mi_mlsu_rinst_execute_finish;
 wire i_dca_matrix_conv00_mi_mlsu_rinst_busy;
+wire i_dca_matrix_conv00_mi_mlsu_rcache_flush;
 wire i_dca_matrix_conv00_mi_mlsu_rload_tensor_row_wvalid;
 wire i_dca_matrix_conv00_mi_mlsu_rload_tensor_row_wlast;
 wire [(32*22)-1:0] i_dca_matrix_conv00_mi_mlsu_rload_tensor_row_wdata;
@@ -922,6 +931,7 @@ wire i_dca_matrix_conv00_mk_mlsu_rinst_wready;
 wire i_dca_matrix_conv00_mk_mlsu_rinst_decode_finish;
 wire i_dca_matrix_conv00_mk_mlsu_rinst_execute_finish;
 wire i_dca_matrix_conv00_mk_mlsu_rinst_busy;
+wire i_dca_matrix_conv00_mk_mlsu_rcache_flush;
 wire i_dca_matrix_conv00_mk_mlsu_rload_tensor_row_wvalid;
 wire i_dca_matrix_conv00_mk_mlsu_rload_tensor_row_wlast;
 wire [(32*7)-1:0] i_dca_matrix_conv00_mk_mlsu_rload_tensor_row_wdata;
@@ -956,6 +966,7 @@ wire i_dca_matrix_conv00_mo_mlsu_rinst_wready;
 wire i_dca_matrix_conv00_mo_mlsu_rinst_decode_finish;
 wire i_dca_matrix_conv00_mo_mlsu_rinst_execute_finish;
 wire i_dca_matrix_conv00_mo_mlsu_rinst_busy;
+wire i_dca_matrix_conv00_mo_mlsu_rcache_flush;
 wire i_dca_matrix_conv00_mo_mlsu_rload_tensor_row_wvalid;
 wire i_dca_matrix_conv00_mo_mlsu_rload_tensor_row_wlast;
 wire [(32*16)-1:0] i_dca_matrix_conv00_mo_mlsu_rload_tensor_row_wdata;
@@ -990,6 +1001,7 @@ wire i_dca_matrix_mac00_ma_mlsu_rinst_wready;
 wire i_dca_matrix_mac00_ma_mlsu_rinst_decode_finish;
 wire i_dca_matrix_mac00_ma_mlsu_rinst_execute_finish;
 wire i_dca_matrix_mac00_ma_mlsu_rinst_busy;
+wire i_dca_matrix_mac00_ma_mlsu_rcache_flush;
 wire i_dca_matrix_mac00_ma_mlsu_rload_tensor_row_wvalid;
 wire i_dca_matrix_mac00_ma_mlsu_rload_tensor_row_wlast;
 wire [(32*8)-1:0] i_dca_matrix_mac00_ma_mlsu_rload_tensor_row_wdata;
@@ -1024,6 +1036,7 @@ wire i_dca_matrix_mac00_mb_mlsu_rinst_wready;
 wire i_dca_matrix_mac00_mb_mlsu_rinst_decode_finish;
 wire i_dca_matrix_mac00_mb_mlsu_rinst_execute_finish;
 wire i_dca_matrix_mac00_mb_mlsu_rinst_busy;
+wire i_dca_matrix_mac00_mb_mlsu_rcache_flush;
 wire i_dca_matrix_mac00_mb_mlsu_rload_tensor_row_wvalid;
 wire i_dca_matrix_mac00_mb_mlsu_rload_tensor_row_wlast;
 wire [(32*8)-1:0] i_dca_matrix_mac00_mb_mlsu_rload_tensor_row_wdata;
@@ -1058,6 +1071,7 @@ wire i_dca_matrix_mac00_mc_mlsu_rinst_wready;
 wire i_dca_matrix_mac00_mc_mlsu_rinst_decode_finish;
 wire i_dca_matrix_mac00_mc_mlsu_rinst_execute_finish;
 wire i_dca_matrix_mac00_mc_mlsu_rinst_busy;
+wire i_dca_matrix_mac00_mc_mlsu_rcache_flush;
 wire i_dca_matrix_mac00_mc_mlsu_rload_tensor_row_wvalid;
 wire i_dca_matrix_mac00_mc_mlsu_rload_tensor_row_wlast;
 wire [(32*8)-1:0] i_dca_matrix_mac00_mc_mlsu_rload_tensor_row_wdata;
@@ -1368,6 +1382,8 @@ wire i_snim_common_peri_group_no_name_rstnn_network;
 wire i_snim_common_peri_group_no_name_clk_slave;
 wire i_snim_common_peri_group_no_name_rstnn_slave;
 wire i_snim_common_peri_group_no_name_comm_disable;
+wire [(`REQUIRED_BW_OF_SLAVE_TID)-1:0] i_snim_common_peri_group_no_name_sptid;
+wire [(32/8)-1:0] i_snim_common_peri_group_no_name_spwstrb;
 wire i_snim_common_peri_group_no_name_spsel;
 wire i_snim_common_peri_group_no_name_spenable;
 wire i_snim_common_peri_group_no_name_spwrite;
@@ -1389,6 +1405,8 @@ wire i_snim_external_peri_group_no_name_rstnn_network;
 wire i_snim_external_peri_group_no_name_clk_slave;
 wire i_snim_external_peri_group_no_name_rstnn_slave;
 wire i_snim_external_peri_group_no_name_comm_disable;
+wire [(`REQUIRED_BW_OF_SLAVE_TID)-1:0] i_snim_external_peri_group_no_name_sptid;
+wire [(32/8)-1:0] i_snim_external_peri_group_no_name_spwstrb;
 wire i_snim_external_peri_group_no_name_spsel;
 wire i_snim_external_peri_group_no_name_spenable;
 wire i_snim_external_peri_group_no_name_spwrite;
@@ -1410,6 +1428,8 @@ wire i_snim_platform_controller_no_name_rstnn_network;
 wire i_snim_platform_controller_no_name_clk_slave;
 wire i_snim_platform_controller_no_name_rstnn_slave;
 wire i_snim_platform_controller_no_name_comm_disable;
+wire [(`REQUIRED_BW_OF_SLAVE_TID)-1:0] i_snim_platform_controller_no_name_sptid;
+wire [(32/8)-1:0] i_snim_platform_controller_no_name_spwstrb;
 wire i_snim_platform_controller_no_name_spsel;
 wire i_snim_platform_controller_no_name_spenable;
 wire i_snim_platform_controller_no_name_spwrite;
@@ -1431,6 +1451,8 @@ wire i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio_rstnn_network;
 wire i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio_clk_slave;
 wire i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio_rstnn_slave;
 wire i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio_comm_disable;
+wire [(`REQUIRED_BW_OF_SLAVE_TID)-1:0] i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio_sptid;
+wire [(32/8)-1:0] i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio_spwstrb;
 wire i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio_spsel;
 wire i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio_spenable;
 wire i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio_spwrite;
@@ -1452,6 +1474,8 @@ wire i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio_rstnn_network;
 wire i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio_clk_slave;
 wire i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio_rstnn_slave;
 wire i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio_comm_disable;
+wire [(`REQUIRED_BW_OF_SLAVE_TID)-1:0] i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio_sptid;
+wire [(32/8)-1:0] i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio_spwstrb;
 wire i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio_spsel;
 wire i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio_spenable;
 wire i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio_spwrite;
@@ -1829,6 +1853,7 @@ i_dca_matrix_conv00
 	.mi_sinst_decode_finish(i_dca_matrix_conv00_mi_sinst_decode_finish),
 	.mi_sinst_execute_finish(i_dca_matrix_conv00_mi_sinst_execute_finish),
 	.mi_sinst_busy(i_dca_matrix_conv00_mi_sinst_busy),
+	.mi_scache_flush(i_dca_matrix_conv00_mi_scache_flush),
 	.mi_sload_tensor_row_wvalid(i_dca_matrix_conv00_mi_sload_tensor_row_wvalid),
 	.mi_sload_tensor_row_wlast(i_dca_matrix_conv00_mi_sload_tensor_row_wlast),
 	.mi_sload_tensor_row_wdata(i_dca_matrix_conv00_mi_sload_tensor_row_wdata),
@@ -1843,6 +1868,7 @@ i_dca_matrix_conv00
 	.mk_sinst_decode_finish(i_dca_matrix_conv00_mk_sinst_decode_finish),
 	.mk_sinst_execute_finish(i_dca_matrix_conv00_mk_sinst_execute_finish),
 	.mk_sinst_busy(i_dca_matrix_conv00_mk_sinst_busy),
+	.mk_scache_flush(i_dca_matrix_conv00_mk_scache_flush),
 	.mk_sload_tensor_row_wvalid(i_dca_matrix_conv00_mk_sload_tensor_row_wvalid),
 	.mk_sload_tensor_row_wlast(i_dca_matrix_conv00_mk_sload_tensor_row_wlast),
 	.mk_sload_tensor_row_wdata(i_dca_matrix_conv00_mk_sload_tensor_row_wdata),
@@ -1857,6 +1883,7 @@ i_dca_matrix_conv00
 	.mo_sinst_decode_finish(i_dca_matrix_conv00_mo_sinst_decode_finish),
 	.mo_sinst_execute_finish(i_dca_matrix_conv00_mo_sinst_execute_finish),
 	.mo_sinst_busy(i_dca_matrix_conv00_mo_sinst_busy),
+	.mo_scache_flush(i_dca_matrix_conv00_mo_scache_flush),
 	.mo_sload_tensor_row_wvalid(i_dca_matrix_conv00_mo_sload_tensor_row_wvalid),
 	.mo_sload_tensor_row_wlast(i_dca_matrix_conv00_mo_sload_tensor_row_wlast),
 	.mo_sload_tensor_row_wdata(i_dca_matrix_conv00_mo_sload_tensor_row_wdata),
@@ -1899,6 +1926,7 @@ i_dca_matrix_mac00
 	.ma_sinst_decode_finish(i_dca_matrix_mac00_ma_sinst_decode_finish),
 	.ma_sinst_execute_finish(i_dca_matrix_mac00_ma_sinst_execute_finish),
 	.ma_sinst_busy(i_dca_matrix_mac00_ma_sinst_busy),
+	.ma_scache_flush(i_dca_matrix_mac00_ma_scache_flush),
 	.ma_sload_tensor_row_wvalid(i_dca_matrix_mac00_ma_sload_tensor_row_wvalid),
 	.ma_sload_tensor_row_wlast(i_dca_matrix_mac00_ma_sload_tensor_row_wlast),
 	.ma_sload_tensor_row_wdata(i_dca_matrix_mac00_ma_sload_tensor_row_wdata),
@@ -1913,6 +1941,7 @@ i_dca_matrix_mac00
 	.mb_sinst_decode_finish(i_dca_matrix_mac00_mb_sinst_decode_finish),
 	.mb_sinst_execute_finish(i_dca_matrix_mac00_mb_sinst_execute_finish),
 	.mb_sinst_busy(i_dca_matrix_mac00_mb_sinst_busy),
+	.mb_scache_flush(i_dca_matrix_mac00_mb_scache_flush),
 	.mb_sload_tensor_row_wvalid(i_dca_matrix_mac00_mb_sload_tensor_row_wvalid),
 	.mb_sload_tensor_row_wlast(i_dca_matrix_mac00_mb_sload_tensor_row_wlast),
 	.mb_sload_tensor_row_wdata(i_dca_matrix_mac00_mb_sload_tensor_row_wdata),
@@ -1927,6 +1956,7 @@ i_dca_matrix_mac00
 	.mc_sinst_decode_finish(i_dca_matrix_mac00_mc_sinst_decode_finish),
 	.mc_sinst_execute_finish(i_dca_matrix_mac00_mc_sinst_execute_finish),
 	.mc_sinst_busy(i_dca_matrix_mac00_mc_sinst_busy),
+	.mc_scache_flush(i_dca_matrix_mac00_mc_scache_flush),
 	.mc_sload_tensor_row_wvalid(i_dca_matrix_mac00_mc_sload_tensor_row_wvalid),
 	.mc_sload_tensor_row_wlast(i_dca_matrix_mac00_mc_sload_tensor_row_wlast),
 	.mc_sload_tensor_row_wdata(i_dca_matrix_mac00_mc_sload_tensor_row_wdata),
@@ -2103,6 +2133,8 @@ common_peri_group
 	.global_tag_list(common_peri_group_global_tag_list),
 	.system_tick_config(common_peri_group_system_tick_config),
 	.core_tick_config(common_peri_group_core_tick_config),
+	.rptid(common_peri_group_rptid),
+	.rpwstrb(common_peri_group_rpwstrb),
 	.rpsel(common_peri_group_rpsel),
 	.rpenable(common_peri_group_rpenable),
 	.rpwrite(common_peri_group_rpwrite),
@@ -2114,22 +2146,22 @@ common_peri_group
 );
 
 ERVP_TICK_GENERATOR
-autoname_103
+autoname_122
 (
-	.clk(autoname_103_clk),
-	.rstnn(autoname_103_rstnn),
-	.tick_config(autoname_103_tick_config),
-	.tick_1us(autoname_103_tick_1us),
-	.tick_62d5ms(autoname_103_tick_62d5ms)
+	.clk(autoname_122_clk),
+	.rstnn(autoname_122_rstnn),
+	.tick_config(autoname_122_tick_config),
+	.tick_1us(autoname_122_tick_1us),
+	.tick_62d5ms(autoname_122_tick_62d5ms)
 );
 
 ERVP_REAL_CLOCK
-autoname_105
+autoname_124
 (
-	.clk(autoname_105_clk),
-	.rstnn(autoname_105_rstnn),
-	.tick_1us(autoname_105_tick_1us),
-	.real_clock(autoname_105_real_clock)
+	.clk(autoname_124_clk),
+	.rstnn(autoname_124_rstnn),
+	.tick_1us(autoname_124_tick_1us),
+	.real_clock(autoname_124_real_clock)
 );
 
 ERVP_EXTERNAL_PERI_GROUP
@@ -2241,42 +2273,42 @@ ERVP_CORE_PERI_GROUP
 	.NUM_LOCK(5),
 	.NUM_GLOBAL_TAG(1)
 )
-autoname_106
+autoname_125
 (
-	.clk(autoname_106_clk),
-	.rstnn(autoname_106_rstnn),
-	.tick_1us(autoname_106_tick_1us),
-	.delay_notice(autoname_106_delay_notice),
-	.plic_interrupt(autoname_106_plic_interrupt),
-	.lock_status_list(autoname_106_lock_status_list),
-	.global_tag_list(autoname_106_global_tag_list),
-	.thread_status_list(autoname_106_thread_status_list),
-	.core_interrupt_vector(autoname_106_core_interrupt_vector),
-	.allows_holds(autoname_106_allows_holds),
-	.rpsel(autoname_106_rpsel),
-	.rpenable(autoname_106_rpenable),
-	.rpwrite(autoname_106_rpwrite),
-	.rpaddr(autoname_106_rpaddr),
-	.rpwdata(autoname_106_rpwdata),
-	.rpready(autoname_106_rpready),
-	.rprdata(autoname_106_rprdata),
-	.rpslverr(autoname_106_rpslverr),
-	.tcu_spsel(autoname_106_tcu_spsel),
-	.tcu_spenable(autoname_106_tcu_spenable),
-	.tcu_spwrite(autoname_106_tcu_spwrite),
-	.tcu_spaddr(autoname_106_tcu_spaddr),
-	.tcu_spwdata(autoname_106_tcu_spwdata),
-	.tcu_spready(autoname_106_tcu_spready),
-	.tcu_sprdata(autoname_106_tcu_sprdata),
-	.tcu_spslverr(autoname_106_tcu_spslverr),
-	.florian_spsel(autoname_106_florian_spsel),
-	.florian_spenable(autoname_106_florian_spenable),
-	.florian_spwrite(autoname_106_florian_spwrite),
-	.florian_spaddr(autoname_106_florian_spaddr),
-	.florian_spwdata(autoname_106_florian_spwdata),
-	.florian_spready(autoname_106_florian_spready),
-	.florian_sprdata(autoname_106_florian_sprdata),
-	.florian_spslverr(autoname_106_florian_spslverr)
+	.clk(autoname_125_clk),
+	.rstnn(autoname_125_rstnn),
+	.tick_1us(autoname_125_tick_1us),
+	.delay_notice(autoname_125_delay_notice),
+	.plic_interrupt(autoname_125_plic_interrupt),
+	.lock_status_list(autoname_125_lock_status_list),
+	.global_tag_list(autoname_125_global_tag_list),
+	.thread_status_list(autoname_125_thread_status_list),
+	.core_interrupt_vector(autoname_125_core_interrupt_vector),
+	.allows_holds(autoname_125_allows_holds),
+	.rpsel(autoname_125_rpsel),
+	.rpenable(autoname_125_rpenable),
+	.rpwrite(autoname_125_rpwrite),
+	.rpaddr(autoname_125_rpaddr),
+	.rpwdata(autoname_125_rpwdata),
+	.rpready(autoname_125_rpready),
+	.rprdata(autoname_125_rprdata),
+	.rpslverr(autoname_125_rpslverr),
+	.tcu_spsel(autoname_125_tcu_spsel),
+	.tcu_spenable(autoname_125_tcu_spenable),
+	.tcu_spwrite(autoname_125_tcu_spwrite),
+	.tcu_spaddr(autoname_125_tcu_spaddr),
+	.tcu_spwdata(autoname_125_tcu_spwdata),
+	.tcu_spready(autoname_125_tcu_spready),
+	.tcu_sprdata(autoname_125_tcu_sprdata),
+	.tcu_spslverr(autoname_125_tcu_spslverr),
+	.florian_spsel(autoname_125_florian_spsel),
+	.florian_spenable(autoname_125_florian_spenable),
+	.florian_spwrite(autoname_125_florian_spwrite),
+	.florian_spaddr(autoname_125_florian_spaddr),
+	.florian_spwdata(autoname_125_florian_spwdata),
+	.florian_spready(autoname_125_florian_spready),
+	.florian_sprdata(autoname_125_florian_sprdata),
+	.florian_spslverr(autoname_125_florian_spslverr)
 );
 
 ERVP_CORE_PERI_GROUP
@@ -2287,42 +2319,42 @@ ERVP_CORE_PERI_GROUP
 	.NUM_LOCK(5),
 	.NUM_GLOBAL_TAG(1)
 )
-autoname_107
+autoname_126
 (
-	.clk(autoname_107_clk),
-	.rstnn(autoname_107_rstnn),
-	.tick_1us(autoname_107_tick_1us),
-	.delay_notice(autoname_107_delay_notice),
-	.plic_interrupt(autoname_107_plic_interrupt),
-	.lock_status_list(autoname_107_lock_status_list),
-	.global_tag_list(autoname_107_global_tag_list),
-	.thread_status_list(autoname_107_thread_status_list),
-	.core_interrupt_vector(autoname_107_core_interrupt_vector),
-	.allows_holds(autoname_107_allows_holds),
-	.rpsel(autoname_107_rpsel),
-	.rpenable(autoname_107_rpenable),
-	.rpwrite(autoname_107_rpwrite),
-	.rpaddr(autoname_107_rpaddr),
-	.rpwdata(autoname_107_rpwdata),
-	.rpready(autoname_107_rpready),
-	.rprdata(autoname_107_rprdata),
-	.rpslverr(autoname_107_rpslverr),
-	.tcu_spsel(autoname_107_tcu_spsel),
-	.tcu_spenable(autoname_107_tcu_spenable),
-	.tcu_spwrite(autoname_107_tcu_spwrite),
-	.tcu_spaddr(autoname_107_tcu_spaddr),
-	.tcu_spwdata(autoname_107_tcu_spwdata),
-	.tcu_spready(autoname_107_tcu_spready),
-	.tcu_sprdata(autoname_107_tcu_sprdata),
-	.tcu_spslverr(autoname_107_tcu_spslverr),
-	.florian_spsel(autoname_107_florian_spsel),
-	.florian_spenable(autoname_107_florian_spenable),
-	.florian_spwrite(autoname_107_florian_spwrite),
-	.florian_spaddr(autoname_107_florian_spaddr),
-	.florian_spwdata(autoname_107_florian_spwdata),
-	.florian_spready(autoname_107_florian_spready),
-	.florian_sprdata(autoname_107_florian_sprdata),
-	.florian_spslverr(autoname_107_florian_spslverr)
+	.clk(autoname_126_clk),
+	.rstnn(autoname_126_rstnn),
+	.tick_1us(autoname_126_tick_1us),
+	.delay_notice(autoname_126_delay_notice),
+	.plic_interrupt(autoname_126_plic_interrupt),
+	.lock_status_list(autoname_126_lock_status_list),
+	.global_tag_list(autoname_126_global_tag_list),
+	.thread_status_list(autoname_126_thread_status_list),
+	.core_interrupt_vector(autoname_126_core_interrupt_vector),
+	.allows_holds(autoname_126_allows_holds),
+	.rpsel(autoname_126_rpsel),
+	.rpenable(autoname_126_rpenable),
+	.rpwrite(autoname_126_rpwrite),
+	.rpaddr(autoname_126_rpaddr),
+	.rpwdata(autoname_126_rpwdata),
+	.rpready(autoname_126_rpready),
+	.rprdata(autoname_126_rprdata),
+	.rpslverr(autoname_126_rpslverr),
+	.tcu_spsel(autoname_126_tcu_spsel),
+	.tcu_spenable(autoname_126_tcu_spenable),
+	.tcu_spwrite(autoname_126_tcu_spwrite),
+	.tcu_spaddr(autoname_126_tcu_spaddr),
+	.tcu_spwdata(autoname_126_tcu_spwdata),
+	.tcu_spready(autoname_126_tcu_spready),
+	.tcu_sprdata(autoname_126_tcu_sprdata),
+	.tcu_spslverr(autoname_126_tcu_spslverr),
+	.florian_spsel(autoname_126_florian_spsel),
+	.florian_spenable(autoname_126_florian_spenable),
+	.florian_spwrite(autoname_126_florian_spwrite),
+	.florian_spaddr(autoname_126_florian_spaddr),
+	.florian_spwdata(autoname_126_florian_spwdata),
+	.florian_spready(autoname_126_florian_spready),
+	.florian_sprdata(autoname_126_florian_sprdata),
+	.florian_spslverr(autoname_126_florian_spslverr)
 );
 
 ERVP_CORE_PERI_GROUP
@@ -2333,42 +2365,42 @@ ERVP_CORE_PERI_GROUP
 	.NUM_LOCK(5),
 	.NUM_GLOBAL_TAG(1)
 )
-autoname_108
+autoname_127
 (
-	.clk(autoname_108_clk),
-	.rstnn(autoname_108_rstnn),
-	.tick_1us(autoname_108_tick_1us),
-	.delay_notice(autoname_108_delay_notice),
-	.plic_interrupt(autoname_108_plic_interrupt),
-	.lock_status_list(autoname_108_lock_status_list),
-	.global_tag_list(autoname_108_global_tag_list),
-	.thread_status_list(autoname_108_thread_status_list),
-	.core_interrupt_vector(autoname_108_core_interrupt_vector),
-	.allows_holds(autoname_108_allows_holds),
-	.rpsel(autoname_108_rpsel),
-	.rpenable(autoname_108_rpenable),
-	.rpwrite(autoname_108_rpwrite),
-	.rpaddr(autoname_108_rpaddr),
-	.rpwdata(autoname_108_rpwdata),
-	.rpready(autoname_108_rpready),
-	.rprdata(autoname_108_rprdata),
-	.rpslverr(autoname_108_rpslverr),
-	.tcu_spsel(autoname_108_tcu_spsel),
-	.tcu_spenable(autoname_108_tcu_spenable),
-	.tcu_spwrite(autoname_108_tcu_spwrite),
-	.tcu_spaddr(autoname_108_tcu_spaddr),
-	.tcu_spwdata(autoname_108_tcu_spwdata),
-	.tcu_spready(autoname_108_tcu_spready),
-	.tcu_sprdata(autoname_108_tcu_sprdata),
-	.tcu_spslverr(autoname_108_tcu_spslverr),
-	.florian_spsel(autoname_108_florian_spsel),
-	.florian_spenable(autoname_108_florian_spenable),
-	.florian_spwrite(autoname_108_florian_spwrite),
-	.florian_spaddr(autoname_108_florian_spaddr),
-	.florian_spwdata(autoname_108_florian_spwdata),
-	.florian_spready(autoname_108_florian_spready),
-	.florian_sprdata(autoname_108_florian_sprdata),
-	.florian_spslverr(autoname_108_florian_spslverr)
+	.clk(autoname_127_clk),
+	.rstnn(autoname_127_rstnn),
+	.tick_1us(autoname_127_tick_1us),
+	.delay_notice(autoname_127_delay_notice),
+	.plic_interrupt(autoname_127_plic_interrupt),
+	.lock_status_list(autoname_127_lock_status_list),
+	.global_tag_list(autoname_127_global_tag_list),
+	.thread_status_list(autoname_127_thread_status_list),
+	.core_interrupt_vector(autoname_127_core_interrupt_vector),
+	.allows_holds(autoname_127_allows_holds),
+	.rpsel(autoname_127_rpsel),
+	.rpenable(autoname_127_rpenable),
+	.rpwrite(autoname_127_rpwrite),
+	.rpaddr(autoname_127_rpaddr),
+	.rpwdata(autoname_127_rpwdata),
+	.rpready(autoname_127_rpready),
+	.rprdata(autoname_127_rprdata),
+	.rpslverr(autoname_127_rpslverr),
+	.tcu_spsel(autoname_127_tcu_spsel),
+	.tcu_spenable(autoname_127_tcu_spenable),
+	.tcu_spwrite(autoname_127_tcu_spwrite),
+	.tcu_spaddr(autoname_127_tcu_spaddr),
+	.tcu_spwdata(autoname_127_tcu_spwdata),
+	.tcu_spready(autoname_127_tcu_spready),
+	.tcu_sprdata(autoname_127_tcu_sprdata),
+	.tcu_spslverr(autoname_127_tcu_spslverr),
+	.florian_spsel(autoname_127_florian_spsel),
+	.florian_spenable(autoname_127_florian_spenable),
+	.florian_spwrite(autoname_127_florian_spwrite),
+	.florian_spaddr(autoname_127_florian_spaddr),
+	.florian_spwdata(autoname_127_florian_spwdata),
+	.florian_spready(autoname_127_florian_spready),
+	.florian_sprdata(autoname_127_florian_sprdata),
+	.florian_spslverr(autoname_127_florian_spslverr)
 );
 
 ERVP_PLATFORM_CONTROLLER
@@ -2563,6 +2595,7 @@ i_dca_matrix_conv00_mi_mlsu
 	.rinst_decode_finish(i_dca_matrix_conv00_mi_mlsu_rinst_decode_finish),
 	.rinst_execute_finish(i_dca_matrix_conv00_mi_mlsu_rinst_execute_finish),
 	.rinst_busy(i_dca_matrix_conv00_mi_mlsu_rinst_busy),
+	.rcache_flush(i_dca_matrix_conv00_mi_mlsu_rcache_flush),
 	.rload_tensor_row_wvalid(i_dca_matrix_conv00_mi_mlsu_rload_tensor_row_wvalid),
 	.rload_tensor_row_wlast(i_dca_matrix_conv00_mi_mlsu_rload_tensor_row_wlast),
 	.rload_tensor_row_wdata(i_dca_matrix_conv00_mi_mlsu_rload_tensor_row_wdata),
@@ -2608,6 +2641,7 @@ i_dca_matrix_conv00_mk_mlsu
 	.rinst_decode_finish(i_dca_matrix_conv00_mk_mlsu_rinst_decode_finish),
 	.rinst_execute_finish(i_dca_matrix_conv00_mk_mlsu_rinst_execute_finish),
 	.rinst_busy(i_dca_matrix_conv00_mk_mlsu_rinst_busy),
+	.rcache_flush(i_dca_matrix_conv00_mk_mlsu_rcache_flush),
 	.rload_tensor_row_wvalid(i_dca_matrix_conv00_mk_mlsu_rload_tensor_row_wvalid),
 	.rload_tensor_row_wlast(i_dca_matrix_conv00_mk_mlsu_rload_tensor_row_wlast),
 	.rload_tensor_row_wdata(i_dca_matrix_conv00_mk_mlsu_rload_tensor_row_wdata),
@@ -2653,6 +2687,7 @@ i_dca_matrix_conv00_mo_mlsu
 	.rinst_decode_finish(i_dca_matrix_conv00_mo_mlsu_rinst_decode_finish),
 	.rinst_execute_finish(i_dca_matrix_conv00_mo_mlsu_rinst_execute_finish),
 	.rinst_busy(i_dca_matrix_conv00_mo_mlsu_rinst_busy),
+	.rcache_flush(i_dca_matrix_conv00_mo_mlsu_rcache_flush),
 	.rload_tensor_row_wvalid(i_dca_matrix_conv00_mo_mlsu_rload_tensor_row_wvalid),
 	.rload_tensor_row_wlast(i_dca_matrix_conv00_mo_mlsu_rload_tensor_row_wlast),
 	.rload_tensor_row_wdata(i_dca_matrix_conv00_mo_mlsu_rload_tensor_row_wdata),
@@ -2698,6 +2733,7 @@ i_dca_matrix_mac00_ma_mlsu
 	.rinst_decode_finish(i_dca_matrix_mac00_ma_mlsu_rinst_decode_finish),
 	.rinst_execute_finish(i_dca_matrix_mac00_ma_mlsu_rinst_execute_finish),
 	.rinst_busy(i_dca_matrix_mac00_ma_mlsu_rinst_busy),
+	.rcache_flush(i_dca_matrix_mac00_ma_mlsu_rcache_flush),
 	.rload_tensor_row_wvalid(i_dca_matrix_mac00_ma_mlsu_rload_tensor_row_wvalid),
 	.rload_tensor_row_wlast(i_dca_matrix_mac00_ma_mlsu_rload_tensor_row_wlast),
 	.rload_tensor_row_wdata(i_dca_matrix_mac00_ma_mlsu_rload_tensor_row_wdata),
@@ -2743,6 +2779,7 @@ i_dca_matrix_mac00_mb_mlsu
 	.rinst_decode_finish(i_dca_matrix_mac00_mb_mlsu_rinst_decode_finish),
 	.rinst_execute_finish(i_dca_matrix_mac00_mb_mlsu_rinst_execute_finish),
 	.rinst_busy(i_dca_matrix_mac00_mb_mlsu_rinst_busy),
+	.rcache_flush(i_dca_matrix_mac00_mb_mlsu_rcache_flush),
 	.rload_tensor_row_wvalid(i_dca_matrix_mac00_mb_mlsu_rload_tensor_row_wvalid),
 	.rload_tensor_row_wlast(i_dca_matrix_mac00_mb_mlsu_rload_tensor_row_wlast),
 	.rload_tensor_row_wdata(i_dca_matrix_mac00_mb_mlsu_rload_tensor_row_wdata),
@@ -2787,6 +2824,7 @@ i_dca_matrix_mac00_mc_mlsu
 	.rinst_decode_finish(i_dca_matrix_mac00_mc_mlsu_rinst_decode_finish),
 	.rinst_execute_finish(i_dca_matrix_mac00_mc_mlsu_rinst_execute_finish),
 	.rinst_busy(i_dca_matrix_mac00_mc_mlsu_rinst_busy),
+	.rcache_flush(i_dca_matrix_mac00_mc_mlsu_rcache_flush),
 	.rload_tensor_row_wvalid(i_dca_matrix_mac00_mc_mlsu_rload_tensor_row_wvalid),
 	.rload_tensor_row_wlast(i_dca_matrix_mac00_mc_mlsu_rload_tensor_row_wlast),
 	.rload_tensor_row_wdata(i_dca_matrix_mac00_mc_mlsu_rload_tensor_row_wdata),
@@ -3215,6 +3253,8 @@ i_snim_common_peri_group_no_name
 	.clk_slave(i_snim_common_peri_group_no_name_clk_slave),
 	.rstnn_slave(i_snim_common_peri_group_no_name_rstnn_slave),
 	.comm_disable(i_snim_common_peri_group_no_name_comm_disable),
+	.sptid(i_snim_common_peri_group_no_name_sptid),
+	.spwstrb(i_snim_common_peri_group_no_name_spwstrb),
 	.spsel(i_snim_common_peri_group_no_name_spsel),
 	.spenable(i_snim_common_peri_group_no_name_spenable),
 	.spwrite(i_snim_common_peri_group_no_name_spwrite),
@@ -3249,6 +3289,8 @@ i_snim_external_peri_group_no_name
 	.clk_slave(i_snim_external_peri_group_no_name_clk_slave),
 	.rstnn_slave(i_snim_external_peri_group_no_name_rstnn_slave),
 	.comm_disable(i_snim_external_peri_group_no_name_comm_disable),
+	.sptid(i_snim_external_peri_group_no_name_sptid),
+	.spwstrb(i_snim_external_peri_group_no_name_spwstrb),
 	.spsel(i_snim_external_peri_group_no_name_spsel),
 	.spenable(i_snim_external_peri_group_no_name_spenable),
 	.spwrite(i_snim_external_peri_group_no_name_spwrite),
@@ -3283,6 +3325,8 @@ i_snim_platform_controller_no_name
 	.clk_slave(i_snim_platform_controller_no_name_clk_slave),
 	.rstnn_slave(i_snim_platform_controller_no_name_rstnn_slave),
 	.comm_disable(i_snim_platform_controller_no_name_comm_disable),
+	.sptid(i_snim_platform_controller_no_name_sptid),
+	.spwstrb(i_snim_platform_controller_no_name_spwstrb),
 	.spsel(i_snim_platform_controller_no_name_spsel),
 	.spenable(i_snim_platform_controller_no_name_spenable),
 	.spwrite(i_snim_platform_controller_no_name_spwrite),
@@ -3317,6 +3361,8 @@ i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio
 	.clk_slave(i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio_clk_slave),
 	.rstnn_slave(i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio_rstnn_slave),
 	.comm_disable(i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio_comm_disable),
+	.sptid(i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio_sptid),
+	.spwstrb(i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio_spwstrb),
 	.spsel(i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio_spsel),
 	.spenable(i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio_spenable),
 	.spwrite(i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio_spwrite),
@@ -3351,6 +3397,8 @@ i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio
 	.clk_slave(i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio_clk_slave),
 	.rstnn_slave(i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio_rstnn_slave),
 	.comm_disable(i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio_comm_disable),
+	.sptid(i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio_sptid),
+	.spwstrb(i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio_spwstrb),
 	.spsel(i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio_spsel),
 	.spenable(i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio_spenable),
 	.spwrite(i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio_spwrite),
@@ -3824,10 +3872,10 @@ assign gclk_process_001 = clk_process_001;
 assign gclk_process_002 = clk_process_002;
 assign gclk_process_003 = clk_process_003;
 assign gclk_noc = clk_noc;
-assign tick_1us = autoname_103_tick_1us;
-assign tick_62d5ms = autoname_103_tick_62d5ms;
+assign tick_1us = autoname_122_tick_1us;
+assign tick_62d5ms = autoname_122_tick_62d5ms;
 assign tick_gpio = external_peri_group_tick_gpio;
-assign autoname_104 = tick_1us;
+assign autoname_123 = tick_1us;
 assign spi_common_sclk = external_peri_group_spi_common_sclk;
 assign spi_common_sdq0 = external_peri_group_spi_common_sdq0;
 assign i_dca_matrix_conv00_control_mmiox1_interface_clk_acc = i_dca_matrix_conv00_clk;
@@ -3854,13 +3902,13 @@ assign i_led_rstnn = rstnn_seqeunce[1];
 assign i_system_ddr_rstnn_dram_if = rstnn_seqeunce[1];
 assign i_system_sram_rstnn = rstnn_seqeunce[1];
 assign common_peri_group_rstnn = rstnn_seqeunce[1];
-assign autoname_103_rstnn = rstnn_seqeunce[2];
-assign autoname_105_rstnn = rstnn_seqeunce[2];
+assign autoname_122_rstnn = rstnn_seqeunce[2];
+assign autoname_124_rstnn = rstnn_seqeunce[2];
 assign external_peri_group_rstnn = rstnn_seqeunce[2];
 assign core_peri_group_rstnn = rstnn_seqeunce[2];
-assign autoname_106_rstnn = rstnn_seqeunce[3];
-assign autoname_107_rstnn = rstnn_seqeunce[3];
-assign autoname_108_rstnn = rstnn_seqeunce[3];
+assign autoname_125_rstnn = rstnn_seqeunce[3];
+assign autoname_126_rstnn = rstnn_seqeunce[3];
+assign autoname_127_rstnn = rstnn_seqeunce[3];
 assign platform_controller_rstnn = rstnn_seqeunce[3];
 assign default_slave_rstnn_network = rstnn_seqeunce[4];
 assign default_slave_rstnn_debug = rstnn_seqeunce[4];
@@ -3885,13 +3933,13 @@ assign i_system_ddr_clk_sys = clk_dram_sys;
 assign clk_dram_if = i_system_ddr_clk_dram_if;
 assign clk_system = i_pll0_clk_system;
 assign common_peri_group_clk = clk_system;
-assign autoname_103_clk = clk_system;
-assign autoname_105_clk = clk_system;
+assign autoname_122_clk = clk_system;
+assign autoname_124_clk = clk_system;
 assign platform_controller_clk = clk_system;
 assign core_peri_group_clk = gclk_local_access;
-assign autoname_106_clk = gclk_local_access;
-assign autoname_107_clk = gclk_local_access;
-assign autoname_108_clk = gclk_local_access;
+assign autoname_125_clk = gclk_local_access;
+assign autoname_126_clk = gclk_local_access;
+assign autoname_127_clk = gclk_local_access;
 assign default_slave_clk_debug = gclk_system_debug;
 assign i_dca_matrix_conv00_control_mmiox1_interface_clk_mmio = gclk_system;
 assign i_dca_matrix_mac00_control_mmiox1_interface_clk_mmio = gclk_system;
@@ -3982,42 +4030,42 @@ assign i_mnim_i_dca_matrix_mac00_mc_mlsu_noc_part_clk_master = clk_dca_core;
 assign i_mnim_i_dca_matrix_mac00_mc_mlsu_noc_part_rstnn_master = i_dca_matrix_mac00_rstnn;
 assign i_snim_i_system_ddr_no_name_clk = gclk_noc;
 assign i_snim_i_system_ddr_no_name_rstnn = rstnn_noc;
-assign i_led_tick_62d5ms = autoname_103_tick_62d5ms;
+assign i_led_tick_62d5ms = autoname_122_tick_62d5ms;
 assign i_led_app_finished = platform_controller_app_finished;
 assign i_system_ddr_rstnn_sys = platform_controller_global_rstnn;
 assign i_pll0_external_rstnn = platform_controller_global_rstnn;
 assign platform_controller_initialized = i_system_ddr_initialized;
 assign core_peri_group_lock_status_list = common_peri_group_lock_status_list;
-assign autoname_106_lock_status_list = common_peri_group_lock_status_list;
-assign autoname_107_lock_status_list = common_peri_group_lock_status_list;
-assign autoname_108_lock_status_list = common_peri_group_lock_status_list;
+assign autoname_125_lock_status_list = common_peri_group_lock_status_list;
+assign autoname_126_lock_status_list = common_peri_group_lock_status_list;
+assign autoname_127_lock_status_list = common_peri_group_lock_status_list;
 assign core_peri_group_thread_status_list = common_peri_group_thread_status_list;
-assign autoname_106_thread_status_list = common_peri_group_thread_status_list;
-assign autoname_107_thread_status_list = common_peri_group_thread_status_list;
-assign autoname_108_thread_status_list = common_peri_group_thread_status_list;
-assign common_peri_group_real_clock = autoname_105_real_clock;
+assign autoname_125_thread_status_list = common_peri_group_thread_status_list;
+assign autoname_126_thread_status_list = common_peri_group_thread_status_list;
+assign autoname_127_thread_status_list = common_peri_group_thread_status_list;
+assign common_peri_group_real_clock = autoname_124_real_clock;
 assign core_peri_group_global_tag_list = common_peri_group_global_tag_list;
-assign autoname_106_global_tag_list = common_peri_group_global_tag_list;
-assign autoname_107_global_tag_list = common_peri_group_global_tag_list;
-assign autoname_108_global_tag_list = common_peri_group_global_tag_list;
-assign autoname_103_tick_config = common_peri_group_system_tick_config;
-assign autoname_105_tick_1us = autoname_103_tick_1us;
-assign external_peri_group_tick_1us = autoname_103_tick_1us;
-assign core_peri_group_tick_1us = autoname_104;
-assign autoname_106_tick_1us = autoname_104;
-assign autoname_107_tick_1us = autoname_104;
-assign autoname_108_tick_1us = autoname_104;
+assign autoname_125_global_tag_list = common_peri_group_global_tag_list;
+assign autoname_126_global_tag_list = common_peri_group_global_tag_list;
+assign autoname_127_global_tag_list = common_peri_group_global_tag_list;
+assign autoname_122_tick_config = common_peri_group_system_tick_config;
+assign autoname_124_tick_1us = autoname_122_tick_1us;
+assign external_peri_group_tick_1us = autoname_122_tick_1us;
+assign core_peri_group_tick_1us = autoname_123;
+assign autoname_125_tick_1us = autoname_123;
+assign autoname_126_tick_1us = autoname_123;
+assign autoname_127_tick_1us = autoname_123;
 assign platform_controller_external_rstnn = external_rstnn;
 assign platform_controller_boot_mode = boot_mode;
 assign platform_controller_jtag_select = `JTAG_SELECT_NOC;
 assign i_main_core_interrupt_vector = core_peri_group_core_interrupt_vector;
-assign i_sub_core_001_interrupt_vector = autoname_106_core_interrupt_vector;
-assign i_sub_core_002_interrupt_vector = autoname_107_core_interrupt_vector;
-assign i_sub_core_003_interrupt_vector = autoname_108_core_interrupt_vector;
+assign i_sub_core_001_interrupt_vector = autoname_125_core_interrupt_vector;
+assign i_sub_core_002_interrupt_vector = autoname_126_core_interrupt_vector;
+assign i_sub_core_003_interrupt_vector = autoname_127_core_interrupt_vector;
 assign core_peri_group_allows_holds = i_mnim_i_main_core_no_name_local_allows_holds;
-assign autoname_106_allows_holds = i_mnim_i_sub_core_001_no_name_local_allows_holds;
-assign autoname_107_allows_holds = i_mnim_i_sub_core_002_no_name_local_allows_holds;
-assign autoname_108_allows_holds = i_mnim_i_sub_core_003_no_name_local_allows_holds;
+assign autoname_125_allows_holds = i_mnim_i_sub_core_001_no_name_local_allows_holds;
+assign autoname_126_allows_holds = i_mnim_i_sub_core_002_no_name_local_allows_holds;
+assign autoname_127_allows_holds = i_mnim_i_sub_core_003_no_name_local_allows_holds;
 assign default_slave_comm_disable = 0;
 assign i_snim_common_peri_group_no_name_comm_disable = 0;
 assign i_snim_external_peri_group_no_name_comm_disable = 0;
@@ -4026,9 +4074,9 @@ assign i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio_comm_disable = 0
 assign i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio_comm_disable = 0;
 assign i_mnim_platform_controller_master_comm_disable = 0;
 assign core_peri_group_plic_interrupt = 0;
-assign autoname_106_plic_interrupt = 0;
-assign autoname_107_plic_interrupt = 0;
-assign autoname_108_plic_interrupt = 0;
+assign autoname_125_plic_interrupt = 0;
+assign autoname_126_plic_interrupt = 0;
+assign autoname_127_plic_interrupt = 0;
 assign i_mnim_i_main_core_no_name_comm_disable = 0;
 assign i_mnim_i_sub_core_001_no_name_comm_disable = 0;
 assign i_mnim_i_sub_core_002_no_name_comm_disable = 0;
@@ -4082,6 +4130,7 @@ assign i_dca_matrix_conv00_mi_sinst_wready = i_dca_matrix_conv00_mi_mlsu_rinst_w
 assign i_dca_matrix_conv00_mi_sinst_decode_finish = i_dca_matrix_conv00_mi_mlsu_rinst_decode_finish;
 assign i_dca_matrix_conv00_mi_sinst_execute_finish = i_dca_matrix_conv00_mi_mlsu_rinst_execute_finish;
 assign i_dca_matrix_conv00_mi_sinst_busy = i_dca_matrix_conv00_mi_mlsu_rinst_busy;
+assign i_dca_matrix_conv00_mi_mlsu_rcache_flush = i_dca_matrix_conv00_mi_scache_flush;
 assign i_dca_matrix_conv00_mi_sload_tensor_row_wvalid = i_dca_matrix_conv00_mi_mlsu_rload_tensor_row_wvalid;
 assign i_dca_matrix_conv00_mi_sload_tensor_row_wlast = i_dca_matrix_conv00_mi_mlsu_rload_tensor_row_wlast;
 assign i_dca_matrix_conv00_mi_sload_tensor_row_wdata = i_dca_matrix_conv00_mi_mlsu_rload_tensor_row_wdata;
@@ -4096,6 +4145,7 @@ assign i_dca_matrix_conv00_mk_sinst_wready = i_dca_matrix_conv00_mk_mlsu_rinst_w
 assign i_dca_matrix_conv00_mk_sinst_decode_finish = i_dca_matrix_conv00_mk_mlsu_rinst_decode_finish;
 assign i_dca_matrix_conv00_mk_sinst_execute_finish = i_dca_matrix_conv00_mk_mlsu_rinst_execute_finish;
 assign i_dca_matrix_conv00_mk_sinst_busy = i_dca_matrix_conv00_mk_mlsu_rinst_busy;
+assign i_dca_matrix_conv00_mk_mlsu_rcache_flush = i_dca_matrix_conv00_mk_scache_flush;
 assign i_dca_matrix_conv00_mk_sload_tensor_row_wvalid = i_dca_matrix_conv00_mk_mlsu_rload_tensor_row_wvalid;
 assign i_dca_matrix_conv00_mk_sload_tensor_row_wlast = i_dca_matrix_conv00_mk_mlsu_rload_tensor_row_wlast;
 assign i_dca_matrix_conv00_mk_sload_tensor_row_wdata = i_dca_matrix_conv00_mk_mlsu_rload_tensor_row_wdata;
@@ -4110,6 +4160,7 @@ assign i_dca_matrix_conv00_mo_sinst_wready = i_dca_matrix_conv00_mo_mlsu_rinst_w
 assign i_dca_matrix_conv00_mo_sinst_decode_finish = i_dca_matrix_conv00_mo_mlsu_rinst_decode_finish;
 assign i_dca_matrix_conv00_mo_sinst_execute_finish = i_dca_matrix_conv00_mo_mlsu_rinst_execute_finish;
 assign i_dca_matrix_conv00_mo_sinst_busy = i_dca_matrix_conv00_mo_mlsu_rinst_busy;
+assign i_dca_matrix_conv00_mo_mlsu_rcache_flush = i_dca_matrix_conv00_mo_scache_flush;
 assign i_dca_matrix_conv00_mo_sload_tensor_row_wvalid = i_dca_matrix_conv00_mo_mlsu_rload_tensor_row_wvalid;
 assign i_dca_matrix_conv00_mo_sload_tensor_row_wlast = i_dca_matrix_conv00_mo_mlsu_rload_tensor_row_wlast;
 assign i_dca_matrix_conv00_mo_sload_tensor_row_wdata = i_dca_matrix_conv00_mo_mlsu_rload_tensor_row_wdata;
@@ -4124,6 +4175,7 @@ assign i_dca_matrix_mac00_ma_sinst_wready = i_dca_matrix_mac00_ma_mlsu_rinst_wre
 assign i_dca_matrix_mac00_ma_sinst_decode_finish = i_dca_matrix_mac00_ma_mlsu_rinst_decode_finish;
 assign i_dca_matrix_mac00_ma_sinst_execute_finish = i_dca_matrix_mac00_ma_mlsu_rinst_execute_finish;
 assign i_dca_matrix_mac00_ma_sinst_busy = i_dca_matrix_mac00_ma_mlsu_rinst_busy;
+assign i_dca_matrix_mac00_ma_mlsu_rcache_flush = i_dca_matrix_mac00_ma_scache_flush;
 assign i_dca_matrix_mac00_ma_sload_tensor_row_wvalid = i_dca_matrix_mac00_ma_mlsu_rload_tensor_row_wvalid;
 assign i_dca_matrix_mac00_ma_sload_tensor_row_wlast = i_dca_matrix_mac00_ma_mlsu_rload_tensor_row_wlast;
 assign i_dca_matrix_mac00_ma_sload_tensor_row_wdata = i_dca_matrix_mac00_ma_mlsu_rload_tensor_row_wdata;
@@ -4138,6 +4190,7 @@ assign i_dca_matrix_mac00_mb_sinst_wready = i_dca_matrix_mac00_mb_mlsu_rinst_wre
 assign i_dca_matrix_mac00_mb_sinst_decode_finish = i_dca_matrix_mac00_mb_mlsu_rinst_decode_finish;
 assign i_dca_matrix_mac00_mb_sinst_execute_finish = i_dca_matrix_mac00_mb_mlsu_rinst_execute_finish;
 assign i_dca_matrix_mac00_mb_sinst_busy = i_dca_matrix_mac00_mb_mlsu_rinst_busy;
+assign i_dca_matrix_mac00_mb_mlsu_rcache_flush = i_dca_matrix_mac00_mb_scache_flush;
 assign i_dca_matrix_mac00_mb_sload_tensor_row_wvalid = i_dca_matrix_mac00_mb_mlsu_rload_tensor_row_wvalid;
 assign i_dca_matrix_mac00_mb_sload_tensor_row_wlast = i_dca_matrix_mac00_mb_mlsu_rload_tensor_row_wlast;
 assign i_dca_matrix_mac00_mb_sload_tensor_row_wdata = i_dca_matrix_mac00_mb_mlsu_rload_tensor_row_wdata;
@@ -4152,6 +4205,7 @@ assign i_dca_matrix_mac00_mc_sinst_wready = i_dca_matrix_mac00_mc_mlsu_rinst_wre
 assign i_dca_matrix_mac00_mc_sinst_decode_finish = i_dca_matrix_mac00_mc_mlsu_rinst_decode_finish;
 assign i_dca_matrix_mac00_mc_sinst_execute_finish = i_dca_matrix_mac00_mc_mlsu_rinst_execute_finish;
 assign i_dca_matrix_mac00_mc_sinst_busy = i_dca_matrix_mac00_mc_mlsu_rinst_busy;
+assign i_dca_matrix_mac00_mc_mlsu_rcache_flush = i_dca_matrix_mac00_mc_scache_flush;
 assign i_dca_matrix_mac00_mc_sload_tensor_row_wvalid = i_dca_matrix_mac00_mc_mlsu_rload_tensor_row_wvalid;
 assign i_dca_matrix_mac00_mc_sload_tensor_row_wlast = i_dca_matrix_mac00_mc_mlsu_rload_tensor_row_wlast;
 assign i_dca_matrix_mac00_mc_sload_tensor_row_wdata = i_dca_matrix_mac00_mc_mlsu_rload_tensor_row_wdata;
@@ -4310,6 +4364,8 @@ assign i_snim_i_system_sram_no_name_sxrid = i_system_sram_sxrid;
 assign i_snim_i_system_sram_no_name_sxrdata = i_system_sram_sxrdata;
 assign i_snim_i_system_sram_no_name_sxrlast = i_system_sram_sxrlast;
 assign i_snim_i_system_sram_no_name_sxrresp = i_system_sram_sxrresp;
+assign common_peri_group_rptid = i_snim_common_peri_group_no_name_sptid;
+assign common_peri_group_rpwstrb = i_snim_common_peri_group_no_name_spwstrb;
 assign common_peri_group_rpsel = i_snim_common_peri_group_no_name_spsel;
 assign common_peri_group_rpenable = i_snim_common_peri_group_no_name_spenable;
 assign common_peri_group_rpwrite = i_snim_common_peri_group_no_name_spwrite;
@@ -4623,30 +4679,30 @@ assign core_peri_group_rpwdata = i_mnim_i_main_core_no_name_local_spwdata;
 assign i_mnim_i_main_core_no_name_local_spready = core_peri_group_rpready;
 assign i_mnim_i_main_core_no_name_local_sprdata = core_peri_group_rprdata;
 assign i_mnim_i_main_core_no_name_local_spslverr = core_peri_group_rpslverr;
-assign autoname_106_rpsel = i_mnim_i_sub_core_001_no_name_local_spsel;
-assign autoname_106_rpenable = i_mnim_i_sub_core_001_no_name_local_spenable;
-assign autoname_106_rpwrite = i_mnim_i_sub_core_001_no_name_local_spwrite;
-assign autoname_106_rpaddr = i_mnim_i_sub_core_001_no_name_local_spaddr;
-assign autoname_106_rpwdata = i_mnim_i_sub_core_001_no_name_local_spwdata;
-assign i_mnim_i_sub_core_001_no_name_local_spready = autoname_106_rpready;
-assign i_mnim_i_sub_core_001_no_name_local_sprdata = autoname_106_rprdata;
-assign i_mnim_i_sub_core_001_no_name_local_spslverr = autoname_106_rpslverr;
-assign autoname_107_rpsel = i_mnim_i_sub_core_002_no_name_local_spsel;
-assign autoname_107_rpenable = i_mnim_i_sub_core_002_no_name_local_spenable;
-assign autoname_107_rpwrite = i_mnim_i_sub_core_002_no_name_local_spwrite;
-assign autoname_107_rpaddr = i_mnim_i_sub_core_002_no_name_local_spaddr;
-assign autoname_107_rpwdata = i_mnim_i_sub_core_002_no_name_local_spwdata;
-assign i_mnim_i_sub_core_002_no_name_local_spready = autoname_107_rpready;
-assign i_mnim_i_sub_core_002_no_name_local_sprdata = autoname_107_rprdata;
-assign i_mnim_i_sub_core_002_no_name_local_spslverr = autoname_107_rpslverr;
-assign autoname_108_rpsel = i_mnim_i_sub_core_003_no_name_local_spsel;
-assign autoname_108_rpenable = i_mnim_i_sub_core_003_no_name_local_spenable;
-assign autoname_108_rpwrite = i_mnim_i_sub_core_003_no_name_local_spwrite;
-assign autoname_108_rpaddr = i_mnim_i_sub_core_003_no_name_local_spaddr;
-assign autoname_108_rpwdata = i_mnim_i_sub_core_003_no_name_local_spwdata;
-assign i_mnim_i_sub_core_003_no_name_local_spready = autoname_108_rpready;
-assign i_mnim_i_sub_core_003_no_name_local_sprdata = autoname_108_rprdata;
-assign i_mnim_i_sub_core_003_no_name_local_spslverr = autoname_108_rpslverr;
+assign autoname_125_rpsel = i_mnim_i_sub_core_001_no_name_local_spsel;
+assign autoname_125_rpenable = i_mnim_i_sub_core_001_no_name_local_spenable;
+assign autoname_125_rpwrite = i_mnim_i_sub_core_001_no_name_local_spwrite;
+assign autoname_125_rpaddr = i_mnim_i_sub_core_001_no_name_local_spaddr;
+assign autoname_125_rpwdata = i_mnim_i_sub_core_001_no_name_local_spwdata;
+assign i_mnim_i_sub_core_001_no_name_local_spready = autoname_125_rpready;
+assign i_mnim_i_sub_core_001_no_name_local_sprdata = autoname_125_rprdata;
+assign i_mnim_i_sub_core_001_no_name_local_spslverr = autoname_125_rpslverr;
+assign autoname_126_rpsel = i_mnim_i_sub_core_002_no_name_local_spsel;
+assign autoname_126_rpenable = i_mnim_i_sub_core_002_no_name_local_spenable;
+assign autoname_126_rpwrite = i_mnim_i_sub_core_002_no_name_local_spwrite;
+assign autoname_126_rpaddr = i_mnim_i_sub_core_002_no_name_local_spaddr;
+assign autoname_126_rpwdata = i_mnim_i_sub_core_002_no_name_local_spwdata;
+assign i_mnim_i_sub_core_002_no_name_local_spready = autoname_126_rpready;
+assign i_mnim_i_sub_core_002_no_name_local_sprdata = autoname_126_rprdata;
+assign i_mnim_i_sub_core_002_no_name_local_spslverr = autoname_126_rpslverr;
+assign autoname_127_rpsel = i_mnim_i_sub_core_003_no_name_local_spsel;
+assign autoname_127_rpenable = i_mnim_i_sub_core_003_no_name_local_spenable;
+assign autoname_127_rpwrite = i_mnim_i_sub_core_003_no_name_local_spwrite;
+assign autoname_127_rpaddr = i_mnim_i_sub_core_003_no_name_local_spaddr;
+assign autoname_127_rpwdata = i_mnim_i_sub_core_003_no_name_local_spwdata;
+assign i_mnim_i_sub_core_003_no_name_local_spready = autoname_127_rpready;
+assign i_mnim_i_sub_core_003_no_name_local_sprdata = autoname_127_rprdata;
+assign i_mnim_i_sub_core_003_no_name_local_spslverr = autoname_127_rpslverr;
 assign platform_controller_pjtag_rtck = pjtag_rtck;
 assign platform_controller_pjtag_rtrstnn = pjtag_rtrstnn;
 assign platform_controller_pjtag_rtms = pjtag_rtms;
@@ -4698,27 +4754,27 @@ assign i_snim_i_system_ddr_no_name_svri_sack = 0;
 assign core_peri_group_tcu_spready = 0;
 assign core_peri_group_tcu_sprdata = 0;
 assign core_peri_group_tcu_spslverr = 0;
-assign autoname_106_tcu_spready = 0;
-assign autoname_106_tcu_sprdata = 0;
-assign autoname_106_tcu_spslverr = 0;
-assign autoname_107_tcu_spready = 0;
-assign autoname_107_tcu_sprdata = 0;
-assign autoname_107_tcu_spslverr = 0;
-assign autoname_108_tcu_spready = 0;
-assign autoname_108_tcu_sprdata = 0;
-assign autoname_108_tcu_spslverr = 0;
+assign autoname_125_tcu_spready = 0;
+assign autoname_125_tcu_sprdata = 0;
+assign autoname_125_tcu_spslverr = 0;
+assign autoname_126_tcu_spready = 0;
+assign autoname_126_tcu_sprdata = 0;
+assign autoname_126_tcu_spslverr = 0;
+assign autoname_127_tcu_spready = 0;
+assign autoname_127_tcu_sprdata = 0;
+assign autoname_127_tcu_spslverr = 0;
 assign core_peri_group_florian_spready = 0;
 assign core_peri_group_florian_sprdata = 0;
 assign core_peri_group_florian_spslverr = 0;
-assign autoname_106_florian_spready = 0;
-assign autoname_106_florian_sprdata = 0;
-assign autoname_106_florian_spslverr = 0;
-assign autoname_107_florian_spready = 0;
-assign autoname_107_florian_sprdata = 0;
-assign autoname_107_florian_spslverr = 0;
-assign autoname_108_florian_spready = 0;
-assign autoname_108_florian_sprdata = 0;
-assign autoname_108_florian_spslverr = 0;
+assign autoname_125_florian_spready = 0;
+assign autoname_125_florian_sprdata = 0;
+assign autoname_125_florian_spslverr = 0;
+assign autoname_126_florian_spready = 0;
+assign autoname_126_florian_sprdata = 0;
+assign autoname_126_florian_spslverr = 0;
+assign autoname_127_florian_spready = 0;
+assign autoname_127_florian_sprdata = 0;
+assign autoname_127_florian_spslverr = 0;
 assign printf_tx = external_peri_group_uart_stx_list[1*(`UART_INDEX_FOR_UART_PRINTF+1)-1 -:1];
 assign external_peri_group_uart_srx_list[1*(`UART_INDEX_FOR_UART_PRINTF+1)-1 -:1] = printf_rx;
 assign spi_flash_sclk = external_peri_group_spi_sclk_list[1*(`SPI_INDEX_FOR_SPI_FLASH+1)-1 -:1];

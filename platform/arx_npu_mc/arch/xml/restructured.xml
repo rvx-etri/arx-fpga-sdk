@@ -234,11 +234,11 @@
       </parameter>
     </ip_instance>
     <ip_instance>
-      <name>autoname_103</name>
+      <name>autoname_122</name>
       <library_name>tick_generator</library_name>
     </ip_instance>
     <ip_instance>
-      <name>autoname_105</name>
+      <name>autoname_124</name>
       <library_name>real_clock</library_name>
     </ip_instance>
     <ip_instance>
@@ -329,7 +329,7 @@
         <name>no_name</name>
         <comm_type>local_memory_#</comm_type>
       </interface>
-      <name>autoname_106</name>
+      <name>autoname_125</name>
     </ip_instance>
     <ip_instance>
       <library_name>core_peri_group</library_name>
@@ -358,7 +358,7 @@
         <name>no_name</name>
         <comm_type>local_memory_#</comm_type>
       </interface>
-      <name>autoname_107</name>
+      <name>autoname_126</name>
     </ip_instance>
     <ip_instance>
       <library_name>core_peri_group</library_name>
@@ -387,7 +387,7 @@
         <name>no_name</name>
         <comm_type>local_memory_#</comm_type>
       </interface>
-      <name>autoname_108</name>
+      <name>autoname_127</name>
     </ip_instance>
     <ip_instance>
       <library_name>platform_controller</library_name>
@@ -928,7 +928,7 @@
         <id>NAME</id>
         <value type="text">&quot;common_peri_group_no_name&quot;</value>
       </parameter>
-      <library_name>sni_apb_asynch</library_name>
+      <library_name>sni_apbe_asynch</library_name>
       <domain>clk_system</domain>
     </ip_instance>
     <ip_instance>
@@ -1915,7 +1915,7 @@
       <port>output</port>
     </signal>
     <signal>
-      <name>autoname_104</name>
+      <name>autoname_123</name>
       <width type="dec">1</width>
       <comm_type>tick_timer</comm_type>
     </signal>
@@ -2139,11 +2139,11 @@
       <output>gclk_noc</output>
     </connect>
     <connect>
-      <input>autoname_103/tick_1us</input>
+      <input>autoname_122/tick_1us</input>
       <output>tick_1us</output>
     </connect>
     <connect>
-      <input>autoname_103/tick_62d5ms</input>
+      <input>autoname_122/tick_62d5ms</input>
       <output>tick_62d5ms</output>
     </connect>
     <connect>
@@ -2152,7 +2152,7 @@
     </connect>
     <connect>
       <input>tick_1us</input>
-      <output>autoname_104</output>
+      <output>autoname_123</output>
     </connect>
     <connect>
       <input>external_peri_group/spi_common_sclk</input>
@@ -2292,11 +2292,11 @@
     </connect>
     <connect>
       <input>rstnn_seqeunce[2]</input>
-      <output>autoname_103/rstnn</output>
+      <output>autoname_122/rstnn</output>
     </connect>
     <connect>
       <input>rstnn_seqeunce[2]</input>
-      <output>autoname_105/rstnn</output>
+      <output>autoname_124/rstnn</output>
     </connect>
     <connect>
       <input>rstnn_seqeunce[2]</input>
@@ -2308,15 +2308,15 @@
     </connect>
     <connect>
       <input>rstnn_seqeunce[3]</input>
-      <output>autoname_106/rstnn</output>
+      <output>autoname_125/rstnn</output>
     </connect>
     <connect>
       <input>rstnn_seqeunce[3]</input>
-      <output>autoname_107/rstnn</output>
+      <output>autoname_126/rstnn</output>
     </connect>
     <connect>
       <input>rstnn_seqeunce[3]</input>
-      <output>autoname_108/rstnn</output>
+      <output>autoname_127/rstnn</output>
     </connect>
     <connect>
       <input>rstnn_seqeunce[3]</input>
@@ -2416,11 +2416,11 @@
     </connect>
     <connect>
       <input>clk_system</input>
-      <output>autoname_103/clk</output>
+      <output>autoname_122/clk</output>
     </connect>
     <connect>
       <input>clk_system</input>
-      <output>autoname_105/clk</output>
+      <output>autoname_124/clk</output>
     </connect>
     <connect>
       <input>clk_system</input>
@@ -2432,15 +2432,15 @@
     </connect>
     <connect>
       <input>gclk_local_access</input>
-      <output>autoname_106/clk</output>
+      <output>autoname_125/clk</output>
     </connect>
     <connect>
       <input>gclk_local_access</input>
-      <output>autoname_107/clk</output>
+      <output>autoname_126/clk</output>
     </connect>
     <connect>
       <input>gclk_local_access</input>
-      <output>autoname_108/clk</output>
+      <output>autoname_127/clk</output>
     </connect>
     <connect>
       <input>gclk_system_debug</input>
@@ -2991,7 +2991,7 @@
       <output>platform_controller/pc(3)</output>
     </connect>
     <connect>
-      <input>autoname_103/tick_62d5ms</input>
+      <input>autoname_122/tick_62d5ms</input>
       <output>i_led/tick_62d5ms</output>
     </connect>
     <connect>
@@ -3016,15 +3016,15 @@
     </connect>
     <connect>
       <input>common_peri_group/lock_status_list</input>
-      <output>autoname_106/lock_status_list</output>
+      <output>autoname_125/lock_status_list</output>
     </connect>
     <connect>
       <input>common_peri_group/lock_status_list</input>
-      <output>autoname_107/lock_status_list</output>
+      <output>autoname_126/lock_status_list</output>
     </connect>
     <connect>
       <input>common_peri_group/lock_status_list</input>
-      <output>autoname_108/lock_status_list</output>
+      <output>autoname_127/lock_status_list</output>
     </connect>
     <connect>
       <input>common_peri_group/thread_status_list</input>
@@ -3032,18 +3032,18 @@
     </connect>
     <connect>
       <input>common_peri_group/thread_status_list</input>
-      <output>autoname_106/thread_status_list</output>
+      <output>autoname_125/thread_status_list</output>
     </connect>
     <connect>
       <input>common_peri_group/thread_status_list</input>
-      <output>autoname_107/thread_status_list</output>
+      <output>autoname_126/thread_status_list</output>
     </connect>
     <connect>
       <input>common_peri_group/thread_status_list</input>
-      <output>autoname_108/thread_status_list</output>
+      <output>autoname_127/thread_status_list</output>
     </connect>
     <connect>
-      <input>autoname_105/real_clock</input>
+      <input>autoname_124/real_clock</input>
       <output>common_peri_group/real_clock</output>
     </connect>
     <connect>
@@ -3052,43 +3052,43 @@
     </connect>
     <connect>
       <input>common_peri_group/global_tag_list</input>
-      <output>autoname_106/global_tag_list</output>
+      <output>autoname_125/global_tag_list</output>
     </connect>
     <connect>
       <input>common_peri_group/global_tag_list</input>
-      <output>autoname_107/global_tag_list</output>
+      <output>autoname_126/global_tag_list</output>
     </connect>
     <connect>
       <input>common_peri_group/global_tag_list</input>
-      <output>autoname_108/global_tag_list</output>
+      <output>autoname_127/global_tag_list</output>
     </connect>
     <connect>
       <input>common_peri_group/system_tick_config</input>
-      <output>autoname_103/tick_config</output>
+      <output>autoname_122/tick_config</output>
     </connect>
     <connect>
-      <input>autoname_103/tick_1us</input>
-      <output>autoname_105/tick_1us</output>
+      <input>autoname_122/tick_1us</input>
+      <output>autoname_124/tick_1us</output>
     </connect>
     <connect>
-      <input>autoname_103/tick_1us</input>
+      <input>autoname_122/tick_1us</input>
       <output>external_peri_group/tick_1us</output>
     </connect>
     <connect>
-      <input>autoname_104</input>
+      <input>autoname_123</input>
       <output>core_peri_group/tick_1us</output>
     </connect>
     <connect>
-      <input>autoname_104</input>
-      <output>autoname_106/tick_1us</output>
+      <input>autoname_123</input>
+      <output>autoname_125/tick_1us</output>
     </connect>
     <connect>
-      <input>autoname_104</input>
-      <output>autoname_107/tick_1us</output>
+      <input>autoname_123</input>
+      <output>autoname_126/tick_1us</output>
     </connect>
     <connect>
-      <input>autoname_104</input>
-      <output>autoname_108/tick_1us</output>
+      <input>autoname_123</input>
+      <output>autoname_127/tick_1us</output>
     </connect>
     <connect>
       <input>external_rstnn</input>
@@ -3111,15 +3111,15 @@
       <output>i_main_core/interrupt_vector</output>
     </connect>
     <connect>
-      <input>autoname_106/core_interrupt_vector</input>
+      <input>autoname_125/core_interrupt_vector</input>
       <output>i_sub_core_001/interrupt_vector</output>
     </connect>
     <connect>
-      <input>autoname_107/core_interrupt_vector</input>
+      <input>autoname_126/core_interrupt_vector</input>
       <output>i_sub_core_002/interrupt_vector</output>
     </connect>
     <connect>
-      <input>autoname_108/core_interrupt_vector</input>
+      <input>autoname_127/core_interrupt_vector</input>
       <output>i_sub_core_003/interrupt_vector</output>
     </connect>
     <connect>
@@ -3128,15 +3128,15 @@
     </connect>
     <connect>
       <input>i_mnim_i_sub_core_001_no_name/local_allows_holds</input>
-      <output>autoname_106/allows_holds</output>
+      <output>autoname_125/allows_holds</output>
     </connect>
     <connect>
       <input>i_mnim_i_sub_core_002_no_name/local_allows_holds</input>
-      <output>autoname_107/allows_holds</output>
+      <output>autoname_126/allows_holds</output>
     </connect>
     <connect>
       <input>i_mnim_i_sub_core_003_no_name/local_allows_holds</input>
-      <output>autoname_108/allows_holds</output>
+      <output>autoname_127/allows_holds</output>
     </connect>
     <connect>
       <input>i_mnim_i_main_core_no_name/local</input>
@@ -3144,15 +3144,15 @@
     </connect>
     <connect>
       <input>i_mnim_i_sub_core_001_no_name/local</input>
-      <output>autoname_106/no_name</output>
+      <output>autoname_125/no_name</output>
     </connect>
     <connect>
       <input>i_mnim_i_sub_core_002_no_name/local</input>
-      <output>autoname_107/no_name</output>
+      <output>autoname_126/no_name</output>
     </connect>
     <connect>
       <input>i_mnim_i_sub_core_003_no_name/local</input>
-      <output>autoname_108/no_name</output>
+      <output>autoname_127/no_name</output>
     </connect>
     <connect>
       <input>i_led/led</input>
@@ -3267,6 +3267,38 @@
       <output>`NOT_CONNECT</output>
     </connect>
     <connect>
+      <input>i_snim_external_peri_group_no_name/sptid</input>
+      <output>`NOT_CONNECT</output>
+    </connect>
+    <connect>
+      <input>i_snim_external_peri_group_no_name/spwstrb</input>
+      <output>`NOT_CONNECT</output>
+    </connect>
+    <connect>
+      <input>i_snim_platform_controller_no_name/sptid</input>
+      <output>`NOT_CONNECT</output>
+    </connect>
+    <connect>
+      <input>i_snim_platform_controller_no_name/spwstrb</input>
+      <output>`NOT_CONNECT</output>
+    </connect>
+    <connect>
+      <input>i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio/sptid</input>
+      <output>`NOT_CONNECT</output>
+    </connect>
+    <connect>
+      <input>i_snim_i_dca_matrix_conv00_control_mmiox1_interface_mmio/spwstrb</input>
+      <output>`NOT_CONNECT</output>
+    </connect>
+    <connect>
+      <input>i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio/sptid</input>
+      <output>`NOT_CONNECT</output>
+    </connect>
+    <connect>
+      <input>i_snim_i_dca_matrix_mac00_control_mmiox1_interface_mmio/spwstrb</input>
+      <output>`NOT_CONNECT</output>
+    </connect>
+    <connect>
       <input>`NOT_CONNECT</input>
       <output>default_slave/comm_disable</output>
     </connect>
@@ -3299,15 +3331,15 @@
       <output>`NOT_CONNECT</output>
     </connect>
     <connect>
-      <input>autoname_106/delay_notice</input>
+      <input>autoname_125/delay_notice</input>
       <output>`NOT_CONNECT</output>
     </connect>
     <connect>
-      <input>autoname_107/delay_notice</input>
+      <input>autoname_126/delay_notice</input>
       <output>`NOT_CONNECT</output>
     </connect>
     <connect>
-      <input>autoname_108/delay_notice</input>
+      <input>autoname_127/delay_notice</input>
       <output>`NOT_CONNECT</output>
     </connect>
     <connect>
@@ -3316,15 +3348,15 @@
     </connect>
     <connect>
       <input>`NOT_CONNECT</input>
-      <output>autoname_106/plic_interrupt</output>
+      <output>autoname_125/plic_interrupt</output>
     </connect>
     <connect>
       <input>`NOT_CONNECT</input>
-      <output>autoname_107/plic_interrupt</output>
+      <output>autoname_126/plic_interrupt</output>
     </connect>
     <connect>
       <input>`NOT_CONNECT</input>
-      <output>autoname_108/plic_interrupt</output>
+      <output>autoname_127/plic_interrupt</output>
     </connect>
     <connect>
       <input>platform_controller/global_rstpp</input>
@@ -3415,15 +3447,15 @@
       <output>`NOT_CONNECT</output>
     </connect>
     <connect>
-      <input>autoname_106/tcu</input>
+      <input>autoname_125/tcu</input>
       <output>`NOT_CONNECT</output>
     </connect>
     <connect>
-      <input>autoname_107/tcu</input>
+      <input>autoname_126/tcu</input>
       <output>`NOT_CONNECT</output>
     </connect>
     <connect>
-      <input>autoname_108/tcu</input>
+      <input>autoname_127/tcu</input>
       <output>`NOT_CONNECT</output>
     </connect>
     <connect>
@@ -3431,15 +3463,15 @@
       <output>`NOT_CONNECT</output>
     </connect>
     <connect>
-      <input>autoname_106/florian</input>
+      <input>autoname_125/florian</input>
       <output>`NOT_CONNECT</output>
     </connect>
     <connect>
-      <input>autoname_107/florian</input>
+      <input>autoname_126/florian</input>
       <output>`NOT_CONNECT</output>
     </connect>
     <connect>
-      <input>autoname_108/florian</input>
+      <input>autoname_127/florian</input>
       <output>`NOT_CONNECT</output>
     </connect>
     <connect>

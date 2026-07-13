@@ -80,11 +80,6 @@ ervp_hwtask_busy_fx_t i_dca_matrix_mac00_mult(ervp_mop_mapping_t *mop_mapping, c
   return dca_matrix_mult(mop_mapping, i_dca_matrix_mac00_info, ma_info, mb_info, mc_info, option_value);
 }
 
-ervp_hwtask_busy_fx_t i_dca_matrix_mac00_scalar_mult_fixed(ervp_mop_mapping_t *mop_mapping, const ErvpMatrixInfo *ma_info, int scalar_value, ErvpMatrixInfo *mc_info, unsigned int option_value)
-{
-  return dca_matrix_scalar_mult_fixed(mop_mapping, i_dca_matrix_mac00_info, ma_info, scalar_value, mc_info, option_value);
-}
-
 ////////////////////////////////////////////////////////////////////////////
 
 static ervp_blocked_matrix_info_t* blocked_info_mac;
@@ -131,7 +126,6 @@ void map_your_matrix_function(ervp_mop_mapping_t *mop_mapping)
   blocked_info_mac->subop_mapping->matrix_sub = i_dca_matrix_mac00_sub;
   blocked_info_mac->subop_mapping->matrix_ewmult = i_dca_matrix_mac00_ewmult;
   blocked_info_mac->subop_mapping->matrix_mult = i_dca_matrix_mac00_mult;
-  blocked_info_mac->subop_mapping->matrix_scalar_mult_fixed = i_dca_matrix_mac00_scalar_mult_fixed;
 
   mop_mapping->matrix_add = i_dca_matrix_mac00_add;
   mop_mapping->matrix_sub = i_dca_matrix_mac00_sub;

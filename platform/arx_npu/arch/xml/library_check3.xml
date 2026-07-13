@@ -343,6 +343,71 @@
     </signal>
   </def_interface>
   <def_interface>
+    <name>apbe</name>
+    <role>sender</role>
+    <def_parameter>
+      <name>bw_addr</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <def_parameter>
+      <name>bw_data</name>
+      <value type="dec">32</value>
+      <range type="text">32,64,128</range>
+    </def_parameter>
+    <signal>
+      <name>ptid</name>
+      <width type="text">`REQUIRED_BW_OF_SLAVE_TID</width>
+      <port>output</port>
+      <comm_type>not_used</comm_type>
+    </signal>
+    <signal>
+      <name>pwstrb</name>
+      <width type="text">bw_data/8</width>
+      <port>output</port>
+      <comm_type>not_used</comm_type>
+    </signal>
+    <signal>
+      <name>psel</name>
+      <width type="dec">1</width>
+      <port>output</port>
+    </signal>
+    <signal>
+      <name>penable</name>
+      <width type="dec">1</width>
+      <port>output</port>
+    </signal>
+    <signal>
+      <name>pwrite</name>
+      <width type="dec">1</width>
+      <port>output</port>
+    </signal>
+    <signal>
+      <name>paddr</name>
+      <width type="text">bw_addr</width>
+      <port>output</port>
+    </signal>
+    <signal>
+      <name>pwdata</name>
+      <width type="text">bw_data</width>
+      <port>output</port>
+    </signal>
+    <signal>
+      <name>pready</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>prdata</name>
+      <width type="text">bw_data</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>pslverr</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+  </def_interface>
+  <def_interface>
     <name>axi</name>
     <role>sender</role>
     <def_parameter>
@@ -894,6 +959,105 @@
     </signal>
   </def_interface>
   <def_interface>
+    <name>mlsci</name>
+    <role>sender</role>
+    <def_parameter>
+      <name>bw_axi_data</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <def_parameter>
+      <name>lsu_para</name>
+      <value type="dec">0</value>
+    </def_parameter>
+    <def_parameter>
+      <name>bw_lpi_burden</name>
+      <value type="dec">1</value>
+    </def_parameter>
+    <def_parameter>
+      <name>matrix_num_col</name>
+      <value type="dec">4</value>
+    </def_parameter>
+    <def_parameter>
+      <name>bw_tensor_scalar</name>
+      <value type="dec">33</value>
+    </def_parameter>
+    <signal>
+      <name>inst_wvalid</name>
+      <width type="dec">1</width>
+      <port>output</port>
+    </signal>
+    <signal>
+      <name>inst_wdata</name>
+      <width type="text">`BW_DCA_MATRIX_LSU_INST</width>
+      <port>output</port>
+    </signal>
+    <signal>
+      <name>inst_wready</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>inst_decode_finish</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>inst_execute_finish</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>inst_busy</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>cache_flush</name>
+      <width type="dec">1</width>
+      <port>output</port>
+    </signal>
+    <signal>
+      <name>load_tensor_row_wvalid</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>load_tensor_row_wlast</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>load_tensor_row_wdata</name>
+      <width type="text">bw_tensor_scalar*matrix_num_col</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>load_tensor_row_wready</name>
+      <width type="dec">1</width>
+      <port>output</port>
+    </signal>
+    <signal>
+      <name>store_tensor_row_rvalid</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>store_tensor_row_rlast</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>store_tensor_row_rready</name>
+      <width type="dec">1</width>
+      <port>output</port>
+    </signal>
+    <signal>
+      <name>store_tensor_row_rdata</name>
+      <width type="text">bw_tensor_scalar*matrix_num_col</width>
+      <port>output</port>
+    </signal>
+  </def_interface>
+  <def_interface>
     <name>mlsi</name>
     <role>sender</role>
     <def_parameter>
@@ -945,6 +1109,11 @@
       <name>inst_busy</name>
       <width type="dec">1</width>
       <port>input</port>
+    </signal>
+    <signal>
+      <name>cache_flush</name>
+      <width type="dec">1</width>
+      <port>output</port>
     </signal>
     <signal>
       <name>load_tensor_row_wvalid</name>
@@ -2030,6 +2199,10 @@
       <name>NUM_GLOBAL_TAG</name>
       <value type="dec">1</value>
     </def_parameter>
+    <def_parameter>
+      <name>BW_LOCK_STATUS</name>
+      <value type="dec">16</value>
+    </def_parameter>
     <signal>
       <name>clk</name>
       <width type="dec">1</width>
@@ -2043,7 +2216,7 @@
     </signal>
     <signal>
       <name>lock_status_list</name>
-      <width type="text">NUM_LOCK</width>
+      <width type="text">NUM_LOCK*BW_LOCK_STATUS</width>
       <port>output</port>
       <comm_type>lock_status_list</comm_type>
     </signal>
@@ -2090,7 +2263,7 @@
     </core>
     <interface>
       <name>no_name</name>
-      <library_name>apb</library_name>
+      <library_name>apbe</library_name>
       <hdl_prefix/>
       <role>receiver</role>
       <comm_type>memory:all</comm_type>
@@ -2107,6 +2280,109 @@
       </parameter>
       <sync>clk</sync>
       <init>rstnn</init>
+    </interface>
+  </dec_ip>
+  <dec_ip>
+    <name>Compress PU</name>
+    <hdl_name>ERVP_JPEG_ENCODER</hdl_name>
+    <def_parameter user_editable="False">
+      <name>BW_ADDR</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <def_parameter user_editable="False">
+      <name>BW_DATA</name>
+      <value type="dec">64</value>
+    </def_parameter>
+    <def_parameter user_editable="False">
+      <name>BW_AXI_TID</name>
+      <value type="dec">4</value>
+    </def_parameter>
+    <signal>
+      <name>clk</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>gclk_jpeg</comm_type>
+    </signal>
+    <signal>
+      <name>rstnn</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>clk_axi</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>clk_network</comm_type>
+    </signal>
+    <signal>
+      <name>rstnn_axi</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>rstnn_noc</comm_type>
+    </signal>
+    <signal>
+      <name>clk_ahb</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>clk_network</comm_type>
+    </signal>
+    <signal>
+      <name>rstnn_ahb</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>rstnn_noc</comm_type>
+    </signal>
+    <reset_property>
+      <id>rstnn</id>
+      <type>asynch</type>
+      <type>negative</type>
+      <group>2</group>
+    </reset_property>
+    <core>
+      <sync>clk</sync>
+      <init>rstnn</init>
+      <name>autoname_6</name>
+    </core>
+    <interface>
+      <name>master</name>
+      <library_name>axi</library_name>
+      <hdl_prefix/>
+      <role>sender</role>
+      <comm_type>memory:all</comm_type>
+      <parameter>
+        <id>bw_addr</id>
+        <value type="text">BW_ADDR</value>
+      </parameter>
+      <parameter>
+        <id>bw_data</id>
+        <value type="text">BW_DATA</value>
+      </parameter>
+      <parameter>
+        <id>bw_tid</id>
+        <value type="text">BW_AXI_TID</value>
+      </parameter>
+      <sync>clk_axi</sync>
+      <init>rstnn_axi</init>
+    </interface>
+    <interface>
+      <name>slave</name>
+      <library_name>ahbs</library_name>
+      <hdl_prefix/>
+      <role>receiver</role>
+      <comm_type>memory:all</comm_type>
+      <memorymap>
+        <size type="hex">0x1000</size>
+      </memorymap>
+      <parameter>
+        <id>bw_addr</id>
+        <value type="text">BW_ADDR</value>
+      </parameter>
+      <parameter>
+        <id>bw_data</id>
+        <value type="dec">32</value>
+      </parameter>
+      <sync>clk_ahb</sync>
+      <init>rstnn_ahb</init>
     </interface>
   </dec_ip>
   <dec_ip>
@@ -2131,6 +2407,10 @@
     <def_parameter>
       <name>NUM_GLOBAL_TAG</name>
       <value type="dec">1</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_LOCK_STATUS</name>
+      <value type="dec">16</value>
     </def_parameter>
     <signal>
       <name>clk</name>
@@ -2163,7 +2443,7 @@
     </signal>
     <signal>
       <name>lock_status_list</name>
-      <width type="text">NUM_LOCK</width>
+      <width type="text">NUM_LOCK*BW_LOCK_STATUS</width>
       <port>input</port>
       <comm_type>lock_status_list</comm_type>
     </signal>
@@ -2200,7 +2480,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_6</name>
+      <name>autoname_7</name>
     </core>
     <interface>
       <name>no_name</name>
@@ -2345,7 +2625,7 @@
     <core>
       <sync>clk_core</sync>
       <init>rstnn_core</init>
-      <name>autoname_7</name>
+      <name>autoname_8</name>
     </core>
     <interface>
       <name>control</name>
@@ -2565,7 +2845,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_8</name>
+      <name>autoname_9</name>
     </core>
     <interface>
       <name>control</name>
@@ -2799,7 +3079,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_9</name>
+      <name>autoname_10</name>
     </core>
     <interface>
       <name>control</name>
@@ -2964,8 +3244,214 @@
     <core>
       <sync>clk_core</sync>
       <init>rstnn_core</init>
-      <name>autoname_10</name>
+      <name>autoname_11</name>
     </core>
+  </dec_ip>
+  <dec_ip>
+    <name>dca_mru_mmiox_mlsu</name>
+    <hdl_name>DCA_MATRIX_REORDER_UNIT_MMIOX_MLSU</hdl_name>
+    <def_parameter>
+      <name>BW_ADDR</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <def_parameter>
+      <name>MI_BW_DATA</name>
+      <value type="dec">128</value>
+    </def_parameter>
+    <def_parameter>
+      <name>MO_BW_DATA</name>
+      <value type="dec">128</value>
+    </def_parameter>
+    <def_parameter>
+      <name>MATRIX_SIZE_PARA</name>
+      <value type="dec">16</value>
+    </def_parameter>
+    <def_parameter>
+      <name>TENSOR_PARA</name>
+      <value type="dec">0</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_CONFIG</name>
+      <value type="dec">1</value>
+      <virtual/>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_STATUS</name>
+      <value type="dec">32</value>
+      <virtual/>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_LOG</name>
+      <value type="dec">32</value>
+      <virtual/>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_INST</name>
+      <value type="dec">352</value>
+      <virtual/>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_INPUT</name>
+      <value type="dec">32</value>
+      <virtual/>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_OUTPUT</name>
+      <value type="dec">32</value>
+      <virtual/>
+    </def_parameter>
+    <def_parameter>
+      <name>CONFIG_DEFAULT_VALUE</name>
+      <value type="dec">0</value>
+      <virtual/>
+    </def_parameter>
+    <def_parameter>
+      <name>LOG_FIFO_DEPTH</name>
+      <value type="dec">0</value>
+      <virtual/>
+    </def_parameter>
+    <def_parameter>
+      <name>INST_FIFO_DEPTH</name>
+      <value type="dec">4</value>
+      <virtual/>
+    </def_parameter>
+    <def_parameter>
+      <name>INPUT_FIFO_DEPTH</name>
+      <value type="text">INST_FIFO_DEPTH</value>
+      <virtual/>
+    </def_parameter>
+    <def_parameter>
+      <name>OUTPUT_FIFO_DEPTH</name>
+      <value type="dec">0</value>
+      <virtual/>
+    </def_parameter>
+    <def_parameter>
+      <name>LSU_PARA</name>
+      <value type="dec">0</value>
+      <virtual/>
+    </def_parameter>
+    <signal>
+      <name>clk</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>clk_dca_core</comm_type>
+    </signal>
+    <signal>
+      <name>rstnn</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <reset_property>
+      <id>rstnn</id>
+      <type>asynch</type>
+      <type>negative</type>
+      <group>3</group>
+    </reset_property>
+    <core>
+      <sync>clk</sync>
+      <init>rstnn</init>
+      <name>autoname_12</name>
+    </core>
+    <interface>
+      <name>control</name>
+      <library_name>mmiox1</library_name>
+      <role>receiver</role>
+      <comm_type>memory:all</comm_type>
+      <parameter>
+        <id>bw_config</id>
+        <value type="text">BW_CONFIG</value>
+      </parameter>
+      <parameter>
+        <id>bw_status</id>
+        <value type="text">BW_STATUS</value>
+      </parameter>
+      <parameter>
+        <id>bw_log</id>
+        <value type="text">BW_LOG</value>
+      </parameter>
+      <parameter>
+        <id>bw_inst</id>
+        <value type="text">BW_INST</value>
+      </parameter>
+      <parameter>
+        <id>bw_input</id>
+        <value type="text">BW_INPUT</value>
+      </parameter>
+      <parameter>
+        <id>bw_output</id>
+        <value type="text">BW_OUTPUT</value>
+      </parameter>
+      <parameter>
+        <id>config_default_value</id>
+        <value type="text">CONFIG_DEFAULT_VALUE</value>
+      </parameter>
+      <parameter>
+        <id>log_fifo_depth</id>
+        <value type="text">LOG_FIFO_DEPTH</value>
+      </parameter>
+      <parameter>
+        <id>inst_fifo_depth</id>
+        <value type="text">INST_FIFO_DEPTH</value>
+      </parameter>
+      <parameter>
+        <id>input_fifo_depth</id>
+        <value type="text">INPUT_FIFO_DEPTH</value>
+      </parameter>
+      <parameter>
+        <id>output_fifo_depth</id>
+        <value type="text">OUTPUT_FIFO_DEPTH</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+    <interface>
+      <name>mi</name>
+      <library_name>mlsi</library_name>
+      <role>sender</role>
+      <comm_type>memory:data_c</comm_type>
+      <parameter>
+        <id>bw_axi_data</id>
+        <value type="text">MI_BW_DATA</value>
+      </parameter>
+      <parameter>
+        <id>lsu_para</id>
+        <value type="text">MAKE_LSU_READ_ONLY(LSU_PARA)</value>
+      </parameter>
+      <parameter>
+        <id>bw_tensor_scalar</id>
+        <value type="text">TENSOR_PARA</value>
+      </parameter>
+      <parameter>
+        <id>matrix_num_col</id>
+        <value type="text">MATRIX_SIZE_PARA</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+    <interface>
+      <name>mo</name>
+      <library_name>mlsi</library_name>
+      <role>sender</role>
+      <comm_type>memory:data_c</comm_type>
+      <parameter>
+        <id>bw_axi_data</id>
+        <value type="text">MO_BW_DATA</value>
+      </parameter>
+      <parameter>
+        <id>lsu_para</id>
+        <value type="text">MAKE_LSU_WRITE_ONLY(LSU_PARA)</value>
+      </parameter>
+      <parameter>
+        <id>bw_tensor_scalar</id>
+        <value type="text">TENSOR_PARA</value>
+      </parameter>
+      <parameter>
+        <id>matrix_num_col</id>
+        <value type="text">MATRIX_SIZE_PARA</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
   </dec_ip>
   <dec_ip>
     <name>dca_neugemm_mmiox_mlsu</name>
@@ -3074,7 +3560,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_11</name>
+      <name>autoname_13</name>
     </core>
     <interface>
       <name>control</name>
@@ -3236,7 +3722,7 @@
     <core>
       <sync>clk_core</sync>
       <init>rstnn_core</init>
-      <name>autoname_12</name>
+      <name>autoname_14</name>
     </core>
   </dec_ip>
   <dec_ip>
@@ -3313,7 +3799,7 @@
     <core>
       <sync>clk_debug</sync>
       <init>rstnn_debug</init>
-      <name>autoname_13</name>
+      <name>autoname_15</name>
     </core>
     <interface>
       <name>ni</name>
@@ -3426,7 +3912,7 @@
     <core>
       <sync>clk_axi</sync>
       <init>rstnn_axi</init>
-      <name>autoname_14</name>
+      <name>autoname_16</name>
     </core>
     <interface>
       <name>master</name>
@@ -3531,7 +4017,7 @@
     <core>
       <sync>clk_axi</sync>
       <init>rstnn_axi</init>
-      <name>autoname_15</name>
+      <name>autoname_17</name>
     </core>
     <interface>
       <name>read</name>
@@ -3918,7 +4404,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_16</name>
+      <name>autoname_18</name>
     </core>
     <interface>
       <name>no_name</name>
@@ -4014,6 +4500,14 @@
       <name>BW_AXI_TID</name>
       <value type="dec">16</value>
     </def_parameter>
+    <def_parameter>
+      <name>CAPACITY</name>
+      <value type="hex">0x40000000</value>
+    </def_parameter>
+    <def_parameter>
+      <name>MEMORYMAP_SIZE</name>
+      <value type="text">CAPACITY</value>
+    </def_parameter>
     <imp_dependent/>
     <signal>
       <name>clk_ref</name>
@@ -4059,7 +4553,7 @@
     <core>
       <sync>clk_sys</sync>
       <init>rstnn_sys</init>
-      <name>autoname_17</name>
+      <name>autoname_19</name>
     </core>
     <interface>
       <name>no_name</name>
@@ -4068,7 +4562,7 @@
       <role>receiver</role>
       <comm_type>memory:data_c</comm_type>
       <memorymap>
-        <size type="hex">0x40000000</size>
+        <size type="text">MEMORYMAP_SIZE</size>
       </memorymap>
       <parameter>
         <id>bw_addr</id>
@@ -4122,7 +4616,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_18</name>
+      <name>autoname_20</name>
     </core>
     <interface>
       <name>control</name>
@@ -4132,6 +4626,231 @@
       <comm_type>florian_#</comm_type>
       <memorymap>
         <size type="hex">0x1000</size>
+      </memorymap>
+      <parameter>
+        <id>bw_addr</id>
+        <value type="text">BW_ADDR</value>
+      </parameter>
+      <parameter>
+        <id>bw_data</id>
+        <value type="text">BW_DATA</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+  </dec_ip>
+  <dec_ip>
+    <name>Florian PU</name>
+    <hdl_name>RVC_ROCKET_BIG</hdl_name>
+    <unique>cpu_main</unique>
+    <essential>cpu_main</essential>
+    <def_parameter user_editable="False">
+      <name>ENABLE_INTERRUPTS</name>
+      <value type="dec">1</value>
+    </def_parameter>
+    <def_parameter user_editable="False">
+      <name>NUM_INTERRUPTS</name>
+      <value type="dec">1</value>
+    </def_parameter>
+    <cpu_info>
+      <define>
+        <name>include_cache</name>
+        <value type="bool">True</value>
+      </define>
+      <define>
+        <name>cache_line_size</name>
+        <value type="dec">64</value>
+      </define>
+    </cpu_info>
+    <signal>
+      <name>clk</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>#</comm_type>
+    </signal>
+    <signal>
+      <name>rstnn</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>interrupt_vector</name>
+      <width type="text">NUM_INTERRUPTS</width>
+      <port>input</port>
+      <comm_type>core_interrupt_vector_#</comm_type>
+    </signal>
+    <signal>
+      <name>interrupt_out</name>
+      <width type="dec">1</width>
+      <port>output</port>
+      <comm_type>core_interrupt_group</comm_type>
+    </signal>
+    <reset_property>
+      <id>rstnn</id>
+      <type>asynch</type>
+      <type>negative</type>
+      <group>4</group>
+    </reset_property>
+    <core>
+      <sync>clk</sync>
+      <init>rstnn</init>
+      <name>autoname_21</name>
+    </core>
+    <interface>
+      <name>no_name</name>
+      <hdl_prefix/>
+      <library_name>axi</library_name>
+      <role>sender</role>
+      <comm_type>memory:all</comm_type>
+      <parameter>
+        <id>bw_addr</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_data</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_tid</id>
+        <value type="dec">4</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+    <interface>
+      <name>pc</name>
+      <library_name>pc</library_name>
+      <hdl_prefix/>
+      <role>sender</role>
+      <comm_type>pc</comm_type>
+      <sync>None</sync>
+      <init>None</init>
+    </interface>
+  </dec_ip>
+  <dec_ip>
+    <name>fuse_box</name>
+    <hdl_name>ERVP_FUSE_BOX</hdl_name>
+    <def_parameter>
+      <name>BW_ADDR</name>
+      <value type="dec">1</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_DATA</name>
+      <value type="dec">1</value>
+    </def_parameter>
+    <def_parameter>
+      <name>NUM_CORE</name>
+      <value type="dec">1</value>
+    </def_parameter>
+    <def_parameter>
+      <name>NUM_CLK_PREDEFINED</name>
+      <value type="dec">1</value>
+    </def_parameter>
+    <def_parameter>
+      <name>NUM_CLK_USER</name>
+      <value type="dec">1</value>
+    </def_parameter>
+    <signal>
+      <name>clk</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>clk_system</comm_type>
+    </signal>
+    <signal>
+      <name>global_rstnn</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>global_rstnn</comm_type>
+    </signal>
+    <signal>
+      <name>rstnn</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>core_clk_list</name>
+      <width type="text">NUM_CORE</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>core_gclk_list</name>
+      <width type="text">NUM_CORE</width>
+      <port>output</port>
+    </signal>
+    <signal>
+      <name>core_comm_disable_list</name>
+      <width type="text">NUM_CORE</width>
+      <port>output</port>
+    </signal>
+    <signal>
+      <name>predefined_clk_list</name>
+      <width type="text">NUM_CLK_PREDEFINED</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>predefined_gclk_list</name>
+      <width type="text">NUM_CLK_PREDEFINED</width>
+      <port>output</port>
+    </signal>
+    <signal>
+      <name>predefined_comm_disable_list</name>
+      <width type="text">NUM_CLK_PREDEFINED</width>
+      <port>output</port>
+    </signal>
+    <signal>
+      <name>user_clk_list</name>
+      <width type="text">NUM_CLK_USER</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>user_gclk_list</name>
+      <width type="text">NUM_CLK_USER</width>
+      <port>output</port>
+    </signal>
+    <signal>
+      <name>user_comm_disable_list</name>
+      <width type="text">NUM_CLK_USER</width>
+      <port>output</port>
+    </signal>
+    <signal>
+      <name>core_interrupt</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>core_interrupt_group</comm_type>
+      <array type="text">NUM_CORE</array>
+    </signal>
+    <signal>
+      <name>delay_notice</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>delay_notice_group</comm_type>
+      <array type="text">NUM_CORE</array>
+    </signal>
+    <signal>
+      <name>wakeup_from_signal</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <user_dependent/>
+    </signal>
+    <reset_property>
+      <id>rstnn</id>
+      <type>asynch</type>
+      <type>negative</type>
+      <group>0</group>
+    </reset_property>
+    <core>
+      <sync>clk</sync>
+      <init>rstnn</init>
+      <name>autoname_22</name>
+    </core>
+    <interface>
+      <name>control</name>
+      <library_name>apb</library_name>
+      <hdl_prefix/>
+      <role>receiver</role>
+      <comm_type>memory:all</comm_type>
+      <memorymap>
+        <size type="hex">0x100</size>
       </memorymap>
       <parameter>
         <id>bw_addr</id>
@@ -4201,6 +4920,132 @@
       </parameter>
       <role>sender</role>
       <comm_type>special</comm_type>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+  </dec_ip>
+  <dec_ip>
+    <name>hbc1_rx</name>
+    <hdl_name>ERVP_HBC1_RX</hdl_name>
+    <def_parameter>
+      <name>BW_ADDR</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_DATA</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <signal>
+      <name>clk</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>gclk_hbc1_rx</comm_type>
+    </signal>
+    <signal>
+      <name>rstnn</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>hbc1_rx_data</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>external</comm_type>
+    </signal>
+    <signal>
+      <name>interrupt_hbc1_rx</name>
+      <width type="dec">1</width>
+      <port>output</port>
+      <comm_type>hbc1_rx_interrupts</comm_type>
+    </signal>
+    <reset_property>
+      <id>rstnn</id>
+      <type>asynch</type>
+      <type>negative</type>
+      <group>2</group>
+    </reset_property>
+    <core>
+      <sync>clk</sync>
+      <init>rstnn</init>
+      <name>autoname_23</name>
+    </core>
+    <interface>
+      <name>no_name</name>
+      <hdl_prefix/>
+      <library_name>apb</library_name>
+      <role>receiver</role>
+      <comm_type>memory:all</comm_type>
+      <memorymap>
+        <size type="text">2**8</size>
+      </memorymap>
+      <parameter>
+        <id>bw_addr</id>
+        <value type="text">BW_ADDR</value>
+      </parameter>
+      <parameter>
+        <id>bw_data</id>
+        <value type="text">BW_DATA</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+  </dec_ip>
+  <dec_ip>
+    <name>hbc1_tx</name>
+    <hdl_name>ERVP_HBC1_TX</hdl_name>
+    <def_parameter>
+      <name>BW_ADDR</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_DATA</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <signal>
+      <name>clk</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>gclk_hbc1_tx</comm_type>
+    </signal>
+    <signal>
+      <name>rstnn</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>hbc1_tx_data</name>
+      <width type="dec">1</width>
+      <port>output</port>
+      <comm_type>external</comm_type>
+    </signal>
+    <reset_property>
+      <id>rstnn</id>
+      <type>asynch</type>
+      <type>negative</type>
+      <group>2</group>
+    </reset_property>
+    <core>
+      <sync>clk</sync>
+      <init>rstnn</init>
+      <name>autoname_24</name>
+    </core>
+    <interface>
+      <name>no_name</name>
+      <hdl_prefix/>
+      <library_name>apb</library_name>
+      <role>receiver</role>
+      <comm_type>memory:all</comm_type>
+      <memorymap>
+        <size type="text">2**8</size>
+      </memorymap>
+      <parameter>
+        <id>bw_addr</id>
+        <value type="text">BW_ADDR</value>
+      </parameter>
+      <parameter>
+        <id>bw_data</id>
+        <value type="text">BW_DATA</value>
+      </parameter>
       <sync>clk</sync>
       <init>rstnn</init>
     </interface>
@@ -4290,7 +5135,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_19</name>
+      <name>autoname_25</name>
     </core>
     <interface>
       <name>slave</name>
@@ -4489,7 +5334,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_20</name>
+      <name>autoname_26</name>
     </core>
     <interface>
       <name>master</name>
@@ -4592,7 +5437,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_21</name>
+      <name>autoname_27</name>
     </core>
     <interface>
       <name>master</name>
@@ -4716,11 +5561,100 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_22</name>
+      <name>autoname_28</name>
     </core>
     <interface>
       <name>ip_part</name>
       <library_name>mlsi</library_name>
+      <hdl_prefix/>
+      <role>receiver</role>
+      <comm_type>special</comm_type>
+      <parameter>
+        <id>bw_axi_data</id>
+        <value type="text">BW_AXI_DATA</value>
+      </parameter>
+      <parameter>
+        <id>lsu_para</id>
+        <value type="text">LSU_PARA</value>
+      </parameter>
+      <parameter>
+        <id>bw_tensor_scalar</id>
+        <value type="text">BW_TENSOR_SCALAR</value>
+      </parameter>
+      <parameter>
+        <id>matrix_num_col</id>
+        <value type="text">MATRIX_NUM_COL</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+    <interface>
+      <name>noc_part</name>
+      <library_name>xmi</library_name>
+      <hdl_prefix/>
+      <role>sender</role>
+      <comm_type>special</comm_type>
+      <parameter>
+        <id>bw_addr</id>
+        <value type="text">BW_AXI_ADDR</value>
+      </parameter>
+      <parameter>
+        <id>bw_data</id>
+        <value type="text">BW_AXI_DATA</value>
+      </parameter>
+      <parameter>
+        <id>has_burden</id>
+        <value type="dec">1</value>
+      </parameter>
+      <parameter>
+        <id>bw_burden</id>
+        <value type="dec">1</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+  </dec_ip>
+  <dec_ip>
+    <name>matrix_lsuc</name>
+    <hdl_name>ERVP_MATRIX_LSU_CACHE</hdl_name>
+    <def_parameter>
+      <name>BW_AXI_ADDR</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_AXI_DATA</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <def_parameter>
+      <name>LSU_PARA</name>
+      <value type="dec">0</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_TENSOR_SCALAR</name>
+      <value type="dec">33</value>
+    </def_parameter>
+    <def_parameter>
+      <name>MATRIX_NUM_COL</name>
+      <value type="dec">4</value>
+    </def_parameter>
+    <signal>
+      <name>clk</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>rstnn</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <core>
+      <sync>clk</sync>
+      <init>rstnn</init>
+      <name>autoname_29</name>
+    </core>
+    <interface>
+      <name>ip_part</name>
+      <library_name>mlsci</library_name>
       <hdl_prefix/>
       <role>receiver</role>
       <comm_type>special</comm_type>
@@ -4806,7 +5740,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_23</name>
+      <name>autoname_30</name>
     </core>
     <interface>
       <name>no_name</name>
@@ -4919,7 +5853,7 @@
     <core>
       <sync>clk_mmio</sync>
       <init>rstnn_mmio</init>
-      <name>autoname_24</name>
+      <name>autoname_31</name>
     </core>
     <interface>
       <name>mmio</name>
@@ -5060,7 +5994,7 @@
     <core>
       <sync>clk_network</sync>
       <init>rstnn_network</init>
-      <name>autoname_25</name>
+      <name>autoname_32</name>
     </core>
     <interface>
       <name>ipif</name>
@@ -5156,7 +6090,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_26</name>
+      <name>autoname_33</name>
     </core>
     <interface>
       <name>ipif</name>
@@ -5284,7 +6218,7 @@
     <core>
       <sync>clk_network</sync>
       <init>rstnn_network</init>
-      <name>autoname_27</name>
+      <name>autoname_34</name>
     </core>
     <interface>
       <name>ipif</name>
@@ -5417,7 +6351,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_28</name>
+      <name>autoname_35</name>
     </core>
     <interface>
       <name>ipif</name>
@@ -5548,7 +6482,7 @@
     <core>
       <sync>clk_network</sync>
       <init>rstnn_network</init>
-      <name>autoname_29</name>
+      <name>autoname_36</name>
     </core>
     <interface>
       <name>ipif</name>
@@ -5644,7 +6578,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_30</name>
+      <name>autoname_37</name>
     </core>
     <interface>
       <name>ipif</name>
@@ -5776,7 +6710,7 @@
     <core>
       <sync>clk_network</sync>
       <init>rstnn_network</init>
-      <name>autoname_31</name>
+      <name>autoname_38</name>
     </core>
     <interface>
       <name>ipif</name>
@@ -5913,7 +6847,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_32</name>
+      <name>autoname_39</name>
     </core>
     <interface>
       <name>ipif</name>
@@ -6052,7 +6986,7 @@
     <core>
       <sync>clk_network</sync>
       <init>rstnn_network</init>
-      <name>autoname_33</name>
+      <name>autoname_40</name>
     </core>
     <interface>
       <name>ipif</name>
@@ -6164,7 +7098,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_34</name>
+      <name>autoname_41</name>
     </core>
     <interface>
       <name>ipif</name>
@@ -6291,7 +7225,7 @@
     <core>
       <sync>clk_network</sync>
       <init>rstnn_network</init>
-      <name>autoname_35</name>
+      <name>autoname_42</name>
     </core>
     <interface>
       <name>ipif</name>
@@ -6403,7 +7337,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_36</name>
+      <name>autoname_43</name>
     </core>
     <interface>
       <name>ipif</name>
@@ -6454,6 +7388,474 @@
       <comm_type>supervision</comm_type>
       <sync>None</sync>
       <init>None</init>
+    </interface>
+  </dec_ip>
+  <dec_ip>
+    <name>offchip_mram_opt_xmi</name>
+    <hdl_name>ERVP_OFFCHIP_MRAM_OPT_XMI</hdl_name>
+    <def_parameter>
+      <name>BW_ADDR</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_DATA</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_LPI_BURDEN</name>
+      <value type="text">`REQUIRED_BW_OF_SLAVE_TID</value>
+    </def_parameter>
+    <def_parameter>
+      <name>CELL_SIZE</name>
+      <value type="text">CAPACITY</value>
+    </def_parameter>
+    <def_parameter>
+      <name>CELL_WIDTH</name>
+      <value type="text">BW_DATA</value>
+    </def_parameter>
+    <def_parameter>
+      <name>CLK_HZ</name>
+      <value type="dec">0</value>
+    </def_parameter>
+    <def_parameter>
+      <name>CAPACITY</name>
+      <value type="hex">0x00800000</value>
+    </def_parameter>
+    <def_parameter>
+      <name>MEMORYMAP_SIZE</name>
+      <value type="text">CAPACITY</value>
+    </def_parameter>
+    <imp_dependent/>
+    <signal>
+      <name>clk</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>clk_offchip_mram</comm_type>
+    </signal>
+    <signal>
+      <name>rstnn</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>EXTMR_E_N</name>
+      <width type="dec">1</width>
+      <port>output</port>
+      <comm_type>external</comm_type>
+    </signal>
+    <signal>
+      <name>EXTMR_W_N</name>
+      <width type="dec">1</width>
+      <port>output</port>
+      <comm_type>external</comm_type>
+    </signal>
+    <signal>
+      <name>EXTMR_G_N</name>
+      <width type="dec">1</width>
+      <port>output</port>
+      <comm_type>external</comm_type>
+    </signal>
+    <signal>
+      <name>EXTMR_BE_N</name>
+      <width type="dec">4</width>
+      <port>output</port>
+      <comm_type>external</comm_type>
+    </signal>
+    <signal>
+      <name>EXTMR_A</name>
+      <width type="dec">21</width>
+      <port>output</port>
+      <comm_type>external</comm_type>
+    </signal>
+    <signal>
+      <name>EXTMR_LS_OE_P</name>
+      <width type="dec">1</width>
+      <port>output</port>
+      <comm_type>external</comm_type>
+    </signal>
+    <signal>
+      <name>EXTMR_LS_CE_N</name>
+      <width type="dec">1</width>
+      <port>output</port>
+      <comm_type>external</comm_type>
+    </signal>
+    <reset_property>
+      <id>rstnn</id>
+      <type>asynch</type>
+      <type>negative</type>
+      <group>1</group>
+    </reset_property>
+    <core>
+      <sync>clk</sync>
+      <init>rstnn</init>
+      <name>autoname_44</name>
+    </core>
+    <interface>
+      <name>control</name>
+      <library_name>mmiox1</library_name>
+      <role>receiver</role>
+      <comm_type>memory:all</comm_type>
+      <parameter>
+        <id>bw_config</id>
+        <value type="dec">16</value>
+      </parameter>
+      <parameter>
+        <id>bw_status</id>
+        <value type="dec">1</value>
+      </parameter>
+      <parameter>
+        <id>bw_log</id>
+        <value type="dec">1</value>
+      </parameter>
+      <parameter>
+        <id>bw_inst</id>
+        <value type="dec">64</value>
+      </parameter>
+      <parameter>
+        <id>bw_input</id>
+        <value type="dec">1</value>
+      </parameter>
+      <parameter>
+        <id>bw_output</id>
+        <value type="dec">64</value>
+      </parameter>
+      <parameter>
+        <id>config_default_value</id>
+        <value type="dec">32768</value>
+      </parameter>
+      <parameter>
+        <id>log_fifo_depth</id>
+        <value type="dec">0</value>
+      </parameter>
+      <parameter>
+        <id>inst_fifo_depth</id>
+        <value type="dec">4</value>
+      </parameter>
+      <parameter>
+        <id>input_fifo_depth</id>
+        <value type="dec">0</value>
+      </parameter>
+      <parameter>
+        <id>output_fifo_depth</id>
+        <value type="dec">2</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+    <interface>
+      <name>no_name</name>
+      <library_name>xmi</library_name>
+      <hdl_prefix/>
+      <role>receiver</role>
+      <comm_type>memory:data_c</comm_type>
+      <memorymap>
+        <size type="text">MEMORYMAP_SIZE</size>
+      </memorymap>
+      <parameter>
+        <id>bw_addr</id>
+        <value type="text">BW_ADDR</value>
+      </parameter>
+      <parameter>
+        <id>bw_data</id>
+        <value type="text">BW_DATA</value>
+      </parameter>
+      <parameter>
+        <id>has_burden</id>
+        <value type="dec">1</value>
+      </parameter>
+      <parameter>
+        <id>bw_burden</id>
+        <value type="text">BW_LPI_BURDEN</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+    <interface>
+      <name>EXTMR_DQ</name>
+      <library_name>tristate_od</library_name>
+      <role>sender</role>
+      <comm_type>external</comm_type>
+      <parameter>
+        <id>bw_data</id>
+        <value type="dec">32</value>
+      </parameter>
+      <sync>None</sync>
+      <init>None</init>
+      <tristate_info>
+        <id/>
+        <library_name>tristate_od</library_name>
+        <parameter>
+          <id>bw_data</id>
+          <value type="dec">32</value>
+        </parameter>
+      </tristate_info>
+    </interface>
+  </dec_ip>
+  <dec_ip>
+    <name>offchip_mram_xmi</name>
+    <hdl_name>ERVP_OFFCHIP_MRAM_XMI</hdl_name>
+    <def_parameter>
+      <name>BW_ADDR</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_DATA</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_LPI_BURDEN</name>
+      <value type="text">`REQUIRED_BW_OF_SLAVE_TID</value>
+    </def_parameter>
+    <def_parameter>
+      <name>CELL_SIZE</name>
+      <value type="text">CAPACITY</value>
+    </def_parameter>
+    <def_parameter>
+      <name>CELL_WIDTH</name>
+      <value type="text">BW_DATA</value>
+    </def_parameter>
+    <def_parameter>
+      <name>CLK_HZ</name>
+      <value type="dec">0</value>
+    </def_parameter>
+    <def_parameter>
+      <name>CAPACITY</name>
+      <value type="hex">0x00800000</value>
+    </def_parameter>
+    <def_parameter>
+      <name>MEMORYMAP_SIZE</name>
+      <value type="text">CAPACITY</value>
+    </def_parameter>
+    <imp_dependent/>
+    <signal>
+      <name>clk</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>clk_offchip_mram</comm_type>
+    </signal>
+    <signal>
+      <name>rstnn</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>EXTMR_E_N</name>
+      <width type="dec">1</width>
+      <port>output</port>
+      <comm_type>external</comm_type>
+    </signal>
+    <signal>
+      <name>EXTMR_W_N</name>
+      <width type="dec">1</width>
+      <port>output</port>
+      <comm_type>external</comm_type>
+    </signal>
+    <signal>
+      <name>EXTMR_G_N</name>
+      <width type="dec">1</width>
+      <port>output</port>
+      <comm_type>external</comm_type>
+    </signal>
+    <signal>
+      <name>EXTMR_BE_N</name>
+      <width type="dec">4</width>
+      <port>output</port>
+      <comm_type>external</comm_type>
+    </signal>
+    <signal>
+      <name>EXTMR_A</name>
+      <width type="dec">21</width>
+      <port>output</port>
+      <comm_type>external</comm_type>
+    </signal>
+    <signal>
+      <name>EXTMR_LS_OE_P</name>
+      <width type="dec">1</width>
+      <port>output</port>
+      <comm_type>external</comm_type>
+    </signal>
+    <signal>
+      <name>EXTMR_LS_CE_N</name>
+      <width type="dec">1</width>
+      <port>output</port>
+      <comm_type>external</comm_type>
+    </signal>
+    <reset_property>
+      <id>rstnn</id>
+      <type>asynch</type>
+      <type>negative</type>
+      <group>1</group>
+    </reset_property>
+    <core>
+      <sync>clk</sync>
+      <init>rstnn</init>
+      <name>autoname_45</name>
+    </core>
+    <interface>
+      <name>control</name>
+      <library_name>mmiox1</library_name>
+      <role>receiver</role>
+      <comm_type>memory:all</comm_type>
+      <parameter>
+        <id>bw_config</id>
+        <value type="dec">16</value>
+      </parameter>
+      <parameter>
+        <id>bw_status</id>
+        <value type="dec">1</value>
+      </parameter>
+      <parameter>
+        <id>bw_log</id>
+        <value type="dec">1</value>
+      </parameter>
+      <parameter>
+        <id>bw_inst</id>
+        <value type="dec">64</value>
+      </parameter>
+      <parameter>
+        <id>bw_input</id>
+        <value type="dec">1</value>
+      </parameter>
+      <parameter>
+        <id>bw_output</id>
+        <value type="dec">64</value>
+      </parameter>
+      <parameter>
+        <id>config_default_value</id>
+        <value type="dec">32768</value>
+      </parameter>
+      <parameter>
+        <id>log_fifo_depth</id>
+        <value type="dec">0</value>
+      </parameter>
+      <parameter>
+        <id>inst_fifo_depth</id>
+        <value type="dec">4</value>
+      </parameter>
+      <parameter>
+        <id>input_fifo_depth</id>
+        <value type="dec">0</value>
+      </parameter>
+      <parameter>
+        <id>output_fifo_depth</id>
+        <value type="dec">2</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+    <interface>
+      <name>no_name</name>
+      <library_name>xmi</library_name>
+      <hdl_prefix/>
+      <role>receiver</role>
+      <comm_type>memory:data_c</comm_type>
+      <memorymap>
+        <size type="text">MEMORYMAP_SIZE</size>
+      </memorymap>
+      <parameter>
+        <id>bw_addr</id>
+        <value type="text">BW_ADDR</value>
+      </parameter>
+      <parameter>
+        <id>bw_data</id>
+        <value type="text">BW_DATA</value>
+      </parameter>
+      <parameter>
+        <id>has_burden</id>
+        <value type="dec">1</value>
+      </parameter>
+      <parameter>
+        <id>bw_burden</id>
+        <value type="text">BW_LPI_BURDEN</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+    <interface>
+      <name>EXTMR_DQ</name>
+      <library_name>tristate_od</library_name>
+      <role>sender</role>
+      <comm_type>external</comm_type>
+      <parameter>
+        <id>bw_data</id>
+        <value type="dec">32</value>
+      </parameter>
+      <sync>None</sync>
+      <init>None</init>
+      <tristate_info>
+        <id/>
+        <library_name>tristate_od</library_name>
+        <parameter>
+          <id>bw_data</id>
+          <value type="dec">32</value>
+        </parameter>
+      </tristate_info>
+    </interface>
+  </dec_ip>
+  <dec_ip>
+    <name>pact</name>
+    <type>cpu_paco</type>
+    <hdl_name>PACT</hdl_name>
+    <def_parameter>
+      <name>BW_ADDR</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_CONTROL_DATA</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <signal>
+      <name>clk_pact</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>gclk_pact</comm_type>
+    </signal>
+    <signal>
+      <name>rstnn_pact</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>clk_apb</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>gclk_system</comm_type>
+    </signal>
+    <signal>
+      <name>rstnn_apb</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>rstnn_noc</comm_type>
+    </signal>
+    <reset_property>
+      <id>rstnn_pact</id>
+      <type>asynch</type>
+      <type>negative</type>
+      <group>3</group>
+    </reset_property>
+    <core>
+      <sync>clk_pact</sync>
+      <init>rstnn_pact</init>
+      <name>autoname_46</name>
+    </core>
+    <interface>
+      <name>control</name>
+      <library_name>apb</library_name>
+      <role>receiver</role>
+      <comm_type>memory:all</comm_type>
+      <memorymap>
+        <size type="hex">0x10000</size>
+      </memorymap>
+      <parameter>
+        <id>bw_addr</id>
+        <value type="text">BW_ADDR</value>
+      </parameter>
+      <parameter>
+        <id>bw_data</id>
+        <value type="text">BW_CONTROL_DATA</value>
+      </parameter>
+      <sync>clk_apb</sync>
+      <init>rstnn_apb</init>
     </interface>
   </dec_ip>
   <dec_ip>
@@ -6551,7 +7953,7 @@
     <core>
       <sync>clk</sync>
       <init>external_rstnn</init>
-      <name>autoname_37</name>
+      <name>autoname_47</name>
     </core>
     <interface>
       <name>master</name>
@@ -6725,7 +8127,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_38</name>
+      <name>autoname_48</name>
     </core>
     <interface>
       <name>no_name</name>
@@ -6884,7 +8286,7 @@
     <core>
       <sync>clk_axi</sync>
       <init>rstnn_axi</init>
-      <name>autoname_39</name>
+      <name>autoname_49</name>
     </core>
     <interface>
       <name>master</name>
@@ -6975,7 +8377,7 @@
     <core>
       <sync>clk_axi</sync>
       <init>rstnn_axi</init>
-      <name>autoname_40</name>
+      <name>autoname_50</name>
     </core>
     <interface>
       <name>master</name>
@@ -7054,7 +8456,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_41</name>
+      <name>autoname_51</name>
     </core>
   </dec_ip>
   <dec_ip>
@@ -7097,7 +8499,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_42</name>
+      <name>autoname_52</name>
     </core>
     <interface>
       <name>no_name</name>
@@ -7160,7 +8562,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_43</name>
+      <name>autoname_53</name>
     </core>
     <interface>
       <name>ni_slave</name>
@@ -7197,6 +8599,242 @@
       <sync>clk</sync>
       <init>rstnn</init>
       <array type="text">NUM_SLAVE</array>
+    </interface>
+  </dec_ip>
+  <dec_ip>
+    <type>cpu_sub</type>
+    <name>rvc_biriscv_sub</name>
+    <hdl_name>RVC_BIRISCV</hdl_name>
+    <unique>cpu_main</unique>
+    <essential>cpu_main</essential>
+    <def_parameter user_editable="False">
+      <name>RESET_VECTOR</name>
+      <value type="dec">0</value>
+    </def_parameter>
+    <def_parameter user_editable="False">
+      <name>ENABLE_EXCEPTIONS</name>
+      <value type="dec">1</value>
+    </def_parameter>
+    <def_parameter user_editable="False">
+      <name>ENABLE_INTERRUPTS</name>
+      <value type="dec">1</value>
+    </def_parameter>
+    <def_parameter user_editable="False">
+      <name>NUM_INTERRUPTS</name>
+      <value type="dec">1</value>
+    </def_parameter>
+    <cpu_info>
+      <define>
+        <name>include_cache</name>
+        <value type="bool">False</value>
+      </define>
+    </cpu_info>
+    <signal>
+      <name>clk</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>#</comm_type>
+    </signal>
+    <signal>
+      <name>rstnn</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>interrupt_vector</name>
+      <width type="text">NUM_INTERRUPTS</width>
+      <port>input</port>
+      <comm_type>core_interrupt_vector_#</comm_type>
+    </signal>
+    <signal>
+      <name>interrupt_out</name>
+      <width type="dec">1</width>
+      <port>output</port>
+      <comm_type>core_interrupt_group</comm_type>
+    </signal>
+    <reset_property>
+      <id>rstnn</id>
+      <type>asynch</type>
+      <type>negative</type>
+      <group>4</group>
+    </reset_property>
+    <core>
+      <sync>clk</sync>
+      <init>rstnn</init>
+      <name>autoname_54</name>
+    </core>
+    <interface>
+      <name>inst</name>
+      <library_name>axi</library_name>
+      <role>sender</role>
+      <comm_type>memory:inst</comm_type>
+      <parameter>
+        <id>bw_addr</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_data</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_tid</id>
+        <value type="dec">4</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+    <interface>
+      <name>data</name>
+      <library_name>axi</library_name>
+      <role>sender</role>
+      <comm_type>memory:all</comm_type>
+      <parameter>
+        <id>bw_addr</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_data</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_tid</id>
+        <value type="dec">4</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+    <interface>
+      <name>pc</name>
+      <library_name>pc</library_name>
+      <hdl_prefix/>
+      <role>sender</role>
+      <comm_type>pc</comm_type>
+      <sync>None</sync>
+      <init>None</init>
+    </interface>
+  </dec_ip>
+  <dec_ip>
+    <type>cpu_sub</type>
+    <name>rvc_orca_cache_sub</name>
+    <hdl_name>RVC_ORCA_CACHE</hdl_name>
+    <def_parameter>
+      <name>RESET_VECTOR</name>
+      <value type="dec">0</value>
+    </def_parameter>
+    <def_parameter>
+      <name>ENABLE_EXCEPTIONS</name>
+      <value type="dec">1</value>
+    </def_parameter>
+    <def_parameter>
+      <name>ENABLE_INTERRUPTS</name>
+      <value type="dec">1</value>
+    </def_parameter>
+    <def_parameter>
+      <name>NUM_INTERRUPTS</name>
+      <value type="dec">1</value>
+    </def_parameter>
+    <signal>
+      <name>clk</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>#</comm_type>
+    </signal>
+    <signal>
+      <name>rstnn</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>interrupt_vector</name>
+      <width type="text">NUM_INTERRUPTS</width>
+      <port>input</port>
+      <comm_type>core_interrupt_vector_#</comm_type>
+    </signal>
+    <signal>
+      <name>interrupt_out</name>
+      <width type="dec">1</width>
+      <port>output</port>
+      <comm_type>core_interrupt_group</comm_type>
+    </signal>
+    <reset_property>
+      <id>rstnn</id>
+      <type>asynch</type>
+      <type>negative</type>
+      <group>4</group>
+    </reset_property>
+    <core>
+      <sync>clk</sync>
+      <init>rstnn</init>
+      <name>autoname_55</name>
+    </core>
+    <interface>
+      <name>inst</name>
+      <library_name>axi</library_name>
+      <role>sender</role>
+      <comm_type>memory:inst</comm_type>
+      <parameter>
+        <id>bw_addr</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_data</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_tid</id>
+        <value type="dec">4</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+    <interface>
+      <name>data_c</name>
+      <library_name>axi</library_name>
+      <role>sender</role>
+      <comm_type>memory:data_c</comm_type>
+      <parameter>
+        <id>bw_addr</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_data</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_tid</id>
+        <value type="dec">4</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+    <interface>
+      <name>data_uc</name>
+      <library_name>axi</library_name>
+      <role>sender</role>
+      <comm_type>memory:data_uc</comm_type>
+      <parameter>
+        <id>bw_addr</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_data</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_tid</id>
+        <value type="dec">4</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+    <interface>
+      <name>pc</name>
+      <library_name>pc</library_name>
+      <hdl_prefix/>
+      <role>sender</role>
+      <comm_type>pc</comm_type>
+      <sync>None</sync>
+      <init>None</init>
     </interface>
   </dec_ip>
   <dec_ip>
@@ -7251,7 +8889,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_44</name>
+      <name>autoname_56</name>
     </core>
     <interface>
       <name>inst</name>
@@ -7375,7 +9013,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_45</name>
+      <name>autoname_57</name>
     </core>
     <interface>
       <name>inst</name>
@@ -7471,7 +9109,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_46</name>
+      <name>autoname_58</name>
     </core>
     <interface>
       <name>no_name</name>
@@ -7548,7 +9186,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_47</name>
+      <name>autoname_59</name>
     </core>
     <interface>
       <name>no_name</name>
@@ -7593,8 +9231,12 @@
       <value type="dec">32</value>
     </def_parameter>
     <def_parameter>
-      <name>BW_AXI_TID</name>
-      <value type="dec">16</value>
+      <name>CAPACITY</name>
+      <value type="hex">0x08000000</value>
+    </def_parameter>
+    <def_parameter>
+      <name>MEMORYMAP_SIZE</name>
+      <value type="text">CAPACITY</value>
     </def_parameter>
     <imp_dependent/>
     <signal>
@@ -7603,22 +9245,16 @@
       <port>input</port>
     </signal>
     <signal>
-      <name>clk_cell</name>
+      <name>clk</name>
       <width type="dec">1</width>
       <port>input</port>
-      <comm_type>clk_sdram_cell</comm_type>
+      <comm_type>clk_sdram</comm_type>
     </signal>
     <signal>
-      <name>clk_axi</name>
+      <name>global_rstnn</name>
       <width type="dec">1</width>
       <port>input</port>
-      <comm_type>clk_sdram_if</comm_type>
-    </signal>
-    <signal>
-      <name>clk_apb</name>
-      <width type="dec">1</width>
-      <port>input</port>
-      <comm_type>gclk_system</comm_type>
+      <comm_type>global_rstnn</comm_type>
     </signal>
     <signal>
       <name>LPSDR_DQ_sod_byte</name>
@@ -7637,12 +9273,13 @@
       <group>1</group>
     </reset_property>
     <interface>
-      <name>memory</name>
-      <library_name>axi</library_name>
+      <name>no_name</name>
+      <library_name>ahbs</library_name>
+      <hdl_prefix/>
       <role>receiver</role>
       <comm_type>memory:data_c</comm_type>
       <memorymap>
-        <size type="hex">0x08000000</size>
+        <size type="text">MEMORYMAP_SIZE</size>
       </memorymap>
       <parameter>
         <id>bw_addr</id>
@@ -7652,11 +9289,7 @@
         <id>bw_data</id>
         <value type="dec">32</value>
       </parameter>
-      <parameter>
-        <id>bw_tid</id>
-        <value type="text">BW_AXI_TID</value>
-      </parameter>
-      <sync>clk_axi</sync>
+      <sync>clk</sync>
       <init>rstnn</init>
     </interface>
     <interface>
@@ -7675,7 +9308,7 @@
         <id>bw_data</id>
         <value type="dec">32</value>
       </parameter>
-      <sync>clk_apb</sync>
+      <sync>clk</sync>
       <init>rstnn</init>
     </interface>
     <interface>
@@ -7714,6 +9347,14 @@
     <def_parameter>
       <name>BW_AXI_TID</name>
       <value type="dec">16</value>
+    </def_parameter>
+    <def_parameter>
+      <name>CAPACITY</name>
+      <value type="hex">0x40000000</value>
+    </def_parameter>
+    <def_parameter>
+      <name>MEMORYMAP_SIZE</name>
+      <value type="text">CAPACITY</value>
     </def_parameter>
     <imp_dependent/>
     <signal>
@@ -7760,7 +9401,7 @@
     <core>
       <sync>clk_sys</sync>
       <init>rstnn_sys</init>
-      <name>autoname_48</name>
+      <name>autoname_60</name>
     </core>
     <interface>
       <name>no_name</name>
@@ -7769,7 +9410,7 @@
       <role>receiver</role>
       <comm_type>memory:data_c</comm_type>
       <memorymap>
-        <size type="hex">0x40000000</size>
+        <size type="text">MEMORYMAP_SIZE</size>
       </memorymap>
       <parameter>
         <id>bw_addr</id>
@@ -7854,7 +9495,7 @@
     <core>
       <sync>clk_network</sync>
       <init>rstnn_network</init>
-      <name>autoname_49</name>
+      <name>autoname_61</name>
     </core>
     <interface>
       <name>ipif</name>
@@ -7950,7 +9591,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_50</name>
+      <name>autoname_62</name>
     </core>
     <interface>
       <name>ipif</name>
@@ -8048,6 +9689,18 @@
       <port>input</port>
       <comm_type>not_used</comm_type>
     </signal>
+    <signal>
+      <name>sptid</name>
+      <width type="text">`REQUIRED_BW_OF_SLAVE_TID</width>
+      <port>output</port>
+      <comm_type>not_used</comm_type>
+    </signal>
+    <signal>
+      <name>spwstrb</name>
+      <width type="text">BW_NODE_DATA/8</width>
+      <port>output</port>
+      <comm_type>not_used</comm_type>
+    </signal>
     <reset_property>
       <id>rstnn_network</id>
       <type>asynch</type>
@@ -8061,7 +9714,7 @@
     <core>
       <sync>clk_network</sync>
       <init>rstnn_network</init>
-      <name>autoname_51</name>
+      <name>autoname_63</name>
     </core>
     <interface>
       <name>ipif</name>
@@ -8149,6 +9802,18 @@
       <port>input</port>
       <comm_type>comm_disable_#</comm_type>
     </signal>
+    <signal>
+      <name>sptid</name>
+      <width type="text">`REQUIRED_BW_OF_SLAVE_TID</width>
+      <port>output</port>
+      <comm_type>not_used</comm_type>
+    </signal>
+    <signal>
+      <name>spwstrb</name>
+      <width type="text">BW_NODE_DATA/8</width>
+      <port>output</port>
+      <comm_type>not_used</comm_type>
+    </signal>
     <reset_property>
       <id>rstnn</id>
       <type>asynch</type>
@@ -8157,11 +9822,218 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_52</name>
+      <name>autoname_64</name>
     </core>
     <interface>
       <name>ipif</name>
       <library_name>apb</library_name>
+      <role>sender</role>
+      <comm_type>special</comm_type>
+      <hdl_prefix/>
+      <sync>clk</sync>
+      <init>rstnn</init>
+      <parameter>
+        <id>bw_addr</id>
+        <value type="text">BW_PLATFORM_ADDR</value>
+      </parameter>
+      <parameter>
+        <id>bw_data</id>
+        <value type="text">BW_NODE_DATA</value>
+      </parameter>
+    </interface>
+    <interface>
+      <name>ni</name>
+      <library_name>ni</library_name>
+      <role>receiver</role>
+      <comm_type>special</comm_type>
+      <hdl_prefix/>
+      <parameter>
+        <id>bw_fni_phit</id>
+        <value type="text">BW_FNI_PHIT</value>
+      </parameter>
+      <parameter>
+        <id>bw_bni_phit</id>
+        <value type="text">BW_BNI_PHIT</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+    <interface>
+      <name>svri</name>
+      <library_name>svri</library_name>
+      <role>both</role>
+      <comm_type>supervision</comm_type>
+      <sync>None</sync>
+      <init>None</init>
+    </interface>
+  </dec_ip>
+  <dec_ip>
+    <name>sni_apbe_asynch</name>
+    <hdl_name>MUNOC_APB_SLAVE_NETWORK_INTERFACE_MODULE_ASYNCH</hdl_name>
+    <def_parameter>
+      <name>NAME</name>
+      <value type="text">&quot;&quot;</value>
+    </def_parameter>
+    <def_parameter>
+      <name>NODE_ID</name>
+      <value type="dec">-1</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_FNI_PHIT</name>
+      <value type="dec">8</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_BNI_PHIT</name>
+      <value type="dec">8</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_PLATFORM_ADDR</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_NODE_DATA</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <signal>
+      <name>clk_network</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>rstnn_network</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>clk_slave</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>rstnn_slave</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>comm_disable</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>not_used</comm_type>
+    </signal>
+    <reset_property>
+      <id>rstnn_network</id>
+      <type>asynch</type>
+      <type>negative</type>
+    </reset_property>
+    <reset_property>
+      <id>rstnn_slave</id>
+      <type>asynch</type>
+      <type>negative</type>
+    </reset_property>
+    <core>
+      <sync>clk_network</sync>
+      <init>rstnn_network</init>
+      <name>autoname_65</name>
+    </core>
+    <interface>
+      <name>ipif</name>
+      <library_name>apbe</library_name>
+      <role>sender</role>
+      <comm_type>special</comm_type>
+      <hdl_prefix/>
+      <sync>clk_slave</sync>
+      <init>rstnn_slave</init>
+      <parameter>
+        <id>bw_addr</id>
+        <value type="text">BW_PLATFORM_ADDR</value>
+      </parameter>
+      <parameter>
+        <id>bw_data</id>
+        <value type="text">BW_NODE_DATA</value>
+      </parameter>
+    </interface>
+    <interface>
+      <name>ni</name>
+      <library_name>ni</library_name>
+      <role>receiver</role>
+      <comm_type>special</comm_type>
+      <hdl_prefix/>
+      <parameter>
+        <id>bw_fni_phit</id>
+        <value type="text">BW_FNI_PHIT</value>
+      </parameter>
+      <parameter>
+        <id>bw_bni_phit</id>
+        <value type="text">BW_BNI_PHIT</value>
+      </parameter>
+      <sync>clk_network</sync>
+      <init>rstnn_network</init>
+    </interface>
+    <interface>
+      <name>svri</name>
+      <library_name>svri</library_name>
+      <role>both</role>
+      <comm_type>supervision</comm_type>
+      <sync>None</sync>
+      <init>None</init>
+    </interface>
+  </dec_ip>
+  <dec_ip>
+    <name>sni_apbe_synch</name>
+    <hdl_name>MUNOC_APB_SLAVE_NETWORK_INTERFACE_MODULE</hdl_name>
+    <def_parameter>
+      <name>NAME</name>
+      <value type="text">&quot;&quot;</value>
+    </def_parameter>
+    <def_parameter>
+      <name>NODE_ID</name>
+      <value type="dec">-1</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_FNI_PHIT</name>
+      <value type="dec">8</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_BNI_PHIT</name>
+      <value type="dec">8</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_PLATFORM_ADDR</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_NODE_DATA</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <signal>
+      <name>clk</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>rstnn</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>comm_disable</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>comm_disable_#</comm_type>
+    </signal>
+    <reset_property>
+      <id>rstnn</id>
+      <type>asynch</type>
+      <type>negative</type>
+    </reset_property>
+    <core>
+      <sync>clk</sync>
+      <init>rstnn</init>
+      <name>autoname_66</name>
+    </core>
+    <interface>
+      <name>ipif</name>
+      <library_name>apbe</library_name>
       <role>sender</role>
       <comm_type>special</comm_type>
       <hdl_prefix/>
@@ -8272,7 +10144,7 @@
     <core>
       <sync>clk_network</sync>
       <init>rstnn_network</init>
-      <name>autoname_53</name>
+      <name>autoname_67</name>
     </core>
     <interface>
       <name>ipif</name>
@@ -8376,7 +10248,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_54</name>
+      <name>autoname_68</name>
     </core>
     <interface>
       <name>ipif</name>
@@ -8491,7 +10363,7 @@
     <core>
       <sync>clk_network</sync>
       <init>rstnn_network</init>
-      <name>autoname_55</name>
+      <name>autoname_69</name>
     </core>
     <interface>
       <name>ipif</name>
@@ -8587,7 +10459,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_56</name>
+      <name>autoname_70</name>
     </core>
     <interface>
       <name>ipif</name>
@@ -8702,7 +10574,7 @@
     <core>
       <sync>clk_network</sync>
       <init>rstnn_network</init>
-      <name>autoname_57</name>
+      <name>autoname_71</name>
     </core>
     <interface>
       <name>ipif</name>
@@ -8806,7 +10678,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_58</name>
+      <name>autoname_72</name>
     </core>
     <interface>
       <name>ipif</name>
@@ -8925,7 +10797,7 @@
     <core>
       <sync>clk_network</sync>
       <init>rstnn_network</init>
-      <name>autoname_59</name>
+      <name>autoname_73</name>
     </core>
     <interface>
       <name>ipif</name>
@@ -9033,7 +10905,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_60</name>
+      <name>autoname_74</name>
     </core>
     <interface>
       <name>ipif</name>
@@ -9134,7 +11006,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_61</name>
+      <name>autoname_75</name>
     </core>
     <interface>
       <name>no_name</name>
@@ -9209,7 +11081,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_62</name>
+      <name>autoname_76</name>
     </core>
     <interface>
       <name>no_name</name>
@@ -9218,7 +11090,7 @@
       <role>receiver</role>
       <comm_type>memory:data_c</comm_type>
       <memorymap>
-        <size type="hex">0x10000</size>
+        <size type="text">CAPACITY</size>
       </memorymap>
       <parameter>
         <id>bw_addr</id>
@@ -9235,6 +11107,246 @@
       <parameter>
         <id>bw_burden</id>
         <value type="text">BW_LPI_BURDEN</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+  </dec_ip>
+  <dec_ip>
+    <name>starc_mmiox_mlsu</name>
+    <hdl_name>STARC_ENGINE</hdl_name>
+    <def_parameter>
+      <name>BW_ADDR</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <def_parameter>
+      <name>SPIKEIN_BW_DATA</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <def_parameter>
+      <name>WEIGHT_BW_DATA</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <def_parameter>
+      <name>SPIKEOUT_BW_DATA</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <def_parameter>
+      <name>CORE_INPUT_SIZE</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <def_parameter>
+      <name>CORE_OUTPUT_SIZE</name>
+      <value type="text">CORE_INPUT_SIZE</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_WEIGHT</name>
+      <value type="dec">8</value>
+    </def_parameter>
+    <def_parameter>
+      <name>CAPACITANCE</name>
+      <value type="dec">2048</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_CAP_COUNTER</name>
+      <value type="dec">16</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_CONFIG</name>
+      <value type="dec">1</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_STATUS</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_LOG</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_INST</name>
+      <value type="dec">520</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_INPUT</name>
+      <value type="text">CORE_INPUT_SIZE*32</value>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_OUTPUT</name>
+      <value type="dec">32</value>
+    </def_parameter>
+    <def_parameter>
+      <name>CONFIG_DEFAULT_VALUE</name>
+      <value type="dec">0</value>
+      <virtual/>
+    </def_parameter>
+    <def_parameter>
+      <name>LOG_FIFO_DEPTH</name>
+      <value type="dec">0</value>
+      <virtual/>
+    </def_parameter>
+    <def_parameter>
+      <name>INST_FIFO_DEPTH</name>
+      <value type="dec">4</value>
+      <virtual/>
+    </def_parameter>
+    <def_parameter>
+      <name>INPUT_FIFO_DEPTH</name>
+      <value type="text">INST_FIFO_DEPTH</value>
+      <virtual/>
+    </def_parameter>
+    <def_parameter>
+      <name>OUTPUT_FIFO_DEPTH</name>
+      <value type="dec">0</value>
+      <virtual/>
+    </def_parameter>
+    <def_parameter>
+      <name>LSU_PARA</name>
+      <value type="dec">0</value>
+      <virtual/>
+    </def_parameter>
+    <signal>
+      <name>clk</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>clk_dca_core</comm_type>
+    </signal>
+    <signal>
+      <name>rstnn</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <reset_property>
+      <id>rstnn</id>
+      <type>asynch</type>
+      <type>negative</type>
+      <group>3</group>
+    </reset_property>
+    <core>
+      <sync>clk</sync>
+      <init>rstnn</init>
+      <name>autoname_77</name>
+    </core>
+    <interface>
+      <name>control</name>
+      <library_name>mmiox1</library_name>
+      <role>receiver</role>
+      <comm_type>memory:all</comm_type>
+      <parameter>
+        <id>bw_config</id>
+        <value type="text">BW_CONFIG</value>
+      </parameter>
+      <parameter>
+        <id>bw_status</id>
+        <value type="text">BW_STATUS</value>
+      </parameter>
+      <parameter>
+        <id>bw_log</id>
+        <value type="text">BW_LOG</value>
+      </parameter>
+      <parameter>
+        <id>bw_inst</id>
+        <value type="text">BW_INST</value>
+      </parameter>
+      <parameter>
+        <id>bw_input</id>
+        <value type="text">BW_INPUT</value>
+      </parameter>
+      <parameter>
+        <id>bw_output</id>
+        <value type="text">BW_OUTPUT</value>
+      </parameter>
+      <parameter>
+        <id>config_default_value</id>
+        <value type="text">CONFIG_DEFAULT_VALUE</value>
+      </parameter>
+      <parameter>
+        <id>log_fifo_depth</id>
+        <value type="text">LOG_FIFO_DEPTH</value>
+      </parameter>
+      <parameter>
+        <id>inst_fifo_depth</id>
+        <value type="text">INST_FIFO_DEPTH</value>
+      </parameter>
+      <parameter>
+        <id>input_fifo_depth</id>
+        <value type="text">INPUT_FIFO_DEPTH</value>
+      </parameter>
+      <parameter>
+        <id>output_fifo_depth</id>
+        <value type="text">OUTPUT_FIFO_DEPTH</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+    <interface>
+      <name>lsu0</name>
+      <library_name>mlsi</library_name>
+      <role>sender</role>
+      <comm_type>memory:data_c</comm_type>
+      <parameter>
+        <id>bw_axi_data</id>
+        <value type="text">SPIKEIN_BW_DATA</value>
+      </parameter>
+      <parameter>
+        <id>lsu_para</id>
+        <value type="text">MAKE_LSU_READ_ONLY(LSU_PARA)</value>
+      </parameter>
+      <parameter>
+        <id>bw_tensor_scalar</id>
+        <value type="dec">1</value>
+      </parameter>
+      <parameter>
+        <id>matrix_num_col</id>
+        <value type="text">CORE_INPUT_SIZE</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+    <interface>
+      <name>lsu1</name>
+      <library_name>mlsi</library_name>
+      <role>sender</role>
+      <comm_type>memory:data_c</comm_type>
+      <parameter>
+        <id>bw_axi_data</id>
+        <value type="text">WEIGHT_BW_DATA</value>
+      </parameter>
+      <parameter>
+        <id>lsu_para</id>
+        <value type="text">MAKE_LSU_READ_ONLY(LSU_PARA)</value>
+      </parameter>
+      <parameter>
+        <id>bw_tensor_scalar</id>
+        <value type="text">BW_WEIGHT</value>
+      </parameter>
+      <parameter>
+        <id>matrix_num_col</id>
+        <value type="text">CORE_INPUT_SIZE</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+    <interface>
+      <name>lsu2</name>
+      <library_name>mlsi</library_name>
+      <role>sender</role>
+      <comm_type>memory:data_c</comm_type>
+      <parameter>
+        <id>bw_axi_data</id>
+        <value type="text">SPIKEOUT_BW_DATA</value>
+      </parameter>
+      <parameter>
+        <id>lsu_para</id>
+        <value type="text">MAKE_LSU_WRITE_ONLY(LSU_PARA)</value>
+      </parameter>
+      <parameter>
+        <id>bw_tensor_scalar</id>
+        <value type="dec">1</value>
+      </parameter>
+      <parameter>
+        <id>matrix_num_col</id>
+        <value type="text">CORE_OUTPUT_SIZE</value>
       </parameter>
       <sync>clk</sync>
       <init>rstnn</init>
@@ -9276,7 +11388,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_63</name>
+      <name>autoname_78</name>
     </core>
     <interface>
       <name>from_core</name>
@@ -9383,7 +11495,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_64</name>
+      <name>autoname_79</name>
     </core>
   </dec_ip>
   <dec_ip>
@@ -9427,7 +11539,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_65</name>
+      <name>autoname_80</name>
     </core>
   </dec_ip>
   <dec_ip>
@@ -9492,7 +11604,7 @@
     <core>
       <sync>clk_axi</sync>
       <init>rstnn_axi</init>
-      <name>autoname_66</name>
+      <name>autoname_81</name>
     </core>
     <interface>
       <name>master</name>
@@ -9696,7 +11808,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_67</name>
+      <name>autoname_82</name>
     </core>
     <interface>
       <name>data</name>
@@ -9805,15 +11917,27 @@
       <port>input</port>
     </signal>
     <signal>
-      <name>extinput_config</name>
-      <width type="text">BW_CONFIG</width>
+      <name>extinput_status</name>
+      <width type="text">BW_STATUS</width>
+      <port>input</port>
+      <user_dependent/>
+    </signal>
+    <signal>
+      <name>extinput_clear</name>
+      <width type="dec">1</width>
       <port>output</port>
       <user_dependent/>
     </signal>
     <signal>
-      <name>extinput_status</name>
-      <width type="text">BW_STATUS</width>
-      <port>input</port>
+      <name>extinput_enable</name>
+      <width type="dec">1</width>
+      <port>output</port>
+      <user_dependent/>
+    </signal>
+    <signal>
+      <name>extinput_start</name>
+      <width type="dec">1</width>
+      <port>output</port>
       <user_dependent/>
     </signal>
     <signal>
@@ -9843,7 +11967,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_68</name>
+      <name>autoname_83</name>
     </core>
     <interface>
       <name>control</name>
@@ -9981,6 +12105,24 @@
       <user_dependent/>
     </signal>
     <signal>
+      <name>extinput_clear</name>
+      <width type="dec">1</width>
+      <port>output</port>
+      <user_dependent/>
+    </signal>
+    <signal>
+      <name>extinput_enable</name>
+      <width type="dec">1</width>
+      <port>output</port>
+      <user_dependent/>
+    </signal>
+    <signal>
+      <name>extinput_start</name>
+      <width type="dec">1</width>
+      <port>output</port>
+      <user_dependent/>
+    </signal>
+    <signal>
       <name>extinput_valid</name>
       <width type="dec">1</width>
       <port>input</port>
@@ -10007,7 +12149,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_69</name>
+      <name>autoname_84</name>
     </core>
     <interface>
       <name>control</name>
@@ -10088,6 +12230,122 @@
   </dec_ip>
   <dec_ip>
     <type>cpu_main</type>
+    <name>rvc_biriscv</name>
+    <hdl_name>RVC_BIRISCV</hdl_name>
+    <unique>cpu_main</unique>
+    <essential>cpu_main</essential>
+    <def_parameter user_editable="False">
+      <name>RESET_VECTOR</name>
+      <value type="dec">0</value>
+    </def_parameter>
+    <def_parameter user_editable="False">
+      <name>ENABLE_EXCEPTIONS</name>
+      <value type="dec">1</value>
+    </def_parameter>
+    <def_parameter user_editable="False">
+      <name>ENABLE_INTERRUPTS</name>
+      <value type="dec">1</value>
+    </def_parameter>
+    <def_parameter user_editable="False">
+      <name>NUM_INTERRUPTS</name>
+      <value type="dec">1</value>
+    </def_parameter>
+    <cpu_info>
+      <define>
+        <name>include_cache</name>
+        <value type="bool">True</value>
+      </define>
+      <define>
+        <name>cache_line_size</name>
+        <value type="dec">32</value>
+      </define>
+    </cpu_info>
+    <signal>
+      <name>clk</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>#</comm_type>
+    </signal>
+    <signal>
+      <name>rstnn</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>interrupt_vector</name>
+      <width type="text">NUM_INTERRUPTS</width>
+      <port>input</port>
+      <comm_type>core_interrupt_vector_#</comm_type>
+    </signal>
+    <signal>
+      <name>interrupt_out</name>
+      <width type="dec">1</width>
+      <port>output</port>
+      <comm_type>core_interrupt_group</comm_type>
+    </signal>
+    <reset_property>
+      <id>rstnn</id>
+      <type>asynch</type>
+      <type>negative</type>
+      <group>4</group>
+    </reset_property>
+    <core>
+      <sync>clk</sync>
+      <init>rstnn</init>
+      <name>autoname_85</name>
+    </core>
+    <interface>
+      <name>inst</name>
+      <library_name>axi</library_name>
+      <role>sender</role>
+      <comm_type>memory:inst</comm_type>
+      <parameter>
+        <id>bw_addr</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_data</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_tid</id>
+        <value type="dec">4</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+    <interface>
+      <name>data</name>
+      <library_name>axi</library_name>
+      <role>sender</role>
+      <comm_type>memory:all</comm_type>
+      <parameter>
+        <id>bw_addr</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_data</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_tid</id>
+        <value type="dec">4</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+    <interface>
+      <name>pc</name>
+      <library_name>pc</library_name>
+      <hdl_prefix/>
+      <role>sender</role>
+      <comm_type>pc</comm_type>
+      <sync>None</sync>
+      <init>None</init>
+    </interface>
+  </dec_ip>
+  <dec_ip>
+    <type>cpu_main</type>
     <name>rvc_orca</name>
     <hdl_name>RVC_ORCA</hdl_name>
     <unique>cpu_main</unique>
@@ -10146,7 +12404,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_70</name>
+      <name>autoname_86</name>
     </core>
     <interface>
       <name>inst</name>
@@ -10173,6 +12431,142 @@
       <library_name>axi</library_name>
       <role>sender</role>
       <comm_type>memory:all</comm_type>
+      <parameter>
+        <id>bw_addr</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_data</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_tid</id>
+        <value type="dec">4</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+    <interface>
+      <name>pc</name>
+      <library_name>pc</library_name>
+      <hdl_prefix/>
+      <role>sender</role>
+      <comm_type>pc</comm_type>
+      <sync>None</sync>
+      <init>None</init>
+    </interface>
+  </dec_ip>
+  <dec_ip>
+    <type>cpu_main</type>
+    <name>rvc_orca_cache</name>
+    <hdl_name>RVC_ORCA_CACHE</hdl_name>
+    <unique>cpu_main</unique>
+    <essential>cpu_main</essential>
+    <def_parameter user_editable="False">
+      <name>RESET_VECTOR</name>
+      <value type="dec">0</value>
+    </def_parameter>
+    <def_parameter user_editable="False">
+      <name>ENABLE_EXCEPTIONS</name>
+      <value type="dec">1</value>
+    </def_parameter>
+    <def_parameter user_editable="False">
+      <name>ENABLE_INTERRUPTS</name>
+      <value type="dec">1</value>
+    </def_parameter>
+    <def_parameter user_editable="False">
+      <name>NUM_INTERRUPTS</name>
+      <value type="dec">1</value>
+    </def_parameter>
+    <cpu_info>
+      <define>
+        <name>include_cache</name>
+        <value type="bool">True</value>
+      </define>
+      <define>
+        <name>cache_line_size</name>
+        <value type="dec">16</value>
+      </define>
+    </cpu_info>
+    <signal>
+      <name>clk</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>#</comm_type>
+    </signal>
+    <signal>
+      <name>rstnn</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>interrupt_vector</name>
+      <width type="text">NUM_INTERRUPTS</width>
+      <port>input</port>
+      <comm_type>core_interrupt_vector_#</comm_type>
+    </signal>
+    <signal>
+      <name>interrupt_out</name>
+      <width type="dec">1</width>
+      <port>output</port>
+      <comm_type>core_interrupt_group</comm_type>
+    </signal>
+    <reset_property>
+      <id>rstnn</id>
+      <type>asynch</type>
+      <type>negative</type>
+      <group>4</group>
+    </reset_property>
+    <core>
+      <sync>clk</sync>
+      <init>rstnn</init>
+      <name>autoname_87</name>
+    </core>
+    <interface>
+      <name>inst</name>
+      <library_name>axi</library_name>
+      <role>sender</role>
+      <comm_type>memory:inst</comm_type>
+      <parameter>
+        <id>bw_addr</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_data</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_tid</id>
+        <value type="dec">4</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+    <interface>
+      <name>data_c</name>
+      <library_name>axi</library_name>
+      <role>sender</role>
+      <comm_type>memory:data_c</comm_type>
+      <parameter>
+        <id>bw_addr</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_data</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_tid</id>
+        <value type="dec">4</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+    <interface>
+      <name>data_uc</name>
+      <library_name>axi</library_name>
+      <role>sender</role>
+      <comm_type>memory:data_uc</comm_type>
       <parameter>
         <id>bw_addr</id>
         <value type="dec">32</value>
@@ -10262,7 +12656,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_71</name>
+      <name>autoname_88</name>
     </core>
     <interface>
       <name>inst</name>
@@ -10394,12 +12788,122 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_72</name>
+      <name>autoname_89</name>
     </core>
     <interface>
       <name>no_name</name>
       <hdl_prefix/>
       <library_name>axi</library_name>
+      <role>sender</role>
+      <comm_type>memory:all</comm_type>
+      <parameter>
+        <id>bw_addr</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_data</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_tid</id>
+        <value type="dec">4</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+    <interface>
+      <name>pc</name>
+      <library_name>pc</library_name>
+      <hdl_prefix/>
+      <role>sender</role>
+      <comm_type>pc</comm_type>
+      <sync>None</sync>
+      <init>None</init>
+    </interface>
+  </dec_ip>
+  <dec_ip>
+    <type>cpu_main</type>
+    <name>rvc_rocket_jtag</name>
+    <hdl_name>RVC_ROCKET_JTAG</hdl_name>
+    <unique>cpu_main</unique>
+    <essential>cpu_main</essential>
+    <def_parameter user_editable="False">
+      <name>ENABLE_INTERRUPTS</name>
+      <value type="dec">1</value>
+    </def_parameter>
+    <def_parameter user_editable="False">
+      <name>NUM_INTERRUPTS</name>
+      <value type="dec">1</value>
+    </def_parameter>
+    <cpu_info>
+      <define>
+        <name>include_cache</name>
+        <value type="bool">True</value>
+      </define>
+      <define>
+        <name>cache_line_size</name>
+        <value type="dec">64</value>
+      </define>
+    </cpu_info>
+    <signal>
+      <name>clk</name>
+      <width type="dec">1</width>
+      <port>input</port>
+      <comm_type>#</comm_type>
+    </signal>
+    <signal>
+      <name>rstnn</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <signal>
+      <name>interrupt_vector</name>
+      <width type="text">NUM_INTERRUPTS</width>
+      <port>input</port>
+      <comm_type>core_interrupt_vector_#</comm_type>
+    </signal>
+    <signal>
+      <name>interrupt_out</name>
+      <width type="dec">1</width>
+      <port>output</port>
+      <comm_type>core_interrupt_group</comm_type>
+    </signal>
+    <reset_property>
+      <id>rstnn</id>
+      <type>asynch</type>
+      <type>negative</type>
+      <group>4</group>
+    </reset_property>
+    <core>
+      <sync>clk</sync>
+      <init>rstnn</init>
+      <name>autoname_90</name>
+    </core>
+    <interface>
+      <name>mem</name>
+      <hdl_prefix>mem_</hdl_prefix>
+      <library_name>axi4</library_name>
+      <role>sender</role>
+      <comm_type>memory:all</comm_type>
+      <parameter>
+        <id>bw_addr</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_data</id>
+        <value type="dec">32</value>
+      </parameter>
+      <parameter>
+        <id>bw_tid</id>
+        <value type="dec">4</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+    <interface>
+      <name>mmio</name>
+      <hdl_prefix>mmio_</hdl_prefix>
+      <library_name>axi4</library_name>
       <role>sender</role>
       <comm_type>memory:all</comm_type>
       <parameter>
@@ -10487,7 +12991,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_73</name>
+      <name>autoname_91</name>
     </core>
     <interface>
       <name>no_name</name>
@@ -10590,7 +13094,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_74</name>
+      <name>autoname_92</name>
     </core>
     <interface>
       <name>ifu</name>
@@ -10713,7 +13217,7 @@
     <core>
       <sync>clk_dram_if</sync>
       <init>rstnn_sys</init>
-      <name>autoname_75</name>
+      <name>autoname_93</name>
     </core>
     <interface>
       <name>no_name</name>
@@ -10792,7 +13296,7 @@
     <core>
       <sync>clk_dram_if</sync>
       <init>rstnn_sys</init>
-      <name>autoname_76</name>
+      <name>autoname_94</name>
     </core>
     <interface>
       <name>no_name</name>
@@ -10852,7 +13356,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_77</name>
+      <name>autoname_95</name>
     </core>
     <interface>
       <name>master</name>
@@ -10903,7 +13407,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_78</name>
+      <name>autoname_96</name>
     </core>
     <interface>
       <name>master</name>
@@ -10959,7 +13463,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_79</name>
+      <name>autoname_97</name>
     </core>
     <interface>
       <name>master</name>
@@ -11018,7 +13522,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_80</name>
+      <name>autoname_98</name>
     </core>
     <interface>
       <name>master</name>
@@ -11074,7 +13578,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_81</name>
+      <name>autoname_99</name>
     </core>
     <interface>
       <name>master</name>
@@ -11125,7 +13629,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_82</name>
+      <name>autoname_100</name>
     </core>
     <interface>
       <name>master</name>
@@ -11181,7 +13685,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_83</name>
+      <name>autoname_101</name>
     </core>
     <interface>
       <name>master</name>
@@ -11240,7 +13744,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_84</name>
+      <name>autoname_102</name>
     </core>
     <interface>
       <name>master</name>
@@ -11304,7 +13808,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_85</name>
+      <name>autoname_103</name>
     </core>
     <interface>
       <name>master</name>
@@ -11371,7 +13875,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_86</name>
+      <name>autoname_104</name>
     </core>
     <interface>
       <name>master</name>
@@ -11439,7 +13943,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_87</name>
+      <name>autoname_105</name>
     </core>
     <interface>
       <name>master</name>
@@ -11506,7 +14010,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_88</name>
+      <name>autoname_106</name>
     </core>
     <interface>
       <name>master</name>
@@ -11529,6 +14033,75 @@
       <parameter>
         <id>bw_burden</id>
         <value type="text">BW_BURDEN</value>
+      </parameter>
+      <sync>clk</sync>
+      <init>rstnn</init>
+    </interface>
+  </dec_ip>
+  <dec_ip>
+    <name>user_matrix_lsu</name>
+    <hdl_name>USER_IP</hdl_name>
+    <def_parameter>
+      <name>BW_AXI_DATA</name>
+      <value type="dec">32</value>
+      <virtual/>
+    </def_parameter>
+    <def_parameter>
+      <name>LSU_PARA</name>
+      <value type="dec">0</value>
+      <virtual/>
+    </def_parameter>
+    <def_parameter>
+      <name>BW_TENSOR_SCALAR</name>
+      <value type="dec">33</value>
+    </def_parameter>
+    <def_parameter>
+      <name>MATRIX_NUM_COL</name>
+      <value type="dec">4</value>
+    </def_parameter>
+    <user_dependent/>
+    <signal>
+      <name>clk</name>
+      <width type="dec">1</width>
+      <port>output</port>
+    </signal>
+    <signal>
+      <name>rstnn</name>
+      <width type="dec">1</width>
+      <port>input</port>
+    </signal>
+    <reset_property>
+      <id>rstnn</id>
+      <type>asynch</type>
+      <type>negative</type>
+      <group>3</group>
+    </reset_property>
+    <core>
+      <sync>clk</sync>
+      <init>rstnn</init>
+      <name>autoname_107</name>
+    </core>
+    <interface>
+      <name>no_name</name>
+      <library_name>mlsi</library_name>
+      <hdl_prefix/>
+      <role>sender</role>
+      <comm_type>special</comm_type>
+      <parameter>
+        <id>bw_axi_data</id>
+        <value type="text">BW_AXI_DATA</value>
+      </parameter>
+      <parameter>
+        <id>lsu_para</id>
+        <value type="text">LSU_PARA</value>
+      </parameter>
+      <parameter>
+        <id>bw_tensor_scalar</id>
+        <value type="text">BW_TENSOR_SCALAR</value>
+      </parameter>
+      <parameter>
+        <id>matrix_num_col</id>
+        <value type="text">MATRIX_NUM_COL</value>
       </parameter>
       <sync>clk</sync>
       <init>rstnn</init>
@@ -11614,7 +14187,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_89</name>
+      <name>autoname_108</name>
     </core>
     <interface>
       <name>mmiox</name>
@@ -11706,7 +14279,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_90</name>
+      <name>autoname_109</name>
     </core>
     <interface>
       <name>slave</name>
@@ -11764,7 +14337,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_91</name>
+      <name>autoname_110</name>
     </core>
     <interface>
       <name>slave</name>
@@ -11823,7 +14396,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_92</name>
+      <name>autoname_111</name>
     </core>
     <interface>
       <name>slave</name>
@@ -11881,7 +14454,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_93</name>
+      <name>autoname_112</name>
     </core>
     <interface>
       <name>slave</name>
@@ -11944,7 +14517,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_94</name>
+      <name>autoname_113</name>
     </core>
     <interface>
       <name>slave</name>
@@ -12010,7 +14583,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_95</name>
+      <name>autoname_114</name>
     </core>
     <interface>
       <name>slave</name>
@@ -12073,7 +14646,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_96</name>
+      <name>autoname_115</name>
     </core>
     <interface>
       <name>slave</name>
@@ -12131,7 +14704,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_97</name>
+      <name>autoname_116</name>
     </core>
     <interface>
       <name>slave</name>
@@ -12194,7 +14767,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_98</name>
+      <name>autoname_117</name>
     </core>
     <interface>
       <name>slave</name>
@@ -12261,7 +14834,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_99</name>
+      <name>autoname_118</name>
     </core>
     <interface>
       <name>slave</name>
@@ -12327,7 +14900,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_100</name>
+      <name>autoname_119</name>
     </core>
     <interface>
       <name>slave</name>
@@ -12393,7 +14966,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_101</name>
+      <name>autoname_120</name>
     </core>
     <interface>
       <name>slave</name>
@@ -12524,7 +15097,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_102</name>
+      <name>autoname_121</name>
     </core>
     <interface>
       <name>control</name>
@@ -12705,6 +15278,14 @@
       <name>BW_AXI_TID</name>
       <value type="dec">16</value>
     </def_parameter>
+    <def_parameter>
+      <name>CAPACITY</name>
+      <value type="hex">0x40000000</value>
+    </def_parameter>
+    <def_parameter>
+      <name>MEMORYMAP_SIZE</name>
+      <value type="text">CAPACITY</value>
+    </def_parameter>
     <imp_dependent/>
     <signal>
       <name>clk_ref</name>
@@ -12750,7 +15331,7 @@
     <core>
       <sync>clk_sys</sync>
       <init>rstnn_sys</init>
-      <name>autoname_48</name>
+      <name>autoname_60</name>
     </core>
     <interface>
       <name>no_name</name>
@@ -12759,7 +15340,7 @@
       <role>receiver</role>
       <comm_type>memory:data_c</comm_type>
       <memorymap>
-        <size type="hex">0x40000000</size>
+        <size type="text">MEMORYMAP_SIZE</size>
       </memorymap>
       <parameter>
         <id>bw_addr</id>
@@ -12865,7 +15446,7 @@
     <core>
       <sync>clk</sync>
       <init>rstnn</init>
-      <name>autoname_61</name>
+      <name>autoname_75</name>
     </core>
     <interface>
       <name>no_name</name>

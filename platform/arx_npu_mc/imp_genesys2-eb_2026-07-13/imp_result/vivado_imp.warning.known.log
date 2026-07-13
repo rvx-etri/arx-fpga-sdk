@@ -1,0 +1,234 @@
+WARNING: [Synth 8-10940] macro 'MUNOC_LDEF_1' is redefined [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_44.v:91]
+WARNING: [Synth 8-10940] macro 'MUNOC_LDEF_5' is redefined [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_44.v:92]
+WARNING: [Synth 8-10940] macro 'MUNOC_LDEF_3' is redefined [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_44.v:93]
+WARNING: [Synth 8-10940] macro 'MUNOC_LDEF_0' is redefined [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_44.v:94]
+WARNING: [Synth 8-10940] macro 'MUNOC_LDEF_2' is redefined [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_44.v:95]
+WARNING: [Synth 8-10940] macro 'MUNOC_LDEF_4' is redefined [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_44.v:102]
+WARNING: [Synth 8-10940] macro 'MUNOC_LDEF_6' is redefined [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_13.v:136]
+WARNING: [Synth 8-6014] Unused sequential element munoc_signal_09_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_15.v:464]
+WARNING: [Synth 8-6014] Unused sequential element munoc_signal_09_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_15.v:464]
+WARNING: [Synth 8-6014] Unused sequential element munoc_signal_41_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_32.v:347]
+WARNING: [Synth 8-6014] Unused sequential element munoc_signal_62_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_32.v:348]
+WARNING: [Synth 8-6014] Unused sequential element munoc_signal_34_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_32.v:425]
+WARNING: [Synth 8-6014] Unused sequential element munoc_signal_07_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_32.v:426]
+WARNING: [Synth 8-6014] Unused sequential element munoc_signal_09_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_15.v:464]
+WARNING: [Synth 8-7129] Port clear in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port enable in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqhint in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqlast in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[90] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[89] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[88] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[87] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[86] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[85] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[84] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[83] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[80] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[79] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[78] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[77] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[76] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[75] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[74] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[73] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[72] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[71] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[70] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[69] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[68] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[31] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[30] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[29] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[28] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[27] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[26] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[25] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[24] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[23] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[22] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[21] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[20] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[19] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[18] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[17] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[16] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[1] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[0] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlydready[1] in module MUNOC_BURDEN_HANDLER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slyhint in module MUNOC_BURDEN_HANDLER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slydata[43] in module MUNOC_BURDEN_HANDLER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slydata[42] in module MUNOC_BURDEN_HANDLER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slydata[41] in module MUNOC_BURDEN_HANDLER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slydata[40] in module MUNOC_BURDEN_HANDLER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slydata[39] in module MUNOC_BURDEN_HANDLER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slydata[38] in module MUNOC_BURDEN_HANDLER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slydata[37] in module MUNOC_BURDEN_HANDLER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slydata[36] in module MUNOC_BURDEN_HANDLER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqhint in module MUNOC_LPIXM2LPIXS is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqlast in module MUNOC_LPIXM2LPIXS is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[82] in module MUNOC_LPIXM2LPIXS is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slqdready[1] in module MUNOC_LPIXM2LPIXS is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slylast in module MUNOC_LPIXM2LPIXS is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rxwid[7] in module MUNOC_AXI2LPIXM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rxwid[6] in module MUNOC_AXI2LPIXM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rxwid[5] in module MUNOC_AXI2LPIXM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rxwid[4] in module MUNOC_AXI2LPIXM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rxwid[3] in module MUNOC_AXI2LPIXM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rxwid[2] in module MUNOC_AXI2LPIXM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rxwid[1] in module MUNOC_AXI2LPIXM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rxwid[0] in module MUNOC_AXI2LPIXM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slqdready[1] in module MUNOC_AXI2LPIXM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slyhint in module MUNOC_AXI2LPIXM is either unconnected or has no load
+WARNING: [Vivado 12-584] No ports matched 'boot_mode[1]'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/boot_mode.xdc:22]
+WARNING: [Vivado 12-584] No ports matched 'i2c_readymade_sclk_list[0]'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/i2c_readymade.xdc:19]
+WARNING: [Vivado 12-584] No ports matched 'i2c_readymade_sdata_list[0]'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/i2c_readymade.xdc:20]
+WARNING: [Vivado 12-584] No ports matched 'i2c_readymade_sclk_list[0]'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/i2c_readymade.xdc:22]
+WARNING: [Vivado 12-584] No ports matched 'i2c_readymade_sdata_list[0]'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/i2c_readymade.xdc:23]
+WARNING: [Vivado 12-584] No ports matched 'spi_flash_sdq[2]'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/spi_flash.xdc:25]
+WARNING: [Vivado 12-584] No ports matched 'spi_flash_sdq[3]'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/spi_flash.xdc:26]
+WARNING: [Vivado 12-584] No ports matched 'oled_scs'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_rgb.xdc:32]
+WARNING: [Vivado 12-584] No ports matched 'oled_sdq0'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_rgb.xdc:33]
+WARNING: [Vivado 12-584] No ports matched 'oled_sdq1'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_rgb.xdc:34]
+WARNING: [Vivado 12-584] No ports matched 'oled_sclk'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_rgb.xdc:35]
+WARNING: [Vivado 12-584] No ports matched 'oled_sdcsel'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_rgb.xdc:37]
+WARNING: [Vivado 12-584] No ports matched 'oled_srstnn'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_rgb.xdc:38]
+WARNING: [Vivado 12-584] No ports matched 'oled_svbat'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_rgb.xdc:39]
+WARNING: [Vivado 12-584] No ports matched 'oled_svdd'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_rgb.xdc:40]
+WARNING: [Vivado 12-584] No ports matched 'oled_bw_sclk'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_bw_on_board.xdc:22]
+WARNING: [Vivado 12-584] No ports matched 'oled_bw_sdin'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_bw_on_board.xdc:23]
+WARNING: [Vivado 12-584] No ports matched 'oled_bw_dc'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_bw_on_board.xdc:25]
+WARNING: [Vivado 12-584] No ports matched 'oled_bw_res'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_bw_on_board.xdc:26]
+WARNING: [Vivado 12-584] No ports matched 'oled_bw_vbat'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_bw_on_board.xdc:27]
+WARNING: [Vivado 12-584] No ports matched 'oled_bw_vdd'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_bw_on_board.xdc:28]
+WARNING: [Synth 8-10940] macro 'MUNOC_LDEF_1' is redefined [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_44.v:91]
+WARNING: [Synth 8-10940] macro 'MUNOC_LDEF_5' is redefined [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_44.v:92]
+WARNING: [Synth 8-10940] macro 'MUNOC_LDEF_3' is redefined [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_44.v:93]
+WARNING: [Synth 8-10940] macro 'MUNOC_LDEF_0' is redefined [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_44.v:94]
+WARNING: [Synth 8-10940] macro 'MUNOC_LDEF_2' is redefined [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_44.v:95]
+WARNING: [Synth 8-10940] macro 'MUNOC_LDEF_4' is redefined [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_44.v:102]
+WARNING: [Synth 8-10940] macro 'MUNOC_LDEF_6' is redefined [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_13.v:136]
+WARNING: [Synth 8-6014] Unused sequential element munoc_signal_09_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_15.v:464]
+WARNING: [Synth 8-6014] Unused sequential element munoc_signal_09_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_15.v:464]
+WARNING: [Synth 8-6014] Unused sequential element munoc_signal_41_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_32.v:347]
+WARNING: [Synth 8-6014] Unused sequential element munoc_signal_62_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_32.v:348]
+WARNING: [Synth 8-6014] Unused sequential element munoc_signal_34_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_32.v:425]
+WARNING: [Synth 8-6014] Unused sequential element munoc_signal_07_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_32.v:426]
+WARNING: [Synth 8-6014] Unused sequential element munoc_signal_09_reg was removed.  [/home/kshan/rvx_etri/hwlib_basic/munoc/src/munoc_module_15.v:464]
+WARNING: [Synth 8-7129] Port clear in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port enable in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqhint in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqlast in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[90] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[89] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[88] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[87] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[86] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[85] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[84] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[83] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[80] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[79] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[78] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[77] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[76] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[75] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[74] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[73] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[72] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[71] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[70] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[69] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[68] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[31] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[30] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[29] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[28] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[27] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[26] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[25] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[24] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[23] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[22] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[21] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[20] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[19] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[18] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[17] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[16] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[1] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[0] in module MUNOC_LPIXS2SCELL_NBR is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlydready[1] in module MUNOC_BURDEN_HANDLER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slyhint in module MUNOC_BURDEN_HANDLER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slydata[43] in module MUNOC_BURDEN_HANDLER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slydata[42] in module MUNOC_BURDEN_HANDLER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slydata[41] in module MUNOC_BURDEN_HANDLER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slydata[40] in module MUNOC_BURDEN_HANDLER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slydata[39] in module MUNOC_BURDEN_HANDLER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slydata[38] in module MUNOC_BURDEN_HANDLER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slydata[37] in module MUNOC_BURDEN_HANDLER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slydata[36] in module MUNOC_BURDEN_HANDLER is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqhint in module MUNOC_LPIXM2LPIXS is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqlast in module MUNOC_LPIXM2LPIXS is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rlqdata[82] in module MUNOC_LPIXM2LPIXS is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slqdready[1] in module MUNOC_LPIXM2LPIXS is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slylast in module MUNOC_LPIXM2LPIXS is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rxwid[7] in module MUNOC_AXI2LPIXM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rxwid[6] in module MUNOC_AXI2LPIXM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rxwid[5] in module MUNOC_AXI2LPIXM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rxwid[4] in module MUNOC_AXI2LPIXM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rxwid[3] in module MUNOC_AXI2LPIXM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rxwid[2] in module MUNOC_AXI2LPIXM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rxwid[1] in module MUNOC_AXI2LPIXM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rxwid[0] in module MUNOC_AXI2LPIXM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slqdready[1] in module MUNOC_AXI2LPIXM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slyhint in module MUNOC_AXI2LPIXM is either unconnected or has no load
+WARNING: [Vivado 12-584] No ports matched 'boot_mode[1]'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/boot_mode.xdc:22]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/boot_mode.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/ARX_NPU_MC_FPGA_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+WARNING: [Vivado 12-584] No ports matched 'i2c_readymade_sclk_list[0]'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/i2c_readymade.xdc:19]
+WARNING: [Vivado 12-584] No ports matched 'i2c_readymade_sdata_list[0]'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/i2c_readymade.xdc:20]
+WARNING: [Vivado 12-584] No ports matched 'i2c_readymade_sclk_list[0]'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/i2c_readymade.xdc:22]
+WARNING: [Vivado 12-584] No ports matched 'i2c_readymade_sdata_list[0]'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/i2c_readymade.xdc:23]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/i2c_readymade.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/ARX_NPU_MC_FPGA_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+WARNING: [Constraints 18-619] A clock with name 'external_clk_0' already exists, overwriting the previous clock with the same name. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/clk_and_rst.xdc:31]
+WARNING: [Vivado 12-584] No ports matched 'spi_flash_sdq[2]'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/spi_flash.xdc:25]
+WARNING: [Vivado 12-584] No ports matched 'spi_flash_sdq[3]'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/spi_flash.xdc:26]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/spi_flash.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/ARX_NPU_MC_FPGA_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+WARNING: [Vivado 12-584] No ports matched 'oled_scs'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_rgb.xdc:32]
+WARNING: [Vivado 12-584] No ports matched 'oled_sdq0'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_rgb.xdc:33]
+WARNING: [Vivado 12-584] No ports matched 'oled_sdq1'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_rgb.xdc:34]
+WARNING: [Vivado 12-584] No ports matched 'oled_sclk'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_rgb.xdc:35]
+WARNING: [Vivado 12-584] No ports matched 'oled_sdcsel'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_rgb.xdc:37]
+WARNING: [Vivado 12-584] No ports matched 'oled_srstnn'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_rgb.xdc:38]
+WARNING: [Vivado 12-584] No ports matched 'oled_svbat'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_rgb.xdc:39]
+WARNING: [Vivado 12-584] No ports matched 'oled_svdd'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_rgb.xdc:40]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_rgb.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/ARX_NPU_MC_FPGA_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+WARNING: [Vivado 12-584] No ports matched 'oled_bw_sclk'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_bw_on_board.xdc:22]
+WARNING: [Vivado 12-584] No ports matched 'oled_bw_sdin'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_bw_on_board.xdc:23]
+WARNING: [Vivado 12-584] No ports matched 'oled_bw_dc'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_bw_on_board.xdc:25]
+WARNING: [Vivado 12-584] No ports matched 'oled_bw_res'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_bw_on_board.xdc:26]
+WARNING: [Vivado 12-584] No ports matched 'oled_bw_vbat'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_bw_on_board.xdc:27]
+WARNING: [Vivado 12-584] No ports matched 'oled_bw_vdd'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_bw_on_board.xdc:28]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_bw_on_board.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/ARX_NPU_MC_FPGA_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+WARNING: [Vivado 12-584] No ports matched 'boot_mode[1]'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/boot_mode.xdc:22]
+WARNING: [Vivado 12-584] No ports matched 'i2c_readymade_sclk_list[0]'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/i2c_readymade.xdc:19]
+WARNING: [Vivado 12-584] No ports matched 'i2c_readymade_sdata_list[0]'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/i2c_readymade.xdc:20]
+WARNING: [Vivado 12-584] No ports matched 'i2c_readymade_sclk_list[0]'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/i2c_readymade.xdc:22]
+WARNING: [Vivado 12-584] No ports matched 'i2c_readymade_sdata_list[0]'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/i2c_readymade.xdc:23]
+WARNING: [Constraints 18-619] A clock with name 'external_clk_0' already exists, overwriting the previous clock with the same name. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/clk_and_rst.xdc:31]
+WARNING: [Vivado 12-584] No ports matched 'spi_flash_sdq[2]'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/spi_flash.xdc:25]
+WARNING: [Vivado 12-584] No ports matched 'spi_flash_sdq[3]'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/spi_flash.xdc:26]
+WARNING: [Vivado 12-584] No ports matched 'oled_scs'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_rgb.xdc:32]
+WARNING: [Vivado 12-584] No ports matched 'oled_sdq0'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_rgb.xdc:33]
+WARNING: [Vivado 12-584] No ports matched 'oled_sdq1'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_rgb.xdc:34]
+WARNING: [Vivado 12-584] No ports matched 'oled_sclk'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_rgb.xdc:35]
+WARNING: [Vivado 12-584] No ports matched 'oled_sdcsel'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_rgb.xdc:37]
+WARNING: [Vivado 12-584] No ports matched 'oled_srstnn'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_rgb.xdc:38]
+WARNING: [Vivado 12-584] No ports matched 'oled_svbat'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_rgb.xdc:39]
+WARNING: [Vivado 12-584] No ports matched 'oled_svdd'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_rgb.xdc:40]
+WARNING: [Vivado 12-584] No ports matched 'oled_bw_sclk'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_bw_on_board.xdc:22]
+WARNING: [Vivado 12-584] No ports matched 'oled_bw_sdin'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_bw_on_board.xdc:23]
+WARNING: [Vivado 12-584] No ports matched 'oled_bw_dc'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_bw_on_board.xdc:25]
+WARNING: [Vivado 12-584] No ports matched 'oled_bw_res'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_bw_on_board.xdc:26]
+WARNING: [Vivado 12-584] No ports matched 'oled_bw_vbat'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_bw_on_board.xdc:27]
+WARNING: [Vivado 12-584] No ports matched 'oled_bw_vdd'. [/home/kshan/rvx_etri/imp_class_info/genesys2-eb/pinmap/oled_bw_on_board.xdc:28]
